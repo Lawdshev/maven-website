@@ -14,7 +14,7 @@ export type MegaMenuColumn = {
 export const aiMegaMenu: MegaMenuColumn[] = [
   {
     links: [
-      { label: "Overview", href: "#" },
+      { label: "Overview", href: "/services" },
       { label: "AI Agents", href: "#" },
       { label: "Real-Time Data Pipelines", href: "#" },
       { label: "Cloud Native Architecture", href: "#" },
@@ -35,7 +35,7 @@ export const aiMegaMenu: MegaMenuColumn[] = [
 export const hybridCloudMegaMenu: MegaMenuColumn[] = [
   {
     links: [
-      { label: "Overview", href: "#" },
+      { label: "Overview", href: "/industries" },
       { label: "Cloud Services", href: "#" },
       { label: "Hybrid Cloud Platform", href: "#" },
       { label: "Cloud Security", href: "#" },

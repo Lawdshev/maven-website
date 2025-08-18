@@ -31,12 +31,14 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 // Update the Header component function signature to include a ref for click outside detection
 export default function Header({ children }: { children: React.ReactNode }) {
   const [showSearchInput, setShowSearchInput] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null); // State to track which mega menu is open
   const headerRef = useRef<HTMLElement>(null); // Ref for the header to detect clicks outside
+  const router = useRouter();
 
   const toggleSearchInput = () => {
     setShowSearchInput(!showSearchInput);
@@ -45,41 +47,43 @@ export default function Header({ children }: { children: React.ReactNode }) {
 
   const handleMenuToggle = (menuName: string) => {
     setOpenMenu(openMenu === menuName ? null : menuName);
-    setShowSearchInput(false); // Close search when a menu is opened
+    setShowSearchInput(false);
   };
 
-  const closeMegaMenu = () => {
+  const closeMegaMenu = (link: string) => {
+    console.log("link", link);
+    router.push(link);
     setOpenMenu(null);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
+  // useEffect(() => {
+  //   const handleClickOutside = (event: MouseEvent) => {
+  //     const target = event.target as HTMLElement;
 
-      // Close if not clicking a toggle and not inside an open mega menu
-      if (
-        !target.closest("[data-mega-toggle]") && // not a toggle
-        !target.closest(".mega-menu") // not inside mega menu itself
-      ) {
-        setOpenMenu(null);
-      }
-    };
+  //     // Close if not clicking a toggle and not inside an open mega menu
+  //     if (
+  //       !target.closest("[data-mega-toggle]") && // not a toggle
+  //       !target.closest(".mega-menu") // not inside mega menu itself
+  //     ) {
+  //       setOpenMenu(null);
+  //     }
+  //   };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (openMenu) setOpenMenu(null);
-    };
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (openMenu) setOpenMenu(null);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [openMenu]);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [openMenu]);
 
   return (
     <>
@@ -98,6 +102,14 @@ export default function Header({ children }: { children: React.ReactNode }) {
             />
           </Link>
           <nav className="hidden lg:flex space-x-6 text-sm font-medium">
+            <div className="relative">
+              <Link
+                href="/about-us"
+                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer"
+              >
+                About us{" "}
+              </Link>
+            </div>
             {/* AI Mega Menu */}
             <div className="relative">
               <Link
@@ -124,7 +136,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
                 className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer"
                 onClick={() => handleMenuToggle("hybrid-cloud")}
               >
-                Hybrid Cloud{" "}
+                Industries{" "}
                 {openMenu === "hybrid-cloud" ? (
                   <ChevronUp className="ml-1 h-4 w-4" />
                 ) : (
@@ -142,11 +154,11 @@ export default function Header({ children }: { children: React.ReactNode }) {
             {/* Products Mega Menu */}
             <div className="relative">
               <Link
-                href="/products"
+                href="/solutions"
                 className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer"
                 // onClick={() => handleMenuToggle("products")}
               >
-                Products{" "}
+                Solutions{" "}
                 {openMenu === "products" ? (
                   <ChevronUp className="ml-1 h-4 w-4" />
                 ) : (
@@ -162,33 +174,11 @@ export default function Header({ children }: { children: React.ReactNode }) {
             </div>
 
             <Link
-              href="#"
+              href="/consulting"
               className="flex items-center hover:text-[#0054aa] text-lg"
             >
               Consulting
             </Link>
-
-            {/* Support Mega Menu */}
-            <div className="relative">
-              <Link
-                href="#"
-                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer"
-                onClick={() => handleMenuToggle("support")}
-              >
-                Support{" "}
-                {openMenu === "support" ? (
-                  <ChevronUp className="ml-1 h-4 w-4" />
-                ) : (
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                )}
-              </Link>
-              {openMenu === "support" && (
-                <MegaMenu
-                  columns={supportMegaMenu}
-                  onLinkClick={closeMegaMenu}
-                />
-              )}
-            </div>
 
             <Link
               href="/blog"
@@ -360,27 +350,6 @@ export default function Header({ children }: { children: React.ReactNode }) {
                 >
                   Consulting
                 </Link>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Link
-                      href="#"
-                      className="flex items-center text-lg font-medium hover:text-[#0054aa] cursor-pointer"
-                    >
-                      Support <ChevronDown className="ml-1 h-4 w-4" />
-                    </Link>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-[200px]">
-                    {supportMegaMenu
-                      .flatMap((col) => col.links)
-                      .map((item, index) => (
-                        <DropdownMenuItem key={index}>
-                          <Link href={item.href} className="w-full block">
-                            {item.label}
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
                 <Link
                   href="/blog"
                   className="text-lg font-medium hover:text-[#0054aa]"
