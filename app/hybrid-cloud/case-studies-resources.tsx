@@ -24,7 +24,7 @@ export default function CaseStudiesResources() {
               className="h-auto max-w-[120px]"
             //   query="Masters golf tournament logo"
             />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
+            <h3 className="text-lg font-normal text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
               Driving fan engagement to new heights
             </h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm">
@@ -49,7 +49,7 @@ export default function CaseStudiesResources() {
               className="h-auto max-w-[160px]"
             //   query="Red Hat and Mavencode logos side by side"
             />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
+            <h3 className="text-lg font-normal text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
               Generative AI transforms content
             </h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm">
@@ -75,7 +75,7 @@ export default function CaseStudiesResources() {
               className="h-auto max-w-[160px]"
             //   query="Water Corporation logo with droplet design"
             />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
+            <h3 className="text-lg font-normal text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
               More planning, less risk
             </h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm">
@@ -101,7 +101,7 @@ export default function CaseStudiesResources() {
               className="h-auto max-w-[120px]"
             //   query="UMB bank logo with yellow underline"
             />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
+            <h3 className="text-lg font-normal text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
               Accelerate digitalization
             </h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm">
@@ -132,7 +132,7 @@ export default function CaseStudiesResources() {
               className="h-12 w-12"
             //   query="abstract icon of two circular arrows, [#0054aa]  and teal gradient"
             />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
+            <p className="text-lg font-normal text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
               IBV report: The great tech reset
               <ArrowRight className="ml-2 inline-block h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </p>
@@ -151,7 +151,7 @@ export default function CaseStudiesResources() {
               className="h-12 w-12"
             //   query="abstract icon of wavy lines, [#0054aa]  and teal gradient"
             />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
+            <p className="text-lg font-normal text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
               AI Academy: Design a hybrid cloud infrastructure for and with AI
               <ArrowRight className="ml-2 inline-block h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </p>
@@ -170,7 +170,7 @@ export default function CaseStudiesResources() {
               className="h-12 w-12"
             //   query="abstract icon of a person holding data, [#0054aa]  and teal gradient"
             />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
+            <p className="text-lg font-normal text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
               Maximize the value of hybrid cloud in the generative AI era
               <ArrowRight className="ml-2 inline-block h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </p>
@@ -189,7 +189,7 @@ export default function CaseStudiesResources() {
               className="h-12 w-12"
             //   query="abstract icon of a globe with connecting lines, [#0054aa]  and teal gradient"
             />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
+            <p className="text-lg font-normal text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] -600 transition-colors">
               Guidebook: Getting AI ready from the ground up
               <ArrowRight className="ml-2 inline-block h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </p>

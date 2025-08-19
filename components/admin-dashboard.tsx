@@ -157,7 +157,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Published Posts</p>
-                <p className="text-2xl font-bold text-gray-900">{publishedPosts.length}</p>
+                <p className="text-2xl font-[medium] text-gray-900">{publishedPosts.length}</p>
               </div>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Draft Posts</p>
-                <p className="text-2xl font-bold text-gray-900">{draftPosts.length}</p>
+                <p className="text-2xl font-[medium] text-gray-900">{draftPosts.length}</p>
               </div>
             </div>
           </div>
@@ -181,7 +181,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Total Posts</p>
-                <p className="text-2xl font-bold text-gray-900">{blogPosts.length}</p>
+                <p className="text-2xl font-[medium] text-gray-900">{blogPosts.length}</p>
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
         {editingPost && (
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-8">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-gray-900">Edit Blog Post</h2>
+              <h2 className="text-xl font-[medium] text-gray-900">Edit Blog Post</h2>
               <Button variant="outline" onClick={handleCancelEdit}>
                 <X className="h-4 w-4 mr-2" />
                 Cancel
@@ -383,7 +383,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
         {/* Create Post Form */}
         {showCreateForm && !editingPost && (
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">Create New Blog Post</h2>
+            <h2 className="text-xl font-[medium] text-gray-900 mb-6">Create New Blog Post</h2>
 
             <form ref={createFormRef} action={createFormAction} className="space-y-6">
               {/* Title Field */}
@@ -545,7 +545,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
         {/* Blog Posts List */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
           <div className="px-6 py-4 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900">Blog Posts</h2>
+            <h2 className="text-xl font-[medium] text-gray-900">Blog Posts</h2>
           </div>
 
           {blogPosts.length === 0 ? (
@@ -571,7 +571,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
                         )}
                         <div className="flex-1">
                           <div className="flex items-center space-x-2 mb-2">
-                            <h3 className="text-lg font-semibold text-gray-900">{post.title}</h3>
+                            <h3 className="text-lg font-normal text-gray-900">{post.title}</h3>
                             <span
                               className={`px-2 py-1 text-xs font-medium rounded-full ${
                                 post.status === "published"

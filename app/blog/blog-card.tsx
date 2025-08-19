@@ -28,7 +28,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           <span className="font-medium text-[#0054aa] dark:text-[ #0054aa]">{post.category}</span>
           <span>{post.date}</span>
         </div>
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] transition-colors">
+        <h3 className="text-xl font-normal text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] transition-colors">
           {post.title}
         </h3>
         <p className="text-gray-700 dark:text-gray-300 text-sm line-clamp-3">{post.excerpt}</p>

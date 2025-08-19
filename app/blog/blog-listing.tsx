@@ -21,7 +21,7 @@ export default function BlogListing() {
                 className="rounded-md aspect-video object-cover"
               />
               <div className="space-y-2">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] transition-colors">
+                <h3 className="text-lg font-normal text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] transition-colors">
                   {post.title}
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 text-sm">{post.excerpt}</p>

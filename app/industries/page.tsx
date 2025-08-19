@@ -28,7 +28,7 @@ export default function IndustriesPage() {
               </Link>{" "}
               / Industries
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] leading-tight mb-6">
               <span className="text-[#0054aa]">Intelligent Solutions,</span>
               <br />
               <span className="text-gray-900">Built for Your Industry</span>
@@ -66,13 +66,13 @@ export default function IndustriesPage() {
                 <ShoppingCart className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h2 className="text-4xl font-bold text-[#0054aa]">Retail</h2>
+                <h2 className="text-4xl font-[medium] text-[#0054aa]">Retail</h2>
                 <div className="w-20 h-1 bg-gradient-to-r from-[#0054aa] to-[#0054aa] -400 rounded-full mt-2"></div>
               </div>
             </div>
 
             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">
+              <h3 className="text-2xl font-[medium] mb-6 text-gray-900">
                 Smarter inventory and operations with smarter data flow.
               </h3>
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
@@ -84,7 +84,7 @@ export default function IndustriesPage() {
 
               {/* Applications Cards */}
               <div className="space-y-6 mb-8">
-                <h4 className="text-xl font-semibold text-gray-900 flex items-center">
+                <h4 className="text-xl font-normal text-gray-900 flex items-center">
                   <BarChart3 className="h-5 w-5 text-[#0054aa] mr-2" />
                   Applications of AI in Retail:
                 </h4>
@@ -120,7 +120,7 @@ export default function IndustriesPage() {
                           <app.icon className="h-4 w-4 text-white" />
                         </div>
                         <div>
-                          <h5 className="font-semibold text-gray-900 text-sm">
+                          <h5 className="font-normal text-gray-900 text-sm">
                             {app.title}
                           </h5>
                           <p className="text-xs text-gray-600 mt-1">
@@ -147,7 +147,7 @@ export default function IndustriesPage() {
 
             {/* Move benefits section here */}
             <div className="bg-gradient-to-r from-slate-50 to-gray-50 p-6 rounded-2xl border border-gray-200 mt-8">
-              <h4 className="text-lg font-semibold mb-4 text-gray-900 flex items-center">
+              <h4 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
                 <CheckCircle className="h-5 w-5 text-[#0054aa] mr-2" />
                 Key Benefits:
               </h4>
@@ -198,7 +198,7 @@ export default function IndustriesPage() {
 
             {/* Move benefits section here */}
             <div className="bg-gradient-to-r from-slate-50 to-gray-50 p-6 rounded-2xl border border-gray-200 mt-8">
-              <h4 className="text-lg font-semibold mb-4 text-gray-900 flex items-center">
+              <h4 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
                 <CheckCircle className="h-5 w-5 text-[#0054aa] mr-2" />
                 Patient & Operational Benefits:
               </h4>
@@ -235,13 +235,13 @@ export default function IndustriesPage() {
                 <Heart className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h2 className="text-4xl font-bold text-gray-800">Healthcare</h2>
+                <h2 className="text-4xl font-[medium] text-gray-800">Healthcare</h2>
                 <div className="w-20 h-1 bg-gradient-to-r from-gray-600 to-slate-400 rounded-full mt-2"></div>
               </div>
             </div>
 
             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">
+              <h3 className="text-2xl font-[medium] mb-6 text-gray-900">
                 Support critical decisions with accurate, fast insights.
               </h3>
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
@@ -253,7 +253,7 @@ export default function IndustriesPage() {
 
               {/* Applications Grid */}
               <div className="space-y-6 mb-8">
-                <h4 className="text-xl font-semibold text-gray-900 flex items-center">
+                <h4 className="text-xl font-normal text-gray-900 flex items-center">
                   <Heart className="h-5 w-5 text-[#0054aa] mr-2" />
                   Applications of AI in Healthcare:
                 </h4>
@@ -291,7 +291,7 @@ export default function IndustriesPage() {
                       <div className="flex items-start space-x-3">
                         <CheckCircle className="h-5 w-5 text-[#0054aa] mt-1 flex-shrink-0" />
                         <div>
-                          <span className="font-semibold text-gray-900">
+                          <span className="font-normal text-gray-900">
                             {app.title}
                           </span>
                           <span className="text-gray-700"> – {app.desc}</span>
@@ -321,13 +321,13 @@ export default function IndustriesPage() {
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h2 className="text-4xl font-bold text-[#0054aa]">Finance</h2>
+                <h2 className="text-4xl font-[medium] text-[#0054aa]">Finance</h2>
                 <div className="w-20 h-1 bg-gradient-to-r from-[#0054aa] to-[#0054aa] -400 rounded-full mt-2"></div>
               </div>
             </div>
 
             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">
+              <h3 className="text-2xl font-[medium] mb-6 text-gray-900">
                 Automate risk evaluation and regulatory pipelines.
               </h3>
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
@@ -340,7 +340,7 @@ export default function IndustriesPage() {
 
               {/* Applications with Icons */}
               <div className="space-y-6 mb-8">
-                <h4 className="text-xl font-semibold text-gray-900 flex items-center">
+                <h4 className="text-xl font-normal text-gray-900 flex items-center">
                   <TrendingUp className="h-5 w-5 text-[#0054aa] mr-2" />
                   Applications of AI in Finance:
                 </h4>
@@ -382,7 +382,7 @@ export default function IndustriesPage() {
                           <app.icon className="h-5 w-5 text-white" />
                         </div>
                         <div>
-                          <h5 className="font-semibold text-gray-900 mb-1">
+                          <h5 className="font-normal text-gray-900 mb-1">
                             {app.title}
                           </h5>
                           <p className="text-sm text-gray-600">{app.desc}</p>
@@ -407,7 +407,7 @@ export default function IndustriesPage() {
 
             {/* Move benefits section here */}
             <div className="bg-gradient-to-r from-slate-50 to-gray-50 p-6 rounded-2xl border border-gray-200 mt-8">
-              <h4 className="text-lg font-semibold mb-4 text-gray-900 flex items-center">
+              <h4 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
                 <CheckCircle className="h-5 w-5 text-[#0054aa] mr-2" />
                 Financial Benefits:
               </h4>
@@ -458,7 +458,7 @@ export default function IndustriesPage() {
 
             {/* Move benefits section here */}
             <div className="bg-gradient-to-r from-slate-50 to-gray-50 p-6 rounded-2xl border border-gray-200 mt-8">
-              <h4 className="text-lg font-semibold mb-4 text-gray-900 flex items-center">
+              <h4 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
                 <CheckCircle className="h-5 w-5 text-[#0054aa] mr-2" />
                 Operational Benefits:
               </h4>
@@ -495,13 +495,13 @@ export default function IndustriesPage() {
                 <Zap className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h2 className="text-4xl font-bold text-slate-700">Energy</h2>
+                <h2 className="text-4xl font-[medium] text-slate-700">Energy</h2>
                 <div className="w-20 h-1 bg-gradient-to-r from-slate-600 to-gray-400 rounded-full mt-2"></div>
               </div>
             </div>
 
             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">
+              <h3 className="text-2xl font-[medium] mb-6 text-gray-900">
                 Real-time visibility across large, dispersed systems.
               </h3>
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
@@ -513,7 +513,7 @@ export default function IndustriesPage() {
 
               {/* Applications with Timeline Style */}
               <div className="space-y-6 mb-8">
-                <h4 className="text-xl font-semibold text-gray-900 flex items-center">
+                <h4 className="text-xl font-normal text-gray-900 flex items-center">
                   <Zap className="h-5 w-5 text-[#0054aa] mr-2" />
                   Applications of AI in Energy:
                 </h4>
@@ -552,7 +552,7 @@ export default function IndustriesPage() {
                           <app.icon className="h-5 w-5 text-white" />
                         </div>
                         <div>
-                          <h5 className="font-semibold text-gray-900 mb-1">
+                          <h5 className="font-normal text-gray-900 mb-1">
                             {app.title}
                           </h5>
                           <p className="text-sm text-gray-600">{app.desc}</p>

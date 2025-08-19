@@ -68,7 +68,7 @@ export default function ConsultingPage() {
           <div className="bg-[#0054aa] bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20 rounded-2xl p-6 mb-8">
             <div className="flex items-center mb-4">
               <AlertTriangle className="h-8 w-8 text-yellow-700 mr-3" />
-              <h2 className="text-2xl font-bold text-white">Hidden AI Dangers That Could Cost You Millions</h2>
+              <h2 className="text-2xl font-[medium] text-white">Hidden AI Dangers That Could Cost You Millions</h2>
             </div>
             <p className="text-[#e3f2fd] text-lg leading-relaxed">
               Without proper AI governance, security protocols, and strategic implementation, organizations face data
@@ -77,14 +77,14 @@ export default function ConsultingPage() {
             </p>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] leading-tight mb-6 text-white">
             MavenCode AI Consulting
           </h1>
           <p className="text-xl text-[#e3f2fd] mb-8 max-w-3xl leading-relaxed">
             Navigate AI implementation safely with expert guidance that protects your business while unlocking
             transformational value.
           </p>
-          <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+          <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-8 py-4 text-lg font-normal rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
             Discover All We Offer
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
@@ -95,7 +95,7 @@ export default function ConsultingPage() {
       <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0054aa]">Consulting Reinvented for the AI Era</h2>
+            <h2 className="text-4xl md:text-5xl font-[medium] mb-6 text-[#0054aa]">Consulting Reinvented for the AI Era</h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               MavenCode AI Consulting blends deep technical mastery with a business-first mindset. At the crossroads of
               advanced AI, automation, and scalable infrastructure, we create solutions that deliver measurable results.
@@ -105,7 +105,7 @@ export default function ConsultingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-                <h3 className="text-2xl font-bold mb-6 text-gray-900">Our Approach</h3>
+                <h3 className="text-2xl font-[medium] mb-6 text-gray-900">Our Approach</h3>
                 <p className="text-lg text-gray-700 mb-8 leading-relaxed">
                   We work side-by-side with clients to advise, design, build, and operate intelligent systems that solve
                   today's challenges and evolve for tomorrow's opportunities.
@@ -123,7 +123,7 @@ export default function ConsultingPage() {
                         <step.icon className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 text-lg">{step.title}</h4>
+                        <h4 className="font-normal text-gray-900 text-lg">{step.title}</h4>
                         <p className="text-gray-600">{step.desc}</p>
                       </div>
                     </div>
@@ -150,7 +150,7 @@ export default function ConsultingPage() {
       <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#0054aa]">Industry Expertise</h2>
+            <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">Industry Expertise</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Deep domain knowledge across critical industries, delivering AI solutions that understand your unique
               challenges.
@@ -169,7 +169,7 @@ export default function ConsultingPage() {
                         <industry.icon className="h-8 w-8 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold">{industry.title}</h3>
+                        <h3 className="text-2xl font-[medium]">{industry.title}</h3>
                       </div>
                     </div>
                   </div>
@@ -205,7 +205,7 @@ export default function ConsultingPage() {
       {/* Partnerships */}
       <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#0054aa]">Innovating Together</h2>
+          <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">Innovating Together</h2>
           <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto">
             Our partnerships with top technology platforms enable enterprise-grade solutions designed to scale.
           </p>
@@ -240,12 +240,12 @@ export default function ConsultingPage() {
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="w-full mx-auto px-6 md:px-12 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">What's Next?</h2>
+            <h2 className="text-4xl md:text-5xl font-[medium] mb-6 text-white leading-tight">What's Next?</h2>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
               Ready to see how MavenCode Consulting can accelerate your business? Connect with us to discuss your goals
               and discover how our experts can design and deliver a powerful AI transformation roadmap tailored to you.
             </p>
-            <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-10 py-6 text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-10 py-6 text-lg font-normal rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               Book a Consultation
               <ArrowRight className="ml-3 h-6 w-6" />
             </Button>

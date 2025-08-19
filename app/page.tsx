@@ -13,7 +13,7 @@ export default function Component() {
     <div className="text-gray-900">
       <main className="w-full min-h-[700px] bg-[url('/hero-image-5.png')] bg-cover bg-center mx-auto px-6 md:px-12 py-8 lg:py-16 grid grid-cols-1 lg:grid-cols-1 gap-8">
         <div className="lg:col-span-1 flex flex-col justify-center w-[80%]">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] leading-tight mb-6">
             <span className="text-[#0054aa]">
               Turning AI Into Your Competitive Edge Less hand-holding. More
               momentum.
@@ -37,7 +37,7 @@ export default function Component() {
       {/* Featured Content / Intro (added) */}
       <section className="w-full relative mx-auto px-6 md:px-12 py-8 lg:py-12 slanted-bg flex ">
         <div className="">
-          <h2 className="text-3xl  font-extrabold mb-6 text-[#0054aa] leading-[50px]">
+          <h2 className="text-3xl  font-[medium]  mb-6 text-[#0054aa] leading-[50px]">
             Built for Autonomy.
             <br className="hidden md:block" />
             <span className="text-gray-900">Designed for Impact.</span>
@@ -45,7 +45,7 @@ export default function Component() {
 
           <p className="text-lg text-gray-700 max-w-5xl mb-4 leading-relaxed">
             We engineer AI systems that{" "}
-            <span className="font-semibold text-gray-900">
+            <span className="font-normal text-gray-900">
               think, decide, and adapt
             </span>{" "}
             not just react. Fueled by real-time data, guided by logic, and
@@ -55,7 +55,7 @@ export default function Component() {
 
           <p className="text-lg text-gray-700 max-w-5xl mb-4 leading-relaxed">
             This isn't about chasing abstract AI dreams. It's about
-            <span className="font-semibold text-gray-900">
+            <span className="font-normal text-gray-900">
               {" "}
               practical, high-performance intelligence
             </span>
@@ -66,7 +66,7 @@ export default function Component() {
           <p className="text-lg text-gray-700 max-w-5xl mb-10 leading-relaxed">
             We empower systems to handle the repetitive, predictable, and
             time-consuming tasks, freeing your team to focus on{" "}
-            <span className="text-[#0054aa] font-semibold">
+            <span className="text-[#0054aa] font-normal">
               innovation, strategy, and human brilliance
             </span>
             .
@@ -84,7 +84,7 @@ export default function Component() {
                 className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl transition-all duration-300"
               >
                 {/* <div className="text-4xl mb-3">{item.icon}</div> */}
-                <p className="font-semibold text-gray-900">{item.title}</p>
+                <p className="font-normal text-gray-900">{item.title}</p>
               </li>
             ))}
           </ul>
@@ -93,7 +93,7 @@ export default function Component() {
 
       {/* Recommended for you section */}
       <section className="w-full mx-auto px-6 py-8 lg:py-12">
-        <h2 className="text-3xl font-bold mb-6 text-[#0054aa]">
+        <h2 className="text-3xl font-[medium] mb-6 text-[#0054aa]">
           What we build
         </h2>
         <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide justify-between">
@@ -107,7 +107,7 @@ export default function Component() {
               className="w-full h-[300px]  mb-3 object-cover"
             />
             <div className="p-4">
-              <p className="text-xl font-bold text-black">AI Agents</p>
+              <p className="text-xl font-[medium] text-black">AI Agents</p>
               <h3 className="font-normal text-lg mt-2">
                 Lightweight and adaptive components that respond to new inputs
                 and improve overtime
@@ -129,7 +129,7 @@ export default function Component() {
               className="w-full h-[300px] mb-3 object-cover"
             />
             <div className="p-4">
-              <p className="text-xl font-bold text-black">
+              <p className="text-xl font-[medium] text-black">
                 Real-Time Data Pipelines
               </p>
               <h3 className="font-normal text-lg mt-2">
@@ -152,7 +152,7 @@ export default function Component() {
               className="w-full h-[300px] mb-3 object-cover"
             />
             <div className="p-4">
-              <p className="text-xl font-bold text-black">
+              <p className="text-xl font-[medium] text-black">
                 Cloud Native Architecture
               </p>
               <h3 className="font-normal text-lg mt-2">
@@ -172,7 +172,7 @@ export default function Component() {
 
       {/* Solutions by Industry */}
       <section className="w-full mx-auto px-6 md:px-12 py-8 lg:py-12 ">
-        <h2 className="text-3xl font-bold mb-8 text-[#0054aa]">
+        <h2 className="text-3xl font-[medium] mb-8 text-[#0054aa]">
           Solutions by Industry
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-gray-200 rounded-lg overflow-hidden">
@@ -266,7 +266,7 @@ export default function Component() {
 
       {/* Technology Foundation (added) */}
       <section className="w-full mx-auto px-6 md:px-12 py-8 lg:py-12">
-        <h2 className="text-3xl font-bold mb-4 text-[#0054aa]">
+        <h2 className="text-3xl font-[medium] mb-4 text-[#0054aa]">
           Built on Trusted Infrastructure
         </h2>
         <p className="text-lg text-gray-700 mb-4">
@@ -344,10 +344,10 @@ export default function Component() {
 
       <section className="w-full mx-auto px-6 md:px-12 py-12 lg:py-16">
         <div className="w-full mx-auto">
-          <h1 className="text-3xl font-bold mb-6 text-[#0054aa]">
+          <h1 className="text-3xl font-[medium] mb-6 text-[#0054aa]">
             Why MavenCode ?
           </h1>
-          <h2 className="text-2xl font-bold mb-4 text-[#0054aa]">
+          <h2 className="text-2xl font-[medium] mb-4 text-[#0054aa]">
             Not Automation. Actual Autonomy.
           </h2>
           <p className="text-lg text-gray-700 mb-8 leading-relaxed">
@@ -377,7 +377,7 @@ export default function Component() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                <h3 className="text-xl font-normal mb-2 text-gray-900">
                   Real-time responsiveness by design
                 </h3>
                 <p className="text-gray-600 mb-4">
@@ -413,7 +413,7 @@ export default function Component() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                <h3 className="text-xl font-normal mb-2 text-gray-900">
                   Systems that evolve through use
                 </h3>
                 <p className="text-gray-600 mb-4">
@@ -443,7 +443,7 @@ export default function Component() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                <h3 className="text-xl font-normal mb-2 text-gray-900">
                   Decision-making at the edge
                 </h3>
                 <p className="text-gray-600 mb-4">
@@ -473,7 +473,7 @@ export default function Component() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                <h3 className="text-xl font-normal mb-2 text-gray-900">
                   Human-AI collaboration
                 </h3>
                 <p className="text-gray-600 mb-4">
@@ -490,7 +490,7 @@ export default function Component() {
       <section className="bg-[#f5f7fb] py-12">
         <div className="w-full mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold mb-2 text-[#0054aa] leading-[50px]">
+            <h2 className="text-3xl font-[medium] mb-2 text-[#0054aa] leading-[50px]">
               Build with Less Friction. Scale with More Intelligence.
             </h2>
             <p className="text-gray-700 mb-4 leading-[30px]">

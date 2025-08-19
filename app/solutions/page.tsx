@@ -108,7 +108,7 @@ export default function SolutionsPage() {
             </Link>{" "}
             / Solutions
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] leading-tight mb-6 text-white">
             AI-Powered Solutions
             <br />
             <span className="text-blue-200">Built for Business Impact</span>
@@ -117,7 +117,7 @@ export default function SolutionsPage() {
             From autonomous AI agents to specialized industry tools, our solutions deliver measurable results through
             intelligent automation and data-driven insights.
           </p>
-          <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+          <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-8 py-4 text-lg font-normal rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
             Explore All Solutions
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
@@ -128,7 +128,7 @@ export default function SolutionsPage() {
       <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0054aa]">Six Solutions, Endless Possibilities</h2>
+            <h2 className="text-3xl md:text-4xl font-[medium] mb-4 text-[#0054aa]">Six Solutions, Endless Possibilities</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Each solution is designed to solve specific business challenges with AI-first engineering and measurable
               outcomes.
@@ -149,7 +149,7 @@ export default function SolutionsPage() {
                             <solution.icon className="h-6 w-6 text-white" />
                           </div>
                           <div>
-                            <h3 className="text-2xl font-bold">{solution.title}</h3>
+                            <h3 className="text-2xl font-[medium]">{solution.title}</h3>
                             <p className="text-sm opacity-90">{solution.subtitle}</p>
                           </div>
                         </div>
@@ -178,7 +178,7 @@ export default function SolutionsPage() {
 
                     {/* Key Features */}
                     <div className="mb-6">
-                      <h4 className="text-lg font-semibold mb-4 text-gray-900 flex items-center">
+                      <h4 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
                         <Zap className="h-5 w-5 text-[#0054aa] mr-2" />
                         Key Features
                       </h4>
@@ -194,7 +194,7 @@ export default function SolutionsPage() {
 
                     {/* Use Cases */}
                     <div className="mb-6">
-                      <h4 className="text-lg font-semibold mb-4 text-gray-900 flex items-center">
+                      <h4 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
                         <BarChart3 className="h-5 w-5 text-[#0054aa] mr-2" />
                         Use Cases
                       </h4>
@@ -231,7 +231,7 @@ export default function SolutionsPage() {
       <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#0054aa]">
+            <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">
               Why MavenCode Solutions Lead the Market
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -270,7 +270,7 @@ export default function SolutionsPage() {
                 >
                   <benefit.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">{benefit.title}</h3>
+                <h3 className="text-xl font-[medium] mb-4 text-gray-900">{benefit.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
               </div>
             ))}
@@ -282,7 +282,7 @@ export default function SolutionsPage() {
       <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#0054aa]">Proven Results Across Industries</h2>
+            <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">Proven Results Across Industries</h2>
             <p className="text-lg text-gray-600">Our solutions deliver measurable impact from day one.</p>
           </div>
 
@@ -294,7 +294,7 @@ export default function SolutionsPage() {
               { metric: "24/7", label: "Autonomous operation" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-[#0054aa] mb-2">{stat.metric}</div>
+                <div className="text-4xl md:text-5xl font-[medium] text-[#0054aa] mb-2">{stat.metric}</div>
                 <div className="text-gray-600 text-sm md:text-base">{stat.label}</div>
               </div>
             ))}
@@ -307,7 +307,7 @@ export default function SolutionsPage() {
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="w-full mx-auto px-6 md:px-12 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+            <h2 className="text-4xl md:text-5xl font-[medium] mb-6 text-white leading-tight">
               READY TO TRANSFORM YOUR OPERATIONS?
             </h2>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
@@ -316,7 +316,7 @@ export default function SolutionsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact-us">
-                <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-10 py-6 text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-10 py-6 text-lg font-normal rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   Book a Demo
                   <ArrowRight className="ml-3 h-6 w-6" />
                 </Button>
@@ -324,7 +324,7 @@ export default function SolutionsPage() {
               <Link href="/contact-us">
                 <Button
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-[#0054aa] px-10 py-6 text-lg font-semibold rounded-xl transition-all duration-300 bg-transparent"
+                  className="border-white text-white hover:bg-white hover:text-[#0054aa] px-10 py-6 text-lg font-normal rounded-xl transition-all duration-300 bg-transparent"
                 >
                   Contact Sales
                 </Button>

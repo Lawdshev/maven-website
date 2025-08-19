@@ -20,7 +20,7 @@ export default function BlogPostDetail({ slug }: BlogPostDetailProps) {
       <div className="container px-4 md:px-6 max-w-4xl mx-auto">
         {/* Post Title and Metadata */}
         <div className="space-y-6 mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-gray-50 leading-[60px]">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] tracking-tight text-gray-900 dark:text-gray-50 leading-[60px]">
             {post.title}
           </h1>
           <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 space-x-4">

@@ -25,7 +25,7 @@ export default function ContactForm() {
     <section className="w-full py-6 md:py-8 lg:py-12 bg-[url('/hero-image-5.png')] bg-cover bg-center dark:bg-gray-950">
       <div className="px-4 md:px-6 max-w-2xl mx-auto bg-white py-8 md:py-12 lg:py-16 shadow-lg self-left">
         <div className="text-center mb-12">
-          <h1 className="text-xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50">
+          <h1 className="text-xl lg:text-3xl font-[medium] tracking-tight text-gray-900 dark:text-gray-50">
             Contact Us
           </h1>
           <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">

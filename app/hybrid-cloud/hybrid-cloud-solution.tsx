@@ -40,7 +40,7 @@ export default function HybridCloudSolutions() {
               alt="Abstract binary code icon"
               className="h-16 w-16"
             />
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50">
+            <h3 className="text-xl font-normal text-gray-900 dark:text-gray-50">
               Modernize & migrate applications with AI
             </h3>
             <p className="text-gray-700 dark:text-gray-300">
@@ -62,7 +62,7 @@ export default function HybridCloudSolutions() {
               alt="Abstract grid of squares icon"
               className="h-16 w-16"
             />
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50">
+            <h3 className="text-xl font-normal text-gray-900 dark:text-gray-50">
               Leverage an AI-ready infrastructure
             </h3>
             <p className="text-gray-700 dark:text-gray-300">
@@ -84,7 +84,7 @@ export default function HybridCloudSolutions() {
               alt="Abstract circular shape icon"
               className="h-16 w-16"
             />
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50">
+            <h3 className="text-xl font-normal text-gray-900 dark:text-gray-50">
               Enable an open hybrid cloud to run AI anywhere
             </h3>
             <p className="text-gray-700 dark:text-gray-300">
@@ -105,7 +105,7 @@ export default function HybridCloudSolutions() {
               alt="Abstract grid of diagonal lines icon"
               className="h-16 w-16"
             />
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50">Harness the full power of Linux®</h3>
+            <h3 className="text-xl font-normal text-gray-900 dark:text-gray-50">Harness the full power of Linux®</h3>
             <p className="text-gray-700 dark:text-gray-300">
               Run Linux on Mavencode servers to bring a new level of reliability, security and scalability to your
               business-critical workloads.

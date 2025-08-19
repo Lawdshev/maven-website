@@ -43,7 +43,7 @@ function Footer() {
           </Link>
           </div>
           <div className="md:col-span-1">
-            <h4 className="font-semibold text-white mb-4">Discover</h4>
+            <h4 className="font-normal text-white mb-4">Discover</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="#" className="hover:underline">
@@ -78,7 +78,7 @@ function Footer() {
             </ul>
           </div>
           <div className="md:col-span-1">
-            <h4 className="font-semibold text-white mb-4">Connect</h4>
+            <h4 className="font-normal text-white mb-4">Connect</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="#" className="hover:underline">
@@ -113,7 +113,7 @@ function Footer() {
             </ul>
           </div>
           <div className="md:col-span-1">
-            <h4 className="font-semibold text-white mb-4">Follow</h4>
+            <h4 className="font-normal text-white mb-4">Follow</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="#" className="hover:underline">
@@ -143,7 +143,7 @@ function Footer() {
             </ul>
           </div>
           <div className="md:col-span-1">
-            <h4 className="font-semibold text-white mb-4">About</h4>
+            <h4 className="font-normal text-white mb-4">About</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="#" className="hover:underline">
@@ -207,7 +207,7 @@ function Footer() {
           className="w-16 h-16 rounded-full bg-[#0054aa] -600 hover:bg-[#0054aa] -700 text-white flex items-center justify-center shadow-lg"
           onClick={toggleChatbox}
         >
-          <span className="text-2xl font-bold">AI</span>
+          <span className="text-2xl">AI</span>
           <ArrowRight className="ml-1 h-5 w-5" />
         </Button>
       </div>
@@ -216,7 +216,7 @@ function Footer() {
       {showChatbox && (
         <div className="fixed bottom-28 right-8 z-50 w-80 h-96 bg-white rounded-lg shadow-xl flex flex-col border border-gray-200">
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
-            <h3 className="text-lg font-semibold flex items-center">
+            <h3 className="text-lg font-normal flex items-center">
               <MessageSquare className="h-5 w-5 mr-2 text-[#0054aa] -600" /> AI
               Assistant
             </h3>

@@ -19,7 +19,7 @@ export default function DiscoverMore() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Content Block 1 */}
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50">Explore Mavencode Cloud Platform</h3>
+            <h3 className="text-lg font-normal text-gray-900 dark:text-gray-50">Explore Mavencode Cloud Platform</h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm">AI-ready, secure and hybrid by design.</p>
             <Link href="#" className="inline-flex items-center text-[#0054aa] -600 hover:underline text-sm font-medium">
               Discover Mavencode Cloud platform
@@ -29,7 +29,7 @@ export default function DiscoverMore() {
 
           {/* Content Block 2 */}
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50">Cloud consulting services</h3>
+            <h3 className="text-lg font-normal text-gray-900 dark:text-gray-50">Cloud consulting services</h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm">Start your cloud transformation today.</p>
             <Link href="#" className="inline-flex items-center text-[#0054aa] -600 hover:underline text-sm font-medium">
               Explore hybrid cloud consulting services
@@ -39,7 +39,7 @@ export default function DiscoverMore() {
 
           {/* Content Block 3 */}
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50">Mavencode Quantum</h3>
+            <h3 className="text-lg font-normal text-gray-900 dark:text-gray-50">Mavencode Quantum</h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm">
               Access to the largest quantum computing fleet in the world.
             </p>
@@ -51,7 +51,7 @@ export default function DiscoverMore() {
 
           {/* Content Block 4 */}
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50">Innovating the future</h3>
+            <h3 className="text-lg font-normal text-gray-900 dark:text-gray-50">Innovating the future</h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm">Check out Mavencode&apos;s hybrid cloud research.</p>
             <Link href="#" className="inline-flex items-center text-[#0054aa] -600 hover:underline text-sm font-medium">
               Read more

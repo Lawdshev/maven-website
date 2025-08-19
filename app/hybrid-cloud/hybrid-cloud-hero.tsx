@@ -19,7 +19,7 @@ export default function HybridCloudHero() {
               </Link>{" "}
               / Hybrid Cloud
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-gray-50">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] tracking-tight text-gray-900 dark:text-gray-50">
               Hybrid Cloud Solutions
             </h1>
             <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-lg">

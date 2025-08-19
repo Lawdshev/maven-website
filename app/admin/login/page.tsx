@@ -21,7 +21,7 @@ export default function AdminLogin() {
           <div className="mx-auto h-12 w-12 bg-[#0054aa] rounded-full flex items-center justify-center">
             <Lock className="h-6 w-6 text-white" />
           </div>
-          <h2 className="mt-6 text-3xl font-bold text-gray-900">Admin Login</h2>
+          <h2 className="mt-6 text-3xl font-[medium] text-gray-900">Admin Login</h2>
           <p className="mt-2 text-sm text-gray-600">Sign in to manage your blog posts</p>
         </div>
 

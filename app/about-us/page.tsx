@@ -78,7 +78,7 @@ export default function AboutPage() {
             </Link>{" "}
             / About Us
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] leading-tight mb-8 text-white">
             We help organizations transform
             <br />
             <span className="text-blue-200">ambition into AI-powered results</span>
@@ -95,7 +95,7 @@ export default function AboutPage() {
       <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#0054aa]">Our Commitment</h2>
+            <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">Our Commitment</h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               We measure success by the outcomes we create. Every solution we design is built to deliver measurable
               value, improve operational resilience, and open new opportunities for growth. We commit to:
@@ -113,7 +113,7 @@ export default function AboutPage() {
                 >
                   <commitment.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">{commitment.title}</h3>
+                <h3 className="text-2xl font-[medium] mb-4 text-gray-900">{commitment.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{commitment.description}</p>
               </div>
             ))}
@@ -125,7 +125,7 @@ export default function AboutPage() {
       <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#0054aa]">How We Work</h2>
+            <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">How We Work</h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               We work as partners, not just providers. Our approach combines:
             </p>
@@ -142,7 +142,7 @@ export default function AboutPage() {
                       <method.icon className="h-7 w-7 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-3 text-gray-900">{method.title}</h3>
+                      <h3 className="text-xl font-[medium] mb-3 text-gray-900">{method.title}</h3>
                       <p className="text-gray-600 leading-relaxed">{method.description}</p>
                     </div>
                   </div>
@@ -159,7 +159,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#0054aa]">Who We Are</h2>
+                <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">Who We Are</h2>
                 <p className="text-xl text-gray-700 leading-relaxed mb-8">
                   MavenCode is a team of engineers, strategists, and innovators with one mission — to help organizations
                   operate at their highest potential through AI and automation.
@@ -173,7 +173,7 @@ export default function AboutPage() {
 
               {/* Key Strengths */}
               <div className="bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl p-6 border border-blue-100">
-                <h3 className="text-lg font-semibold mb-4 text-gray-900 flex items-center">
+                <h3 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
                   <Award className="h-5 w-5 text-[#0054aa] mr-2" />
                   Our Core Strengths
                 </h3>
@@ -207,12 +207,12 @@ export default function AboutPage() {
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border border-gray-100 z-20">
                 <div className="flex items-center space-x-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-[#0054aa]">50+</div>
+                    <div className="text-2xl font-[medium] text-[#0054aa]">50+</div>
                     <div className="text-sm text-gray-600">Projects Delivered</div>
                   </div>
                   <div className="w-px h-12 bg-gray-200"></div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-[#0054aa]">10+</div>
+                    <div className="text-2xl font-[medium] text-[#0054aa]">10+</div>
                     <div className="text-sm text-gray-600">Industries Served</div>
                   </div>
                 </div>
@@ -225,7 +225,7 @@ export default function AboutPage() {
       {/* Values Section */}
       <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-gray-50">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#0054aa]">What Drives Us</h2>
+          <h2 className="text-3xl md:text-4xl font-[medium] mb-12 text-[#0054aa]">What Drives Us</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -252,7 +252,7 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-[#0054aa] to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <value.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">{value.title}</h3>
+                <h3 className="text-xl font-[medium] mb-4 text-gray-900">{value.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{value.description}</p>
               </div>
             ))}
@@ -265,14 +265,14 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="w-full mx-auto px-6 md:px-12 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">Let's Shape Your AI Future</h2>
+            <h2 className="text-4xl md:text-5xl font-[medium] mb-6 text-white leading-tight">Let's Shape Your AI Future</h2>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
               Talk to our experts and discover how MavenCode can help you design, build, and scale AI solutions that
               transform your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact-us">
-                <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-10 py-6 text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-10 py-6 text-lg font-normal rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   Book a Demo
                   <ArrowRight className="ml-3 h-6 w-6" />
                 </Button>
@@ -280,7 +280,7 @@ export default function AboutPage() {
               <Link href="/contact-us">
                 <Button
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-[#0054aa] px-10 py-6 text-lg font-semibold rounded-xl transition-all duration-300 bg-transparent"
+                  className="border-white text-white hover:bg-white hover:text-[#0054aa] px-10 py-6 text-lg font-normal rounded-xl transition-all duration-300 bg-transparent"
                 >
                   Contact Us
                 </Button>

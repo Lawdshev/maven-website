@@ -27,7 +27,7 @@ export default function ServicesPage() {
               </Link>{" "}
               / Services
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-[#0054aa]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] leading-tight mb-6 text-[#0054aa]">
               <span className="text-[#0054aa]">Transform Your Business</span>{" "}
               with <span className="text-[#0054aa]">AI, Cloud, and Data</span>
             </h1>
@@ -67,7 +67,7 @@ export default function ServicesPage() {
               <div className="p-3 bg-[#0054aa] -100 rounded-lg">
                 <Brain className="h-8 w-8 text-[#fff]" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">AI + DATA</h2>
+              <h2 className="text-3xl font-[medium] text-gray-900">AI + DATA</h2>
             </div>
             <div className="mb-6">
               <Image
@@ -78,7 +78,7 @@ export default function ServicesPage() {
                 className="rounded-lg w-full"
               />
             </div>
-            <p className="text-xl text-gray-700 mb-6 font-semibold">
+            <p className="text-xl text-gray-700 mb-6 font-normal">
               Harness the potential of artificial intelligence to solve
               industry-defining challenges.
             </p>
@@ -119,7 +119,7 @@ export default function ServicesPage() {
               <div className="p-3 bg-purple-100 rounded-lg">
                 <Cloud className="h-8 w-8 text-purple-600" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900">
+              <h2 className="text-3xl font-[medium] text-gray-900">
                 CLOUD ENGINEERING
               </h2>
             </div>
@@ -132,7 +132,7 @@ export default function ServicesPage() {
                 className="rounded-lg w-full"
               />
             </div>
-            <p className="text-xl text-gray-700 mb-6 font-semibold">
+            <p className="text-xl text-gray-700 mb-6 font-normal">
               Scalable, secure, and future-ready cloud architecture.
             </p>
             <ul className="space-y-3">
@@ -176,11 +176,11 @@ export default function ServicesPage() {
                 <div className="p-3 bg-green-100 rounded-lg">
                   <Database className="h-8 w-8 text-green-600" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">
+                <h2 className="text-3xl font-[medium] text-gray-900">
                   DATA INFRASTRUCTURE
                 </h2>
               </div>
-              <p className="text-xl text-gray-700 mb-6 font-semibold">
+              <p className="text-xl text-gray-700 mb-6 font-normal">
                 Turn massive datasets into instant, actionable insight.
               </p>
               <ul className="space-y-3">
@@ -225,7 +225,7 @@ export default function ServicesPage() {
 
       {/* Industry Solutions */}
       <section className="container mx-auto px-6 md:px-12 py-16">
-        <h2 className="text-4xl font-bold text-center mb-12">
+        <h2 className="text-4xl font-[medium] text-center mb-12">
           <span className="text-[#0054aa]">Industry</span>{" "}
           <span className="text-[#0054aa]">Solutions</span>
         </h2>
@@ -234,7 +234,7 @@ export default function ServicesPage() {
             <div className="p-3 bg-[#0054aa] -100 rounded-lg w-fit mb-4">
               <Building className="h-8 w-8 text-[#0054aa]" />
             </div>
-            <h3 className="text-xl font-semibold mb-3">Retail</h3>
+            <h3 className="text-xl font-normal mb-3">Retail</h3>
             <p className="text-gray-600 text-sm">
               Demand forecasting, dynamic pricing, personalized customer
               experiences
@@ -244,7 +244,7 @@ export default function ServicesPage() {
             <div className="p-3 bg-red-100 rounded-lg w-fit mb-4">
               <Heart className="h-8 w-8 text-red-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-3">Healthcare</h3>
+            <h3 className="text-xl font-normal mb-3">Healthcare</h3>
             <p className="text-gray-600 text-sm">
               Data-driven patient care, operational optimization, regulatory
               compliance
@@ -254,7 +254,7 @@ export default function ServicesPage() {
             <div className="p-3 bg-green-100 rounded-lg w-fit mb-4">
               <DollarSign className="h-8 w-8 text-green-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-3">Finance</h3>
+            <h3 className="text-xl font-normal mb-3">Finance</h3>
             <p className="text-gray-600 text-sm">
               Fraud detection, risk modeling, real-time trading analytics
             </p>
@@ -263,7 +263,7 @@ export default function ServicesPage() {
             <div className="p-3 bg-yellow-100 rounded-lg w-fit mb-4">
               <Zap className="h-8 w-8 text-yellow-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-3">Oil & Gas</h3>
+            <h3 className="text-xl font-normal mb-3">Oil & Gas</h3>
             <p className="text-gray-600 text-sm">
               Predictive maintenance, field data analytics, energy optimization
             </p>
@@ -280,7 +280,7 @@ export default function ServicesPage() {
                 <Users className="h-12 w-12 text-white" />
               </div>
             </div>
-            <h2 className="text-4xl font-bold mb-6">PARTNERSHIP DELIVERY</h2>
+            <h2 className="text-4xl font-[medium] mb-6">PARTNERSHIP DELIVERY</h2>
             <p className="text-xl mb-8">
               We do not just build systems, we build them with you.
             </p>
@@ -312,7 +312,7 @@ export default function ServicesPage() {
 
       {/* Call to Action */}
       <section className="container mx-auto px-6 md:px-12 py-16 text-center">
-        <h2 className="text-xl md:text-3xl font-bold mb-6">
+        <h2 className="text-xl md:text-3xl font-[medium] mb-6">
           <span className="text-[#0054aa]">LET'S BUILD SOMETHING</span>{" "}
           <span className="text-[#0054aa]">INTELLIGENT TOGETHER</span>
         </h2>
