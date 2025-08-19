@@ -26,7 +26,7 @@ export default function Component() {
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 text-2xl">
             <Link href={"/contact-us"}>
-              <Button className="bg-[#0054aa] hover:bg-[#003d7f] cursor-pointer text-xl  text-white px-6 py-6 rounded-md flex items-center justify-center">
+              <Button className="font-normal bg-[#0054aa] hover:bg-[#003d7f] cursor-pointer text-xl  text-white px-6 py-6 rounded-md flex items-center justify-center">
                 Talk to an Engineer <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -114,7 +114,7 @@ export default function Component() {
               </h3>
               <Link
                 href="#"
-                className="text-[#0054aa] hover:underline flex items-center mt-2"
+                className="text-[#0054aa] hover:underline flex items-center mt-2 font-normal"
               >
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -137,7 +137,7 @@ export default function Component() {
               </h3>
               <Link
                 href="#"
-                className="text-[#0054aa] hover:underline flex items-center mt-2"
+                className="text-[#0054aa] hover:underline flex items-center mt-2 font-normal"
               >
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -161,7 +161,7 @@ export default function Component() {
               </h3>
               <Link
                 href="#"
-                className="text-[#0054aa] hover:underline flex items-center mt-2"
+                className="text-[#0054aa] hover:underline flex items-center mt-2 font-normal"
               >
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -192,7 +192,7 @@ export default function Component() {
             </div>
             <Link
               href="#"
-              className="text-[#0054aa] hover:underline flex items-center"
+              className="text-[#0054aa] hover:underline flex items-center font-normal"
             >
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -213,7 +213,7 @@ export default function Component() {
             </div>
             <Link
               href="#"
-              className="text-[#0054aa] hover:underline flex items-center"
+              className="text-[#0054aa] hover:underline flex items-center font-normal"
             >
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -234,7 +234,7 @@ export default function Component() {
             </div>
             <Link
               href="#"
-              className="text-[#0054aa] hover:underline flex items-center"
+              className="text-[#0054aa] hover:underline flex items-center font-normal"
             >
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -256,7 +256,7 @@ export default function Component() {
             </div>
             <Link
               href="#"
-              className="text-[#0054aa] hover:underline flex items-center"
+              className="text-[#0054aa] hover:underline flex items-center font-normal"
             >
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -500,7 +500,7 @@ export default function Component() {
           </div>
           <div className="mt-6 md:mt-0">
             <Link href="/contact-us">
-              <Button className="bg-[#0054aa] hover:bg-[#003d7f] text-white px-6 py-6">
+              <Button className="font-normal bg-[#0054aa] hover:bg-[#003d7f] text-white px-6 py-6">
                 Contact MavenCode
               </Button>
             </Link>

@@ -18,7 +18,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="container mx-auto px-6 md:px-12 py-16 lg:py-24">
+      <section className="container mx-auto px-6 md:px-12 py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="text-sm text-gray-500 mb-4">
@@ -59,8 +59,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="container mx-auto px-6 md:px-12 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section className="container mx-auto px-6 md:px-12 py-16 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16  w-full ">
           {/* AI + DATA */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3 mb-6">
@@ -116,8 +116,8 @@ export default function ServicesPage() {
           {/* CLOUD ENGINEERING */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="p-3 bg-purple-100 rounded-lg">
-                <Cloud className="h-8 w-8 text-purple-600" />
+              <div className="p-3 bg-[#0054aa] rounded-lg">
+                <Cloud className="h-8 w-8 text-[#ffffff]" />
               </div>
               <h2 className="text-3xl font-[medium] text-gray-900">
                 CLOUD ENGINEERING
@@ -173,8 +173,8 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center space-x-3 mb-6">
-                <div className="p-3 bg-green-100 rounded-lg">
-                  <Database className="h-8 w-8 text-green-600" />
+                <div className="p-3 bg-[#0054aa] rounded-lg">
+                  <Database className="h-8 w-8 text-[#ffffff]" />
                 </div>
                 <h2 className="text-3xl font-[medium] text-gray-900">
                   DATA INFRASTRUCTURE
@@ -232,7 +232,7 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
             <div className="p-3 bg-[#0054aa] -100 rounded-lg w-fit mb-4">
-              <Building className="h-8 w-8 text-[#0054aa]" />
+              <Building className="h-8 w-8 text-[#ffffff]" />
             </div>
             <h3 className="text-xl font-normal mb-3">Retail</h3>
             <p className="text-gray-600 text-sm">
@@ -241,8 +241,8 @@ export default function ServicesPage() {
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-            <div className="p-3 bg-red-100 rounded-lg w-fit mb-4">
-              <Heart className="h-8 w-8 text-red-600" />
+            <div className="p-3 bg-[#0054aa] rounded-lg w-fit mb-4">
+              <Heart className="h-8 w-8 text-[#ffffff]" />
             </div>
             <h3 className="text-xl font-normal mb-3">Healthcare</h3>
             <p className="text-gray-600 text-sm">
@@ -251,8 +251,8 @@ export default function ServicesPage() {
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-            <div className="p-3 bg-green-100 rounded-lg w-fit mb-4">
-              <DollarSign className="h-8 w-8 text-green-600" />
+            <div className="p-3 bg-[#0054aa] rounded-lg w-fit mb-4">
+              <DollarSign className="h-8 w-8 text-[#ffffff]" />
             </div>
             <h3 className="text-xl font-normal mb-3">Finance</h3>
             <p className="text-gray-600 text-sm">
@@ -260,8 +260,8 @@ export default function ServicesPage() {
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-            <div className="p-3 bg-yellow-100 rounded-lg w-fit mb-4">
-              <Zap className="h-8 w-8 text-yellow-600" />
+            <div className="p-3 bg-[#0054aa] rounded-lg w-fit mb-4">
+              <Zap className="h-8 w-8 text-[#ffffff]" />
             </div>
             <h3 className="text-xl font-normal mb-3">Oil & Gas</h3>
             <p className="text-gray-600 text-sm">

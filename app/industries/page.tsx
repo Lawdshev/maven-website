@@ -67,7 +67,7 @@ export default function IndustriesPage() {
               </div>
               <div>
                 <h2 className="text-4xl font-[medium] text-[#0054aa]">Retail</h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-[#0054aa] to-[#0054aa] -400 rounded-full mt-2"></div>
+                <div className="w-20 h-1 bg-[from-[#0054aa] to-[#0054aa] -400 rounded-full mt-2"></div>
               </div>
             </div>
 
@@ -146,7 +146,7 @@ export default function IndustriesPage() {
             />
 
             {/* Move benefits section here */}
-            <div className="bg-gradient-to-r from-slate-50 to-gray-50 p-6 rounded-2xl border border-gray-200 mt-8">
+            <div className="bg-[from-slate-50 to-gray-50 p-6 rounded-2xl border border-gray-200 mt-8">
               <h4 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
                 <CheckCircle className="h-5 w-5 text-[#0054aa] mr-2" />
                 Key Benefits:
@@ -169,7 +169,7 @@ export default function IndustriesPage() {
             {/* Move button here */}
             <div className="mt-6">
               <Link href="/contact-us">
-                <Button className=" w-fit mx-auto bg-gradient-to-r from-[#0054aa] to-[#0054aa] -700 hover:from-[#003d7f] hover:to-[#0054aa] -800 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full h-[46px]">
+                <Button className=" w-fit mx-auto bg-[#0054aa] to-[#0054aa] -800 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full h-[46px]">
                   Transform Your Retail Operations
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -197,7 +197,7 @@ export default function IndustriesPage() {
             />
 
             {/* Move benefits section here */}
-            <div className="bg-gradient-to-r from-slate-50 to-gray-50 p-6 rounded-2xl border border-gray-200 mt-8">
+            <div className="bg-[from-slate-50 to-gray-50 p-6 rounded-2xl border border-gray-200 mt-8">
               <h4 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
                 <CheckCircle className="h-5 w-5 text-[#0054aa] mr-2" />
                 Patient & Operational Benefits:
@@ -220,7 +220,7 @@ export default function IndustriesPage() {
             {/* Move button here */}
             <div className="mt-6">
               <Link href="/contact-us">
-                <Button className=" w-fit mx-auto bg-gradient-to-r from-gray-700 to-slate-800 hover:from-gray-800 hover:to-slate-900 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full h-[46px]">
+                <Button className=" w-fit mx-auto bg-[#0054aa] text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full h-[46px]">
                   Explore Healthcare AI Solutions
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -231,12 +231,12 @@ export default function IndustriesPage() {
           <div className="space-y-8 order-2 lg:order-1">
             {/* Industry Header */}
             <div className="flex items-center space-x-4 mb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-gray-700 to-slate-800 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 bg-[#0054aa] rounded-2xl flex items-center justify-center shadow-lg">
                 <Heart className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h2 className="text-4xl font-[medium] text-gray-800">Healthcare</h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-gray-600 to-slate-400 rounded-full mt-2"></div>
+                <h2 className="text-4xl font-[medium] text-[#0054aa]">Healthcare</h2>
+                <div className="w-20 h-1 bg-[#0054aa] rounded-full mt-2"></div>
               </div>
             </div>
 
@@ -262,31 +262,31 @@ export default function IndustriesPage() {
                     {
                       title: "Predictive Diagnostics",
                       desc: "Identify disease risk early with AI-assisted imaging and patient data analysis.",
-                      color: "from-gray-50 to-slate-50",
+                      color: "#000",
                       border: "border-gray-200",
                     },
                     {
                       title: "Operational Efficiency",
                       desc: "Automate scheduling, resource allocation, and supply management.",
-                      color: "from-slate-50 to-[#0054aa] -50",
+                    color: "#000",
                       border: "border-slate-200",
                     },
                     {
                       title: "Clinical Decision Support",
                       desc: "Deliver real-time recommendations to clinicians at the point of care.",
-                      color: "from-blue-50 to-gray-50",
+                   color: "#000",
                       border: "border-blue-200",
                     },
                     {
                       title: "Regulatory Compliance",
                       desc: "Ensure adherence to HIPAA and other data privacy regulations.",
-                      color: "from-gray-50 to-slate-50",
+                      color: "#000",
                       border: "border-gray-200",
                     },
                   ].map((app, index) => (
                     <div
                       key={index}
-                      className={`bg-gradient-to-r ${app.color} p-4 rounded-xl border ${app.border} hover:shadow-md transition-all duration-300`}
+                      className={`bg-[${app.color} p-4 rounded-xl border ${app.border} hover:shadow-md transition-all duration-300`}
                     >
                       <div className="flex items-start space-x-3">
                         <CheckCircle className="h-5 w-5 text-[#0054aa] mt-1 flex-shrink-0" />
@@ -322,7 +322,7 @@ export default function IndustriesPage() {
               </div>
               <div>
                 <h2 className="text-4xl font-[medium] text-[#0054aa]">Finance</h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-[#0054aa] to-[#0054aa] -400 rounded-full mt-2"></div>
+                <div className="w-20 h-1 bg-[from-[#0054aa] to-[#0054aa] -400 rounded-full mt-2"></div>
               </div>
             </div>
 
@@ -350,34 +350,34 @@ export default function IndustriesPage() {
                       title: "Time Series Prediction",
                       desc: "Forecast market movements with stacked models that outperform single-model approaches.",
                       icon: BarChart3,
-                      gradient: "from-[#0054aa] to-[#0054aa] -600",
+                        gradient: "#0054aa",
                     },
                     {
                       title: "Automated Due Diligence",
                       desc: "Use AI to review contracts, agreements, and financial documents, reducing manual errors.",
                       icon: Shield,
-                      gradient: "from-blue-600 to-[#0054aa] -700",
+                     gradient: "#0054aa",
                     },
                     {
                       title: "Fraud Detection & Risk Management",
                       desc: "Identify anomalies, detect threats early, and automatically generate risk reports.",
                       icon: Shield,
-                      gradient: "from-blue-700 to-slate-700",
+                        gradient: "#0054aa",
                     },
                     {
                       title: "Portfolio Management",
                       desc: "Continuously adjust investment strategies based on real-time market conditions.",
                       icon: TrendingUp,
-                      gradient: "from-slate-700 to-gray-700",
+                      gradient: "#0054aa",
                     },
                   ].map((app, index) => (
                     <div
                       key={index}
-                      className="bg-gradient-to-r from-blue-50 to-slate-50 p-5 rounded-xl border border-blue-100 hover:shadow-lg transition-all duration-300 group"
+                      className="bg-[from-blue-50 to-slate-50 p-5 rounded-xl border border-blue-100 hover:shadow-lg transition-all duration-300 group"
                     >
                       <div className="flex items-start space-x-4">
                         <div
-                          className={`w-10 h-10 bg-gradient-to-r ${app.gradient} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
+                          className={`w-10 h-10 bg-[${app.gradient}]  rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
                         >
                           <app.icon className="h-5 w-5 text-white" />
                         </div>
@@ -406,7 +406,7 @@ export default function IndustriesPage() {
             />
 
             {/* Move benefits section here */}
-            <div className="bg-gradient-to-r from-slate-50 to-gray-50 p-6 rounded-2xl border border-gray-200 mt-8">
+            <div className="bg-[from-slate-50 to-gray-50 p-6 rounded-2xl border border-gray-200 mt-8">
               <h4 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
                 <CheckCircle className="h-5 w-5 text-[#0054aa] mr-2" />
                 Financial Benefits:
@@ -429,7 +429,7 @@ export default function IndustriesPage() {
             {/* Move button here */}
             <div className="mt-6">
               <Link href="/contact-us">
-                <Button className=" w-fit mx-auto bg-gradient-to-r from-[#0054aa] to-[#0054aa] -700 hover:from-[#003d7f] hover:to-[#0054aa] -800 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full h-[46px]">
+                <Button className=" w-fit mx-auto bg-[#0054aa] -800 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full h-[46px]">
                   Strengthen Your Financial Operations
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -447,7 +447,7 @@ export default function IndustriesPage() {
 
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative order-1 lg:order-2">
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-600 to-gray-700 rounded-3xl transform -rotate-3 opacity-10"></div>
+            <div className="absolute inset-0 bg-[#0054aa] rounded-3xl transform -rotate-3 opacity-10"></div>
             <Image
               src="/ai-energy-solutions.png"
               alt="AI energy solutions for predictive maintenance, load forecasting, and remote monitoring"
@@ -457,7 +457,7 @@ export default function IndustriesPage() {
             />
 
             {/* Move benefits section here */}
-            <div className="bg-gradient-to-r from-slate-50 to-gray-50 p-6 rounded-2xl border border-gray-200 mt-8">
+            <div className="bg-[from-slate-50 to-gray-50 p-6 rounded-2xl border border-gray-200 mt-8">
               <h4 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
                 <CheckCircle className="h-5 w-5 text-[#0054aa] mr-2" />
                 Operational Benefits:
@@ -480,7 +480,7 @@ export default function IndustriesPage() {
             {/* Move button here */}
             <div className="mt-6">
               <Link href="/contact-us">
-                <Button className=" w-fit mx-auto bg-gradient-to-r from-slate-600 to-gray-700 hover:from-slate-700 hover:to-gray-800 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full h-[46px]">
+                <Button className=" w-fit mx-auto bg-[#0054aa] text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full h-[46px]">
                   Power Your Energy Network with AI
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -491,12 +491,12 @@ export default function IndustriesPage() {
           <div className="space-y-8 order-2 lg:order-1">
             {/* Industry Header */}
             <div className="flex items-center space-x-4 mb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-slate-600 to-gray-700 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 bg-[#0054aa] rounded-2xl flex items-center justify-center shadow-lg">
                 <Zap className="h-8 w-8 text-white" />
               </div>
               <div>
                 <h2 className="text-4xl font-[medium] text-slate-700">Energy</h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-slate-600 to-gray-400 rounded-full mt-2"></div>
+                <div className="w-20 h-1 bg-[#0054aa] rounded-full mt-2"></div>
               </div>
             </div>
 
@@ -523,31 +523,31 @@ export default function IndustriesPage() {
                       title: "Predictive Maintenance",
                       desc: "Detect equipment issues before they cause costly downtime.",
                       icon: Clock,
-                      gradient: "from-[#0054aa] to-[#0054aa] -600",
+                        gradient: "#0054aa",
                     },
                     {
                       title: "Load Forecasting",
                       desc: "Predict energy demand to optimize production and distribution.",
                       icon: BarChart3,
-                      gradient: "from-blue-600 to-[#0054aa] -700",
+                     gradient: "#0054aa",
                     },
                     {
                       title: "Remote Monitoring",
                       desc: "Track performance of assets across multiple locations in real time.",
                       icon: Shield,
-                      gradient: "from-blue-700 to-slate-700",
+                        gradient: "#0054aa",
                     },
                     {
                       title: "Sustainability Optimization",
                       desc: "Analyze energy usage to improve efficiency and reduce environmental impact.",
                       icon: Zap,
-                      gradient: "from-slate-700 to-gray-700",
+                      gradient: "#0054aa",
                     },
                   ].map((app, index) => (
                     <div key={index} className="relative">
-                      <div className="flex items-start space-x-4 bg-gradient-to-r from-slate-50 to-gray-50 p-5 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300 group">
+                      <div className="flex items-start space-x-4 bg-[from-slate-50 to-gray-50 p-5 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300 group">
                         <div
-                          className={`w-10 h-10 bg-gradient-to-r ${app.gradient} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
+                          className={`w-10 h-10 bg-[${app.gradient}]  rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
                         >
                           <app.icon className="h-5 w-5 text-white" />
                         </div>

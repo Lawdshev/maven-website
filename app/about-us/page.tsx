@@ -23,19 +23,19 @@ export default function AboutPage() {
       title: "Impact that lasts",
       description: "Solutions that adapt and scale with your needs",
       icon: Target,
-      color: "from-[#0054aa] to-blue-600",
+      color: "#0054aa",
     },
     {
       title: "Integrity in execution",
       description: "Clear, transparent processes from start to finish",
       icon: Shield,
-      color: "from-blue-600 to-blue-700",
+      color: "#0054aa",
     },
     {
       title: "Innovation with purpose",
       description: "AI that solves real problems, not just creates hype",
       icon: Lightbulb,
-      color: "from-blue-700 to-slate-700",
+      color: "#0054aa",
     },
   ]
 
@@ -44,36 +44,36 @@ export default function AboutPage() {
       title: "Co-creation",
       description: "Working alongside your teams to align technology with business goals",
       icon: Users,
-      gradient: "from-[#0054aa] to-blue-600",
+      gradient: "#0054aa",
     },
     {
       title: "Agility",
       description: "Rapid prototyping, testing, and scaling for faster results",
       icon: Zap,
-      gradient: "from-blue-600 to-blue-700",
+      gradient: "#0054aa",
     },
     {
       title: "Integration",
       description: "Solutions designed to fit seamlessly into your existing systems",
       icon: Layers,
-      gradient: "from-blue-700 to-slate-700",
+      gradient: "#0054aa",
     },
     {
       title: "Continuous improvement",
       description: "AI that learns, adapts, and grows with your business",
       icon: RefreshCw,
-      gradient: "from-slate-700 to-gray-700",
+      gradient: "#0054aa",
     },
   ]
 
   return (
     <div className="text-gray-900">
       {/* Hero Section */}
-      <main className="w-full min-h-[700px] bg-gradient-to-br from-[#0054aa] to-blue-800 mx-auto px-6 md:px-12 py-16 lg:py-24 relative overflow-hidden">
+      <main className="w-full min-h-[700px] bg-[#0054aa] bg-center mx-auto px-6 md:px-12 py-8 lg:py-16 grid grid-cols-1 lg:grid-cols-1 gap-8">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <div className="text-sm text-blue-200 mb-4">
-            <Link href="/" className="text-blue-200 hover:text-white">
+            <Link href="/" className="text-blue-200 hover:text-white font-normal">
               Home
             </Link>{" "}
             / About Us
@@ -92,8 +92,8 @@ export default function AboutPage() {
       </main>
 
       {/* Our Commitment */}
-      <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24">
-        <div className="max-w-6xl mx-auto">
+      <section className="w-full mx-auto px-6 md:px-8 py-12 lg:py-16 ">
+        <div className="max-w-[1300px] mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">Our Commitment</h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2"
               >
                 <div
-                  className={`w-16 h-16 bg-gradient-to-r ${commitment.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-16 h-16  bg-[${commitment.color}] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
                 >
                   <commitment.icon className="h-8 w-8 text-white" />
                 </div>
@@ -122,8 +122,8 @@ export default function AboutPage() {
       </section>
 
       {/* How We Work */}
-      <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-6xl mx-auto">
+      <section className="w-full mx-auto px-6 md:px-8 py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="max-w-[1300px] mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">How We Work</h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
@@ -137,7 +137,7 @@ export default function AboutPage() {
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
                   <div className="flex items-start space-x-6">
                     <div
-                      className={`w-14 h-14 bg-gradient-to-r ${method.gradient} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
+                      className={`w-14 h-14  bg-[${method.gradient}] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
                     >
                       <method.icon className="h-7 w-7 text-white" />
                     </div>
@@ -154,8 +154,8 @@ export default function AboutPage() {
       </section>
 
       {/* Who We Are */}
-      <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24">
-        <div className="max-w-6xl mx-auto">
+      <section className="w-full mx-auto px-6 md:px-8 py-12 lg:py-16">
+        <div className="max-w-[1300px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div>
@@ -223,8 +223,8 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-gray-50">
-        <div className="max-w-6xl mx-auto text-center">
+      <section className="w-full mx-auto px-6 md:px-8 py-12 lg:py-16 bg-gradient-to-br from-slate-50 to-gray-50">
+        <div className="max-w-[1300px] mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-[medium] mb-12 text-[#0054aa]">What Drives Us</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -261,7 +261,7 @@ export default function AboutPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-br from-[#0054aa] to-blue-700 py-16 relative overflow-hidden">
+      <section className="bg-[#0054aa] py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="w-full mx-auto px-6 md:px-12 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
@@ -280,7 +280,7 @@ export default function AboutPage() {
               <Link href="/contact-us">
                 <Button
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-[#0054aa] px-10 py-6 text-lg font-normal rounded-xl transition-all duration-300 bg-transparent"
+                  className="border-white text-white hover:bg-white font-normal hover:text-[#0054aa] px-10 py-6 text-lg font-normal rounded-xl transition-all duration-300 bg-transparent"
                 >
                   Contact Us
                 </Button>

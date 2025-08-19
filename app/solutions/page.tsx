@@ -24,7 +24,7 @@ export default function SolutionsPage() {
       title: "Agentic AI",
       subtitle: "Systems That Run Themselves",
       icon: Bot,
-      color: "from-[#0054aa] to-blue-700",
+      color: "from-[#0054aa] to-[#0054aa]",
       features: [
         "Autonomous Decision-Making",
         "Multi-Agent Collaboration",
@@ -39,7 +39,7 @@ export default function SolutionsPage() {
       title: "AI Takeoff Software",
       subtitle: "From Plans to Estimates in Minutes",
       icon: FileText,
-      color: "from-blue-600 to-blue-800",
+      color: "from-[#0054aa] to-[#0054aa]",
       features: [
         "Instant extraction of measurements",
         "Consistent, error-free results",
@@ -54,7 +54,7 @@ export default function SolutionsPage() {
       title: "AI Blueprint Classifier",
       subtitle: "Drawings to Data, Fast and Flawless",
       icon: Blueprint,
-      color: "from-slate-600 to-slate-800",
+      color: "from-[#0054aa] to-[#0054aa]",
       features: ["Instant Recognition", "Smart Annotation", "Organized Output", "Confidence Scoring"],
       useCases: ["Construction", "Manufacturing", "MEP and Architecture"],
       image: "/blueprint-classifier-demo.png",
@@ -64,7 +64,7 @@ export default function SolutionsPage() {
       title: "AI Voice Agent Platform",
       subtitle: "Speak, Act, Deliver",
       icon: Mic,
-      color: "from-[#0054aa] to-blue-600",
+      color: "from-[#0054aa] to-[#0054aa]",
       features: [
         "No-Code Voice Agent Builder",
         "Context-Aware Conversations",
@@ -79,7 +79,7 @@ export default function SolutionsPage() {
       title: "AI Medical Coding Software",
       subtitle: "From Notes to Codes in Seconds",
       icon: Stethoscope,
-      color: "from-blue-700 to-slate-700",
+      color: "from-[#0054aa] to-[#0054aa]",
       features: ["AI-Powered Code Prediction", "Real-Time Validation", "Batch Processing", "100% EHR Integration"],
       useCases: ["Hospitals & Health Systems", "Medical Coding Companies", "Revenue Cycle Management"],
       image: "/medical-coding-software.png",
@@ -89,7 +89,7 @@ export default function SolutionsPage() {
       title: "AI Interview Agent",
       subtitle: "Smarter Talent Shortlisting at Scale",
       icon: Users,
-      color: "from-slate-700 to-gray-800",
+      color: "from-[#0054aa] to-[#0054aa]",
       features: ["24/7 Candidate Access", "Automated Scoring", "Multilingual Support", "Hiring Dashboard"],
       useCases: ["Talent Acquisition", "HR Departments", "Recruitment Agencies"],
       image: "/interview-agent-dashboard.png",
@@ -99,7 +99,7 @@ export default function SolutionsPage() {
   return (
     <div className="text-gray-900">
       {/* Hero Section */}
-      <main className="w-full min-h-[600px] bg-gradient-to-br from-[#0054aa] to-blue-800 mx-auto px-6 md:px-12 py-16 lg:py-24 relative overflow-hidden">
+      <main className="w-full min-h-[600px] bg-gradient-to-br from-[#0054aa] to-[#0054aa] mx-auto px-6 md:px-12 py-12 lg:py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="text-sm text-blue-200 mb-4">
@@ -125,7 +125,7 @@ export default function SolutionsPage() {
       </main>
 
       {/* Solutions Grid */}
-      <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24">
+      <section className="w-full mx-auto px-6 md:px-12 py-12 lg:py-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-[medium] mb-4 text-[#0054aa]">Six Solutions, Endless Possibilities</h2>
@@ -228,7 +228,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Why Choose Our Solutions */}
-      <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="w-full mx-auto px-6 md:px-12 py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">
@@ -246,19 +246,19 @@ export default function SolutionsPage() {
                 icon: Zap,
                 title: "AI-First Engineering",
                 description: "Every component maximizes AI's autonomy and intelligence from the ground up.",
-                color: "from-[#0054aa] to-blue-600",
+                color: "from-[#0054aa] to-[#0054aa]",
               },
               {
                 icon: BarChart3,
                 title: "Outcome-Driven",
                 description: "Success measured in reduced manual work, faster cycles, and higher output.",
-                color: "from-blue-600 to-blue-700",
+                color: "from-[#0054aa] to-[#0054aa]",
               },
               {
                 icon: Shield,
                 title: "Enterprise-Ready",
                 description: "Secure, scalable, and adaptable to any platform with seamless integrations.",
-                color: "from-blue-700 to-slate-700",
+                color: "",
               },
             ].map((benefit, index) => (
               <div
@@ -279,7 +279,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Performance Metrics */}
-      <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24">
+      <section className="w-full mx-auto px-6 md:px-12 py-12 lg:py-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">Proven Results Across Industries</h2>
@@ -303,7 +303,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-br from-[#0054aa] to-blue-700 py-16 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-[#0054aa] to-[#0054aa] py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="w-full mx-auto px-6 md:px-12 relative z-10">
           <div className="text-center max-w-4xl mx-auto">

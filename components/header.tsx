@@ -105,7 +105,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
             <div className="relative">
               <Link
                 href="/about-us"
-                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer"
+                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer font-normal"
               >
                 About us{" "}
               </Link>
@@ -114,7 +114,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
             <div className="relative">
               <Link
                 href="#"
-                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer"
+                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer font-normal"
                 onClick={() => handleMenuToggle("ai")}
               >
                 Services{" "}
@@ -133,7 +133,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
             <div className="relative">
               <Link
                 href="#"
-                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer"
+                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer font-normal"
                 onClick={() => handleMenuToggle("hybrid-cloud")}
               >
                 Industries{" "}
@@ -155,7 +155,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
             <div className="relative">
               <Link
                 href="/solutions"
-                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer"
+                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer font-normal"
                 // onClick={() => handleMenuToggle("products")}
               >
                 Solutions{" "}
@@ -175,14 +175,14 @@ export default function Header({ children }: { children: React.ReactNode }) {
 
             <Link
               href="/consulting"
-              className="flex items-center hover:text-[#0054aa] text-lg"
+              className="font-normal flex items-center hover:text-[#0054aa] text-lg"
             >
               Consulting
             </Link>
 
             <Link
               href="/blog"
-              className="flex items-center hover:text-[#0054aa] text-lg"
+              className="font-normal flex items-center hover:text-[#0054aa] text-lg"
             >
               Blog
             </Link>
@@ -220,7 +220,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
               <Link href="/contact-us" passHref>
                 <Button
                   variant={"outline"}
-                  className="hidden md:inline-flex bg-[#0054aa] text-white"
+                  className="hidden md:inline-flex bg-[#0054aa] text-white font-normal"
                 >
                   <span>Contact Us</span>
                 </Button>
@@ -274,7 +274,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
                 ) : (
                   <Link
                     href="#"
-                    className="text-lg font-medium hover:text-[#0054aa]"
+                    className="text-lg font-medium hover:text-[#0054aa] font-normal"
                     onClick={toggleSearchInput}
                   >
                     Search
@@ -285,7 +285,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
                   <DropdownMenuTrigger asChild>
                     <Link
                       href="#"
-                      className="flex items-center text-lg font-medium hover:text-[#0054aa] cursor-pointer"
+                      className="flex items-center text-lg font-medium hover:text-[#0054aa] font-normal cursor-pointer"
                     >
                       AI <ChevronDown className="ml-1 h-4 w-4" />
                     </Link>
@@ -306,7 +306,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
                   <DropdownMenuTrigger asChild>
                     <Link
                       href="#"
-                      className="flex items-center text-lg font-medium hover:text-[#0054aa] cursor-pointer"
+                      className="flex items-center text-lg font-medium hover:text-[#0054aa] font-normal cursor-pointer"
                     >
                       Hybrid Cloud <ChevronDown className="ml-1 h-4 w-4" />
                     </Link>
@@ -327,7 +327,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
                   <DropdownMenuTrigger asChild>
                     <Link
                       href="#"
-                      className="flex items-center text-lg font-medium hover:text-[#0054aa] cursor-pointer"
+                      className="flex items-center text-lg font-medium hover:text-[#0054aa] font-normal cursor-pointer"
                     >
                       Products <ChevronDown className="ml-1 h-4 w-4" />
                     </Link>
@@ -346,32 +346,32 @@ export default function Header({ children }: { children: React.ReactNode }) {
                 </DropdownMenu>
                 <Link
                   href="#"
-                  className="text-lg font-medium hover:text-[#0054aa]"
+                  className="text-lg font-medium hover:text-[#0054aa] font-normal"
                 >
                   Consulting
                 </Link>
                 <Link
                   href="/blog"
-                  className="text-lg font-medium hover:text-[#0054aa]"
+                  className="text-lg font-medium hover:text-[#0054aa] font-normal"
                 >
                   Think
                 </Link>
                 <div className="border-t border-gray-200 pt-4 mt-4 flex flex-col gap-2">
                   <Link
                     href="#"
-                    className="text-sm text-gray-600 hover:text-[#0054aa]"
+                    className="text-sm text-gray-600 hover:text-[#0054aa] font-normal"
                   >
                     Chat
                   </Link>
                   <Link
                     href="#"
-                    className="text-sm text-gray-600 hover:text-[#0054aa]"
+                    className="text-sm text-gray-600 hover:text-[#0054aa] font-normal"
                   >
                     Language
                   </Link>
                   <Link
                     href="#"
-                    className="text-sm text-gray-600 hover:text-[#0054aa]"
+                    className="text-sm text-gray-600 hover:text-[#0054aa] font-normal"
                   >
                     Account
                   </Link>

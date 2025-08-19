@@ -22,7 +22,7 @@ export default function ConsultingPage() {
       description:
         "Deploy AI-driven fraud detection, risk modeling, and automated compliance to protect assets and unlock smarter financial operations.",
       icon: TrendingUp,
-      color: "from-[#0054aa] to-blue-700",
+      color: "from-[#0054aa] to-[#0054aa]",
       image: "/finance-consulting.png",
     },
     {
@@ -30,7 +30,7 @@ export default function ConsultingPage() {
       description:
         "Leverage AI for faster diagnostics, predictive patient care, and automated administrative workflows to improve both outcomes and efficiency.",
       icon: Heart,
-      color: "from-blue-600 to-blue-800",
+      color: "from-[#0054aa] to-[#0054aa]",
       image: "/healthcare-consulting.png",
     },
     {
@@ -38,7 +38,7 @@ export default function ConsultingPage() {
       description:
         "Harness real-time demand forecasting, personalized recommendations, and supply chain optimization to maximize sales and customer loyalty.",
       icon: ShoppingCart,
-      color: "from-slate-600 to-slate-800",
+      color: "from-[#0054aa] to-[#0054aa]",
       image: "/retail-consulting.png",
     },
     {
@@ -46,7 +46,7 @@ export default function ConsultingPage() {
       description:
         "Integrate AI-powered quality control, predictive maintenance, and intelligent routing to increase uptime, reduce costs, and streamline operations.",
       icon: Factory,
-      color: "from-gray-600 to-gray-800",
+      color: "from-[#0054aa] to-[#0054aa]",
       image: "/manufacturing-consulting.png",
     },
   ]
@@ -54,7 +54,7 @@ export default function ConsultingPage() {
   return (
     <div className="text-gray-900">
       {/* Hero Section with Warning */}
-      <main className="w-full min-h-[700px] bg-gradient-to-br from-[#0054aa] to-[#003d7f] mx-auto px-6 md:px-12 py-16 lg:py-24 relative overflow-hidden">
+      <main className="w-full min-h-[700px] bg-gradient-to-br from-[#0054aa] to-[#0054aa] mx-auto px-6 md:px-12 py-16 lg:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="text-sm text-red-200 mb-4">
@@ -119,7 +119,7 @@ export default function ConsultingPage() {
                     { icon: Shield, title: "Operate", desc: "Ongoing optimization and support" },
                   ].map((step, index) => (
                     <div key={index} className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-[#0054aa] to-blue-700 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-gradient-to-r from-[#0054aa] to-[#0054aa] rounded-xl flex items-center justify-center flex-shrink-0">
                         <step.icon className="h-6 w-6 text-white" />
                       </div>
                       <div>
@@ -133,7 +133,7 @@ export default function ConsultingPage() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0054aa] to-blue-700 rounded-3xl transform rotate-3 opacity-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0054aa] to-[#0054aa] rounded-3xl transform rotate-3 opacity-10"></div>
               <Image
                 src="/ai-consulting-process.png"
                 alt="AI consulting process visualization showing strategic planning and implementation phases"
@@ -236,7 +236,7 @@ export default function ConsultingPage() {
       </section>
 
       {/* What's Next CTA */}
-      <section className="bg-gradient-to-br from-[#0054aa] to-blue-700 py-16 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-[#0054aa] to-[#0054aa] py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="w-full mx-auto px-6 md:px-12 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
