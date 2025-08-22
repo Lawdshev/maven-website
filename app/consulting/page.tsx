@@ -104,7 +104,7 @@ export default function ConsultingPage() {
                   height={250}
                   className="w-full h-40 object-cover rounded-lg mb-4"
                 />
-                <Button className="bg-[#0054aa] text-white px-6 py-3 rounded-none hover:bg-[#004080] w-full">
+                <Button className="bg-[#0054aa] text-white px-6 py-6 text-xl rounded-none hover:bg-[#004080] w-full">
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
