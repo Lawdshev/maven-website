@@ -11,7 +11,7 @@ export default function BlogListing() {
             <Link
               key={post.id}
               href={`/blog/${post.slug}`}
-              className="group block space-y-4 p-4 hover:bg-gray-50 dark:hover:bg-gray-900 rounded-lg transition-colors"
+              className="group block space-y-4 border  border-gray-200 border-[1px] p-4 hover:bg-gray-50 dark:hover:bg-gray-900 rounded-lg transition-colors"
             >
               <Image
                 src={post.imageUrl || "/placeholder.svg"}
@@ -21,11 +21,11 @@ export default function BlogListing() {
                 className="rounded-md aspect-video object-cover"
               />
               <div className="space-y-2">
-                <h3 className="text-lg font-normal text-gray-900 dark:text-gray-50 group-hover:text-[#0054aa] transition-colors">
+                <h3 className="text-lg font-normal text-black - 900 dark:text-black - 50 group-hover:text-[#0054aa] transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300 text-sm">{post.excerpt}</p>
-                <p className="text-gray-500 dark:text-gray-400 text-xs">
+                <p className="text-black - 700 dark:text-black - 300 text-xl leading-[30px]">{post.excerpt}</p>
+                <p className="text-black - 500 dark:text-black - 400 text-xl ">
                   {post.category} - {post.date}
                 </p>
               </div>
