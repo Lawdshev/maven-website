@@ -1,21 +1,19 @@
-"use client"
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
+  CheckCircle,
+  Zap,
+  BarChart3,
   Bot,
   FileText,
   BarcodeIcon as Blueprint,
   Mic,
   Stethoscope,
   Users,
-  Zap,
-  Shield,
-  BarChart3,
-  CheckCircle,
-  Play,
-} from "lucide-react"
+} from "lucide-react";
 
 export default function SolutionsPage() {
   const solutions = [
@@ -24,315 +22,353 @@ export default function SolutionsPage() {
       title: "Agentic AI",
       subtitle: "Systems That Run Themselves",
       icon: Bot,
-      color: "from-[#0054aa] to-[#0054aa]",
+      overview:
+        "Agentic AI represents the next leap in artificial intelligence—autonomous systems that can plan, decide, and execute without continuous human intervention. These AI agents collaborate like specialized teams, handling complex processes end-to-end with speed and precision.",
+      whyItMatters:
+        "Businesses lose countless hours on repetitive decisions and fragmented workflows. Agentic AI eliminates bottlenecks, enabling operations that scale effortlessly and adapt in real time.",
+      howItWorks:
+        "Multiple specialized AI agents work together: some plan, others execute, and others validate results. This orchestration creates a self-improving ecosystem that learns continuously from context and data.",
       features: [
         "Autonomous Decision-Making",
         "Multi-Agent Collaboration",
         "Self-Improving Intelligence",
         "Data-Aware & Context-Rich",
       ],
-      useCases: ["Operations", "Customer Support", "IT & DevOps", "Finance", "Sales & Marketing"],
+      useCases: [
+        "Operations",
+        "Customer Support",
+        "IT & DevOps",
+        "Finance",
+        "Sales & Marketing",
+      ],
+      advantages: [
+        "Reduce operational costs by up to 40%",
+        "Faster time-to-decision across teams",
+        "Adaptive intelligence with minimal oversight",
+      ],
+      benefits: [
+        "Scalable automation across departments",
+        "Improved accuracy and fewer errors",
+        "Frees teams to focus on strategy and growth",
+      ],
       image: "/agentic-ai-dashboard.png",
+      button: "Book a Demo",
     },
     {
       id: "ai-takeoff",
       title: "AI Takeoff Software",
       subtitle: "From Plans to Estimates in Minutes",
       icon: FileText,
-      color: "from-[#0054aa] to-[#0054aa]",
+      overview:
+        "Our AI Takeoff Software transforms construction plans into precise estimates instantly. It eliminates manual measurement errors and accelerates bid preparation for contractors, engineers, and architects.",
+      whyItMatters:
+        "Manual takeoffs are slow, inconsistent, and costly. Missing details can make or break a project bid. With AI, teams achieve accurate results in a fraction of the time.",
+      howItWorks:
+        "Upload digital blueprints or plans, and our AI automatically extracts measurements, applies standard rules, and generates structured estimates ready for use in your existing tools.",
       features: [
         "Instant extraction of measurements",
         "Consistent, error-free results",
         "Seamless tool integration",
         "Faster bid turnaround",
       ],
-      useCases: ["Construction Estimating", "Architecture & Engineering", "Manufacturing"],
+      useCases: [
+        "Construction Estimating",
+        "Architecture & Engineering",
+        "Manufacturing",
+      ],
+      advantages: [
+        "Up to 80% faster takeoffs",
+        "Eliminates human miscalculations",
+        "Works with industry-standard formats",
+      ],
+      benefits: [
+        "Higher win rates on bids",
+        "Reduced overhead for estimation teams",
+        "More time to focus on client relationships",
+      ],
       image: "/ai-takeoff-interface.png",
+      button: "Book a Demo",
     },
     {
       id: "blueprint-classifier",
       title: "AI Blueprint Classifier",
       subtitle: "Drawings to Data, Fast and Flawless",
       icon: Blueprint,
-      color: "from-[#0054aa] to-[#0054aa]",
-      features: ["Instant Recognition", "Smart Annotation", "Organized Output", "Confidence Scoring"],
+      overview:
+        "Blueprint Classifier converts complex technical drawings into structured, searchable data. With AI-powered recognition and annotation, it accelerates project documentation and collaboration.",
+      whyItMatters:
+        "Engineering and construction projects deal with thousands of drawings. Misclassification leads to delays and costly rework. AI makes it simple, accurate, and scalable.",
+      howItWorks:
+        "Using vision-based AI models, the system identifies blueprint elements, annotates them, and organizes them into searchable categories with confidence scoring.",
+      features: [
+        "Instant Recognition",
+        "Smart Annotation",
+        "Organized Output",
+        "Confidence Scoring",
+      ],
       useCases: ["Construction", "Manufacturing", "MEP and Architecture"],
+      advantages: [
+        "Eliminates manual tagging and sorting",
+        "Creates a single source of truth",
+        "Accelerates design and review cycles",
+      ],
+      benefits: [
+        "Improved collaboration across stakeholders",
+        "Fewer errors in document handling",
+        "Reduced time spent on admin work",
+      ],
       image: "/blueprint-classifier-demo.png",
+      button: "Book a Demo",
     },
     {
       id: "voice-agent",
       title: "AI Voice Agent Platform",
       subtitle: "Speak, Act, Deliver",
       icon: Mic,
-      color: "from-[#0054aa] to-[#0054aa]",
+      overview:
+        "Our AI Voice Agent enables businesses to automate customer interactions with natural, context-aware conversations. It reduces wait times while maintaining a human-like experience.",
+      whyItMatters:
+        "Customers expect 24/7 service. Traditional call centers are costly and limited. Voice AI handles thousands of calls simultaneously with consistent quality.",
+      howItWorks:
+        "A no-code builder lets teams design voice agents tailored to their brand. The AI understands intent, processes tasks, and learns from interactions to improve over time.",
       features: [
         "No-Code Voice Agent Builder",
         "Context-Aware Conversations",
         "Multilingual & Brand-Tuned",
         "Performance Insights",
       ],
-      useCases: ["Customer Support", "Order Handling", "Appointment Scheduling", "Virtual Concierge"],
+      useCases: [
+        "Customer Support",
+        "Order Handling",
+        "Appointment Scheduling",
+        "Virtual Concierge",
+      ],
+      advantages: [
+        "Available 24/7 without extra staffing",
+        "Reduces average handling time by 60%",
+        "Scales instantly to demand",
+      ],
+      benefits: [
+        "Happier customers with faster resolutions",
+        "Significant cost savings",
+        "Better insights into customer behavior",
+      ],
       image: "/voice-agent-platform.png",
+      button: "Book a Demo",
     },
     {
       id: "medical-coding",
       title: "AI Medical Coding Software",
       subtitle: "From Notes to Codes in Seconds",
       icon: Stethoscope,
-      color: "from-[#0054aa] to-[#0054aa]",
-      features: ["AI-Powered Code Prediction", "Real-Time Validation", "Batch Processing", "100% EHR Integration"],
-      useCases: ["Hospitals & Health Systems", "Medical Coding Companies", "Revenue Cycle Management"],
+      overview:
+        "Medical Coding AI transforms physician notes into standardized codes instantly. It reduces administrative burden and ensures accurate claim submission every time.",
+      whyItMatters:
+        "Manual coding is slow, error-prone, and expensive. Incorrect codes lead to claim denials and revenue loss. AI solves this with speed and accuracy.",
+      howItWorks:
+        "Our models analyze clinical documentation in real-time, suggest the correct codes, validate compliance, and integrate directly with EHR systems.",
+      features: [
+        "AI-Powered Code Prediction",
+        "Real-Time Validation",
+        "Batch Processing",
+        "100% EHR Integration",
+      ],
+      useCases: [
+        "Hospitals & Health Systems",
+        "Medical Coding Companies",
+        "Revenue Cycle Management",
+      ],
+      advantages: [
+        "Up to 95% coding accuracy",
+        "Cuts documentation time in half",
+        "Fully HIPAA-compliant system",
+      ],
+      benefits: [
+        "Higher claim acceptance rates",
+        "Faster reimbursements",
+        "Reduced administrative costs",
+      ],
       image: "/medical-coding-software.png",
+      button: "Book a Demo",
     },
     {
       id: "interview-agent",
       title: "AI Interview Agent",
       subtitle: "Smarter Talent Shortlisting at Scale",
       icon: Users,
-      color: "from-[#0054aa] to-[#0054aa]",
-      features: ["24/7 Candidate Access", "Automated Scoring", "Multilingual Support", "Hiring Dashboard"],
-      useCases: ["Talent Acquisition", "HR Departments", "Recruitment Agencies"],
+      overview:
+        "The AI Interview Agent automates initial candidate screenings, scoring applicants consistently and fairly. It shortlists top talent while saving recruiters valuable time.",
+      whyItMatters:
+        "Hiring pipelines are clogged with repetitive screenings. Recruiters waste hours on unsuitable candidates. AI ensures only the best-fit candidates move forward.",
+      howItWorks:
+        "Candidates interact with the AI agent through structured conversations. Responses are scored using pre-defined criteria, and recruiters receive a ranked shortlist instantly.",
+      features: [
+        "24/7 Candidate Access",
+        "Automated Scoring",
+        "Multilingual Support",
+        "Hiring Dashboard",
+      ],
+      useCases: [
+        "Talent Acquisition",
+        "HR Departments",
+        "Recruitment Agencies",
+      ],
+      advantages: [
+        "Cuts screening time by 70%",
+        "Ensures bias-free evaluation",
+        "Works at global scale",
+      ],
+      benefits: [
+        "Better hires, faster",
+        "Reduced recruiter workload",
+        "Improved candidate experience",
+      ],
       image: "/interview-agent-dashboard.png",
+      button: "Book a Demo",
     },
-  ]
+  ];
 
   return (
-    <div className="text-gray-900">
+    <div className="text-black">
       {/* Hero Section */}
-      <main className="w-full min-h-[600px] bg-gradient-to-br from-[#0054aa] to-[#0054aa] mx-auto px-6 md:px-12 py-12 lg:py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="text-sm text-blue-200 mb-4">
-            <Link href="/" className="text-blue-200 hover:text-white">
+      <main className="w-full border-b border-gray-200 px-6 md:px-12 py-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
+        <div>
+          <div className="text-sm text-black mb-4">
+            <Link href="/" className="text-[#0054aa] hover:underline">
               Home
             </Link>{" "}
             / Solutions
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] leading-tight mb-6 text-white">
-            AI-Powered Solutions
+          <h1 className="text-2xl md:text-3xl lg:text-6xl lg:leading-[70px] mb-6 font-normal">
+            <span className="text-[#0054aa]">AI-Powered Solutions,</span>
             <br />
-            <span className="text-blue-200">Built for Business Impact</span>
+            <span className="text-black">Built for Business Impact</span>
           </h1>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-            From autonomous AI agents to specialized industry tools, our solutions deliver measurable results through
-            intelligent automation and data-driven insights.
+          <p className="text-xl text-black max-w-2xl leading-[35px]">
+            From autonomous AI agents to specialized industry tools, our
+            solutions deliver measurable results through intelligent automation
+            and data-driven insights.
           </p>
-          <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-8 py-4 text-lg font-normal rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
-            Explore All Solutions
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+        </div>
+        <div className="flex justify-center">
+          <Image
+            src="/solutions-hero.png"
+            alt="Solutions overview"
+            width={600}
+            height={400}
+            className="border border-gray-200"
+          />
         </div>
       </main>
 
-      {/* Solutions Grid */}
-      <section className="w-full mx-auto px-6 md:px-12 py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-[medium] mb-4 text-[#0054aa]">Six Solutions, Endless Possibilities</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Each solution is designed to solve specific business challenges with AI-first engineering and measurable
-              outcomes.
-            </p>
-          </div>
+      {/* Solutions Sections */}
+      {solutions.map((solution) => (
+        <section
+          key={solution.id}
+          className="w-full mx-auto px-6 md:px-12 py-16 border-t border-gray-200"
+        >
+          <div>
+            {/* Heading */}
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="flex items-center space-x-3 w-full justify-between">
+                <div className="flex items-center space-x-3">
+                  <solution.icon className="h-8 w-8 text-[#0054aa]" />
+                  <h2 className="text-3xl font-normal text-black">
+                    {solution.title}
+                  </h2>
+                </div>
+                <div className="mb-6 max-w-4xl">
+                  <p className="text-xl text-black leading-[35px]">
+                    {solution.subtitle}
+                  </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {solutions.map((solution, index) => (
-              <div key={solution.id} className="group">
-                <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                  {/* Header */}
-                  <div className={`bg-gradient-to-r ${solution.color} p-8 text-white relative overflow-hidden`}>
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -translate-y-16 translate-x-16"></div>
-                    <div className="relative z-10 flex items-start justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center mb-4">
-                          <div className="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mr-4">
-                            <solution.icon className="h-6 w-6 text-white" />
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-[medium]">{solution.title}</h3>
-                            <p className="text-sm opacity-90">{solution.subtitle}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-8">
-                    {/* Image */}
-                    <div className="relative mb-6 rounded-2xl overflow-hidden bg-gray-50">
-                      <Image
-                        src={solution.image || "/placeholder.svg"}
-                        alt={`${solution.title} interface demonstration`}
-                        width={500}
-                        height={300}
-                        className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                      <div className="absolute bottom-4 right-4">
-                        <div className="w-10 h-10 bg-white bg-opacity-90 rounded-full flex items-center justify-center">
-                          <Play className="h-4 w-4 text-gray-700 ml-0.5" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Key Features */}
-                    <div className="mb-6">
-                      <h4 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
-                        <Zap className="h-5 w-5 text-[#0054aa] mr-2" />
-                        Key Features
-                      </h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {solution.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center space-x-2">
-                            <CheckCircle className="h-4 w-4 text-[#0054aa] flex-shrink-0" />
-                            <span className="text-sm text-gray-700">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Use Cases */}
-                    <div className="mb-6">
-                      <h4 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
-                        <BarChart3 className="h-5 w-5 text-[#0054aa] mr-2" />
-                        Use Cases
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {solution.useCases.map((useCase, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 bg-blue-50 text-[#0054aa] text-sm rounded-full border border-blue-100"
-                          >
-                            {useCase}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <Button
-                        className={`bg-gradient-to-r ${solution.color} hover:opacity-90 text-white px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full`}
-                      >
-                        Book a Demo
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
+                  <p className="text-xl leading-[35px] text-black ">
+                    {solution.overview}
+                  </p>
+                  <p className="text-xl leading-[35px] text-black ">
+                    {solution.whyItMatters}
+                  </p>
+                  <p className="text-xl leading-[35px] text-black ">
+                    {solution.howItWorks}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Our Solutions */}
-      <section className="w-full mx-auto px-6 md:px-12 py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">
-              Why MavenCode Solutions Lead the Market
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Every solution is built with AI-first engineering, outcome-driven design, and enterprise-ready
-              architecture.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Zap,
-                title: "AI-First Engineering",
-                description: "Every component maximizes AI's autonomy and intelligence from the ground up.",
-                color: "from-[#0054aa] to-[#0054aa]",
-              },
-              {
-                icon: BarChart3,
-                title: "Outcome-Driven",
-                description: "Success measured in reduced manual work, faster cycles, and higher output.",
-                color: "from-[#0054aa] to-[#0054aa]",
-              },
-              {
-                icon: Shield,
-                title: "Enterprise-Ready",
-                description: "Secure, scalable, and adaptable to any platform with seamless integrations.",
-                color: "",
-              },
-            ].map((benefit, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
-              >
-                <div
-                  className={`w-16 h-16 bg-gradient-to-r ${benefit.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <benefit.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-[medium] mb-4 text-gray-900">{benefit.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Performance Metrics */}
-      <section className="w-full mx-auto px-6 md:px-12 py-12 lg:py-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">Proven Results Across Industries</h2>
-            <p className="text-lg text-gray-600">Our solutions deliver measurable impact from day one.</p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { metric: "80%", label: "Reduction in manual work" },
-              { metric: "50%", label: "Faster processing times" },
-              { metric: "70%", label: "Cost savings achieved" },
-              { metric: "24/7", label: "Autonomous operation" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-[medium] text-[#0054aa] mb-2">{stat.metric}</div>
-                <div className="text-gray-600 text-sm md:text-base">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="bg-gradient-to-br from-[#0054aa] to-[#0054aa] py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-        <div className="w-full mx-auto px-6 md:px-12 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-[medium] mb-6 text-white leading-tight">
-              READY TO TRANSFORM YOUR OPERATIONS?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Book a personalized demo to see how our AI solutions can solve your specific business challenges and
-              deliver measurable results.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact-us">
-                <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-10 py-6 text-lg font-normal rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  Book a Demo
-                  <ArrowRight className="ml-3 h-6 w-6" />
-                </Button>
-              </Link>
-              <Link href="/contact-us">
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-[#0054aa] px-10 py-6 text-lg font-normal rounded-xl transition-all duration-300 bg-transparent"
-                >
-                  Contact Sales
-                </Button>
-              </Link>
             </div>
+
+            {/* Features */}
+            <h4 className="text-xl font-normal mb-4 text-[#0054aa]">
+              Key Features
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 border border-gray-200 divide-x divide-y divide-gray-200 mb-10">
+              {solution.features.map((feature, i) => (
+                <div
+                  key={i}
+                  className="p-6 flex items-start gap-3 min-h-[250px]"
+                >
+                  <CheckCircle className="h-6 w-6 text-[#0054aa] mt-1" />
+                  <p className="text-black text-xl leading-[35px] leading-[30px]">
+                    {feature}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className=" flex  items-center justify-between flex-wrap gap-4">
+              <div>
+                <h4 className="text-xl font-normal mb-4 text-[#0054aa]">
+                  Use Cases
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 border border-gray-200 divide-x divide-y divide-gray-200 mb-10 max-w-2xl">
+                  {solution.useCases.map((uc, i) => (
+                    <div
+                      key={i}
+                      className="p-6 flex items-start gap-3 min-h-[150px]"
+                    >
+                      <BarChart3 className="h-6 w-6 text-[#0054aa] mt-1" />
+                      <p className="text-black text-xl leading-[35px] leading-[30px]">
+                        {uc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 className="text-xl font-normal mb-2 text-[#0054aa]">
+                  Key Advantages
+                </h4>
+                <ul className="list-disc list-inside text-xl leading-[35px] text-black mb-8">
+                  {solution.advantages.map((adv, i) => (
+                    <li key={i} className="mb-2">
+                      {adv}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                {/* Benefits */}
+                <h4 className="text-xl font-normal mb-2 text-[#0054aa]">
+                  Benefits
+                </h4>
+                <ul className="list-disc list-inside text-xl leading-[35px] text-black mb-8">
+                  {solution.benefits.map((ben, i) => (
+                    <li key={i} className="mb-2">
+                      {ben}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Advantages */}
+
+            {/* CTA */}
+            <Button className="bg-[#0054aa] text-white hover:bg-[#004080] px-6 py-6 rounded-none text-xl min-w-[200px]">
+              {solution.button} <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
     </div>
-  )
+  );
 }

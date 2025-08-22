@@ -16,14 +16,14 @@ export default function BlogPostDetail({ slug }: BlogPostDetailProps) {
   }
 
   return (
-    <article className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-950">
+    <article className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-black - 950">
       <div className="container px-4 md:px-6 max-w-4xl mx-auto">
         {/* Post Title and Metadata */}
         <div className="space-y-6 mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] tracking-tight text-gray-900 dark:text-gray-50 leading-[60px]">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium]  text-black - 900 dark:text-black - 50 leading-[70px]">
             {post.title}
           </h1>
-          <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 space-x-4">
+          <div className="flex items-center text-sm text-black - 500 dark:text-black - 400 space-x-4">
             <span>
               Category: <span className="font-medium text-[#0054aa] dark:text-[#0054aa]">{post.category}</span>
             </span>
@@ -44,7 +44,7 @@ export default function BlogPostDetail({ slug }: BlogPostDetailProps) {
 
         {/* Post Content (rendered from HTML string) */}
         <div
-          className="prose prose-lg dark:prose-invert max-w-none text-gray-800 dark:text-gray-200 leading-[50px]"
+          className="prose prose-lg dark:prose-invert max-w-none text-black - 800 dark:text-black - 200 leading-[50px]"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </div>

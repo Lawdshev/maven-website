@@ -35,8 +35,10 @@ function Footer() {
   return (
     <div>
       {/* Footer */}
-      <footer className="bg-black text-gray-300 py-12 px-6 md:px-12">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+      <footer className="bg-black text-gray-300 py-12 px-6 md:px-12 ">
+        <div className="w-[95%] mx-auto max-w-[1800px]">
+
+        <div className=" grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center w-[200px]">
             <Image src="/logo.png" alt="Logo" width={0} height={0} className="w-full"/>
@@ -178,7 +180,7 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="container mx-auto border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
+        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
           <div className="flex space-x-4">
             <Link href="#" className="hover:underline">
               Contact Mavencode
@@ -198,6 +200,7 @@ function Footer() {
               Cookie Preferences
             </Link>
           </div>
+        </div>
         </div>
       </footer>
 

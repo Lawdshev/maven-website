@@ -1,46 +1,46 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import {
-  ArrowRight,
   Brain,
   Cloud,
   Database,
   Users,
-  CheckCircle,
   Building,
   Heart,
   DollarSign,
   Zap,
+  CheckCircle,
+  ArrowRight,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className=" text-black max-w-[1800px] w-[95%] mx-auto font-normal">
       {/* Hero Section */}
-      <section className="container mx-auto px-6 md:px-12 py-12 lg:py-16">
+      <section className="w-full min-h-[500px] bg-[#0054aa] text-white px-6 md:px-12 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="text-sm text-gray-500 mb-4">
-              <Link href="/" className="text-[#0054aa] hover:underline">
+            <div className="text-sm text-blue-200 mb-4">
+              <Link href="/" className="hover:underline">
                 Home
               </Link>{" "}
               / Services
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] leading-tight mb-6 text-[#0054aa]">
-              <span className="text-[#0054aa]">Transform Your Business</span>{" "}
-              with <span className="text-[#0054aa]">AI, Cloud, and Data</span>
+            <h1 className="ttext-2xl md:text-3xl lg:text-6xl lg:leading-[70px] mb-6 font-normal">
+              Transform Your Business with{" "}
+              <span className="text-blue-200">AI, Cloud, and Data</span>
             </h1>
-            <p className="text-xl leading-[30px] text-gray-700 mb-8 max-w-2xl">
-              In today's competitive landscape, staying ahead means making
+            <p className="text-xl text-blue-100 leading-[35px]  max-w-xl">
+              In today’s competitive landscape, staying ahead means making
               smarter decisions, operating more efficiently, and unlocking new
-              opportunities. Our AI, cloud, and data solutions are designed to
-              give you the precision, speed, and scale needed to outpace
-              competitors and lead your industry.
+              opportunities.
             </p>
-            <div className="flex flex-col  sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 text-2xl">
-              <Link href={"/contact-us"}>
-                <Button className="bg-[#0054aa] hover:bg-[#003d7f] min-w-[200px] cursor-pointer text-xl  text-white px-6 py-6 rounded-md flex items-center justify-center">
+            <div className="mt-8">
+              <Link href="/contact-us">
+                <Button className="bg-white text-[#0054aa] text-xl border border-[#0054aa] hover:bg-blue-100 rounded-none px-6 py-6 min-w-[200px]">
                   Get Started <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -49,287 +49,200 @@ export default function ServicesPage() {
           <div className="flex justify-center lg:justify-end">
             <Image
               src="/ai-transformation-hero.png"
-              alt="Minimal navy and cobalt arcs on white background converging to a central point, symbolizing AI-powered business transformation"
+              alt="AI-powered business transformation"
               width={600}
               height={400}
-              className="rounded-lg"
+              // className="rounded-none border border-gray-200"
             />
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="container mx-auto px-6 md:px-12 py-16 ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16  w-full ">
-          {/* AI + DATA */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="p-3 bg-[#0054aa] -100 rounded-lg">
-                <Brain className="h-8 w-8 text-[#fff]" />
-              </div>
-              <h2 className="text-3xl font-[medium] text-gray-900">AI + DATA</h2>
-            </div>
-            <div className="mb-6">
-              <Image
-                src="/ai-data-interface.png"
-                alt="Futuristic AI interface with industry icons and flowing data streams representing machine learning and predictive analytics"
-                width={500}
-                height={300}
-                className="rounded-lg w-full"
-              />
-            </div>
-            <p className="text-xl text-gray-700 mb-6 font-normal">
-              Harness the potential of artificial intelligence to solve
-              industry-defining challenges.
-            </p>
-            <ul className="space-y-3">
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 text-lg font-medium leading-[30px]">
-                  Machine learning models tailored to retail, healthcare,
-                  finance, and energy operations
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 text-lg font-medium leading-[30px]">
-                  Predictive analytics to optimize decisions and anticipate
-                  trends
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 text-lg font-medium leading-[30px]">
-                  Natural language processing for smarter, faster interactions
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 text-lg font-medium leading-[30px]">
-                  AI governance to ensure fairness, transparency, and ethical
-                  deployment
-                </span>
-              </li>
-            </ul>
-          </div>
+      {/* Services Grid (AI + Cloud) */}
+{/* Services Grid (AI + Cloud) */}
+<section className="w-full border-b px-6 md:px-12 py-16 border-t border-gray-200">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 divide-x">
+    {/* AI + DATA */}
+    <div className="p-10 flex flex-col justify-between min-h-[450px]">
+      <Image
+        src="/ai-data-interface.png"
+        alt="AI and Data visualization"
+        width={600}
+        height={350}
+        className="rounded-none border-none  mb-6"
+      />
+      <div>
+        <div className="flex items-center space-x-3">
+          <Brain className="h-8 w-8 text-[#0054aa]" />
+          <h2 className="text-2xl font-normal text-black">AI + DATA</h2>
+        </div>
+        <p className="text-xl text-black leading-[35px] my-3">
+          Harness the potential of artificial intelligence to solve
+          industry-defining challenges.
+        </p>
+        <ul className="space-y-3 mb-8">
+          {[
+            "Machine learning models tailored to retail, healthcare, finance, and energy operations",
+            "Predictive analytics to optimize decisions and anticipate trends",
+            "Natural language processing for smarter, faster interactions",
+            "AI governance to ensure fairness, transparency, and ethical deployment",
+          ].map((item, i) => (
+            <li key={i} className="flex items-start space-x-3">
+              <CheckCircle className="h-5 w-5 text-green-600 mt-1" />
+              <span className="text-black text-xl leading-[35px]">
+                {item}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {/* AI Image */}
+      
+    </div>
 
-          {/* CLOUD ENGINEERING */}
-          <div className="space-y-6">
+    {/* CLOUD ENGINEERING */}
+    <div className="p-10 flex flex-col justify-between min-h-[450px]">
+      <div>
+        <div className="flex items-center space-x-3 mb-6">
+          <Cloud className="h-8 w-8 text-[#0054aa]" />
+          <h2 className="text-2xl font-normal  text-black -900">
+            CLOUD ENGINEERING
+          </h2>
+        </div>
+        <p className="text-xl text-black leading-[35px] my-3">
+          Scalable, secure, and future-ready cloud architecture.
+        </p>
+        <ul className="space-y-3 mb-8">
+          {[
+            "End-to-end cloud migration strategies",
+            "Backend systems built on Google Cloud, AWS, and Microsoft Azure",
+            "Cloud-native architecture for high availability and performance",
+            "Security-first design for compliance in regulated industries",
+          ].map((item, i) => (
+            <li key={i} className="flex items-start space-x-3">
+              <CheckCircle className="h-5 w-5 text-green-600 mt-1" />
+              <span className="text-black text-xl leading-[35px]">
+                {item}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {/* Cloud Image */}
+      <Image
+        src="/cloud-engineering.png"
+        alt="Cloud engineering visualization"
+        width={600}
+        height={350}
+        className="rounded-none border-none"
+      />
+    </div>
+  </div>
+</section>
+
+
+      {/* Data Infrastructure */}
+      <section className="w-full px-6 md:px-12 py-16 border-t border-gray-200">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 divide-x">
+          <div className="p-10 flex flex-col justify-between min-h-[450px]">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="p-3 bg-[#0054aa] rounded-lg">
-                <Cloud className="h-8 w-8 text-[#ffffff]" />
-              </div>
-              <h2 className="text-3xl font-[medium] text-gray-900">
-                CLOUD ENGINEERING
+              <Database className="h-8 w-8 text-[#0054aa]" />
+              <h2 className="text-2xl font-normal  text-black -900">
+                DATA INFRASTRUCTURE
               </h2>
             </div>
-            <div className="mb-6">
-              <Image
-                src="/cloud-engineering.png"
-                alt="Abstract cloud network with global connections, server infrastructure, and security icons representing scalable cloud engineering"
-                width={500}
-                height={300}
-                className="rounded-lg w-full"
-              />
-            </div>
-            <p className="text-xl text-gray-700 mb-6 font-normal">
-              Scalable, secure, and future-ready cloud architecture.
+            <p className="text-xl text-black leading-[35px] my-3">
+              Turn massive datasets into instant, actionable insight.
             </p>
             <ul className="space-y-3">
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 text-lg font-medium leading-[30px]">
-                  End-to-end cloud migration strategies
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 text-lg font-medium leading-[30px]">
-                  Backend systems built on Google Cloud, AWS, and Microsoft
-                  Azure
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 text-lg font-medium leading-[30px]">
-                  Cloud-native architecture for high availability and
-                  performance
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 text-lg font-medium leading-[30px]">
-                  Security-first design for compliance in regulated industries
-                </span>
-              </li>
+              {[
+                "High-performance pipelines for real-time data processing",
+                "Data lake and warehouse solutions for unified access",
+                "Intelligent data modeling and governance frameworks",
+                "Seamless integration with legacy systems",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 mt-1" />
+                  <span className="text-black text-xl leading-[35px]">
+                    {item}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
-        </div>
-      </section>
-
-      {/* Data Infrastructure Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="p-3 bg-[#0054aa] rounded-lg">
-                  <Database className="h-8 w-8 text-[#ffffff]" />
-                </div>
-                <h2 className="text-3xl font-[medium] text-gray-900">
-                  DATA INFRASTRUCTURE
-                </h2>
-              </div>
-              <p className="text-xl text-gray-700 mb-6 font-normal">
-                Turn massive datasets into instant, actionable insight.
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700 text-lg font-medium leading-[30px]">
-                    High-performance pipelines for real-time data processing
-                  </span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700 text-lg font-medium leading-[30px]">
-                    Data lake and warehouse solutions for unified access
-                  </span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700 text-lg font-medium leading-[30px]">
-                    Intelligent data modeling and governance frameworks
-                  </span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700 text-lg font-medium leading-[30px]">
-                    Seamless integration with legacy systems
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <Image
-                src="/data-infrastructure.png"
-                alt="High-tech visualization of real-time data pipelines and analytics dashboards representing modern data infrastructure"
-                width={600}
-                height={400}
-                className="rounded-lg"
-              />
-            </div>
+          <div className="flex items-center justify-center border-l border-gray-200">
+            <Image
+              src="/data-infrastructure.png"
+              alt="Modern data infrastructure visualization"
+              width={600}
+              height={400}
+              className="rounded-none border-none"
+            />
           </div>
         </div>
       </section>
 
       {/* Industry Solutions */}
-      <section className="container mx-auto px-6 md:px-12 py-16">
-        <h2 className="text-4xl font-[medium] text-center mb-12">
-          <span className="text-[#0054aa]">Industry</span>{" "}
-          <span className="text-[#0054aa]">Solutions</span>
+      <section className="w-full px-6 md:px-12 py-16 border-t border-gray-200">
+        <h2 className="text-3xl font-normal text-[#0054aa] mb-12 text-center">
+          Industry Solutions
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-            <div className="p-3 bg-[#0054aa] -100 rounded-lg w-fit mb-4">
-              <Building className="h-8 w-8 text-[#ffffff]" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-gray-200 divide-x divide-y">
+          {[
+            { title: "Retail", icon: Building, text: "Demand forecasting, dynamic pricing, personalized customer experiences" },
+            { title: "Healthcare", icon: Heart, text: "Data-driven patient care, operational optimization, regulatory compliance" },
+            { title: "Finance", icon: DollarSign, text: "Fraud detection, risk modeling, real-time trading analytics" },
+            { title: "Oil & Gas", icon: Zap, text: "Predictive maintenance, field data analytics, energy optimization" },
+          ].map((s, i) => (
+            <div key={i} className="p-8 min-h-[250px]">
+              <s.icon className="h-7 w-7 text-[#0054aa] mb-4" />
+              <h3 className="text-2xl font-normal mb-2">{s.title}</h3>
+              <p className=" text-black -600 text-xl leading-[35px]">{s.text}</p>
             </div>
-            <h3 className="text-xl font-normal mb-3">Retail</h3>
-            <p className="text-gray-600 text-sm">
-              Demand forecasting, dynamic pricing, personalized customer
-              experiences
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-            <div className="p-3 bg-[#0054aa] rounded-lg w-fit mb-4">
-              <Heart className="h-8 w-8 text-[#ffffff]" />
-            </div>
-            <h3 className="text-xl font-normal mb-3">Healthcare</h3>
-            <p className="text-gray-600 text-sm">
-              Data-driven patient care, operational optimization, regulatory
-              compliance
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-            <div className="p-3 bg-[#0054aa] rounded-lg w-fit mb-4">
-              <DollarSign className="h-8 w-8 text-[#ffffff]" />
-            </div>
-            <h3 className="text-xl font-normal mb-3">Finance</h3>
-            <p className="text-gray-600 text-sm">
-              Fraud detection, risk modeling, real-time trading analytics
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-            <div className="p-3 bg-[#0054aa] rounded-lg w-fit mb-4">
-              <Zap className="h-8 w-8 text-[#ffffff]" />
-            </div>
-            <h3 className="text-xl font-normal mb-3">Oil & Gas</h3>
-            <p className="text-gray-600 text-sm">
-              Predictive maintenance, field data analytics, energy optimization
-            </p>
-          </div>
+          ))}
         </div>
       </section>
 
       {/* Partnership Delivery */}
-      <section className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <div className="p-4 bg-[#0054aa] -600 rounded-lg">
-                <Users className="h-12 w-12 text-white" />
+      <section className="w-full px-6 md:px-12 py-16 border-t border-gray-200 bg-gray-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <Users className="h-12 w-12 text-[#0054aa] mx-auto mb-6" />
+          <h2 className="text-3xl font-normal mb-6">Partnership Delivery</h2>
+          <p className="text-2xl mb-12  text-black -700 leading-[40px]">
+            We don’t just build systems, we build them with you.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 border border-gray-200 divide-x">
+            {[
+              "Co-creation with client teams from concept to deployment",
+              "Technology-agnostic approach to choose the right tools",
+              "Managed services for monitoring, updates, and performance tuning",
+            ].map((item, i) => (
+              <div key={i} className="p-8 flex items-start space-x-3 min-h-[250px]">
+                <CheckCircle className="h-12 w-12 text-green-600 mt-1" />
+                <p className="text-black text-xl leading-[35px]">{item}</p>
               </div>
-            </div>
-            <h2 className="text-4xl font-[medium] mb-6">PARTNERSHIP DELIVERY</h2>
-            <p className="text-xl mb-8">
-              We do not just build systems, we build them with you.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-              <div className="space-y-3">
-                <CheckCircle className="h-6 w-6 text-green-400" />
-                <p className="text-gray-300">
-                  Co-creation with client teams from concept to deployment
-                </p>
-              </div>
-              <div className="space-y-3">
-                <CheckCircle className="h-6 w-6 text-green-400" />
-                <p className="text-gray-300">
-                  Technology-agnostic approach to choose the right tools for
-                  each challenge
-                </p>
-              </div>
-              <div className="space-y-3">
-                <CheckCircle className="h-6 w-6 text-green-400" />
-                <p className="text-gray-300">
-                  Managed services for monitoring, updates, and performance
-                  tuning
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="container mx-auto px-6 md:px-12 py-16 text-center">
-        <h2 className="text-xl md:text-3xl font-[medium] mb-6">
-          <span className="text-[#0054aa]">LET'S BUILD SOMETHING</span>{" "}
-          <span className="text-[#0054aa]">INTELLIGENT TOGETHER</span>
-        </h2>
-        <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-          Ready to explore how AI, cloud, and data can transform your business?
-          Book a discovery call with MavenCode today and start your journey
-          toward autonomous, high-performance systems that give you a lasting
-          competitive edge.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-           <Link href="/contact-us">
-              <Button className="bg-[#0054aa] hover:bg-[#003d7f] text-white px-6 py-6">
-               Book Discovery Call
-              </Button>
-            </Link>
+      <div className="my-12 bg-gray-50 border border-gray-200 p-8 rounded-none flex flex-col md:flex-row text-lg items-center justify-between">
+        <div className="flex-1 mb-4 md:mb-0">
+          <h4 className=" text-black -900 font-normal text-2xl mb-2">
+            Let’s Build Something Intelligent Together
+          </h4>
+          <p className=" text-black -700 text-xl max-w-4xl leading-[35px]">
+            Ready to explore how AI, cloud, and data can transform your
+            business? Book a discovery call with MavenCode today.
+          </p>
         </div>
-      </section>
+        <Link href="/contact-us">
+          <Button className="bg-[#0054aa] hover:bg-[#003d7f] text-white text-xl rounded-none w-fit px-6 py-6 md:min-w-[200px]">
+            Book Discovery Call
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }

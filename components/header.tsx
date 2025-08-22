@@ -89,8 +89,10 @@ export default function Header({ children }: { children: React.ReactNode }) {
     <>
       <header
         ref={headerRef}
-        className="border-b border-gray-200 py-4 px-6 md:px-12 flex items-center justify-between relative z-50"
+        className="border-b border-gray-200 py-4 px-6 md:px-12 "
       >
+        <div className="flex items-center justify-between relative z-50 max-w-[1800px] w-[95%] mx-auto">
+
         <div className="flex items-center space-x-8">
           <Link href="/" className="flex items-center w-[200px]">
             <Image
@@ -202,7 +204,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
                 onClick={toggleSearchInput}
                 className="ml-2"
               >
-                <X className="h-5 w-5 text-gray-600" />
+                <X className="h-5 w-5 text-[black] -600" />
                 <span className="sr-only">Cancel search</span>
               </Button>
             </div>
@@ -214,15 +216,12 @@ export default function Header({ children }: { children: React.ReactNode }) {
                 className="hidden md:inline-flex"
                 onClick={toggleSearchInput}
               >
-                <Search className="h-5 w-5 text-gray-600" />
+                <Search className="h-5 w-5 text-[black] -600" />
                 <span className="sr-only">Search</span>
               </Button>
-              <Link href="/contact-us" passHref>
-                <Button
-                  variant={"outline"}
-                  className="hidden md:inline-flex bg-[#0054aa] text-white font-normal"
-                >
-                  <span>Contact Us</span>
+              <Link href={"/contact-us"}>
+                <Button className="font-normal md:min-w-[200px] w-fit rounded-none bg-[#0054aa] hover:bg-[#003d7f] cursor-pointer text-xl  text-white px-6 py-6 flex items-center justify-center">
+                  Contact us
                 </Button>
               </Link>
               <Button
@@ -230,7 +229,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
                 size="icon"
                 className="hidden md:inline-flex"
               >
-                <Globe className="h-5 w-5 text-gray-600" />
+                <Globe className="h-5 w-5 text-[black] -600" />
                 <span className="sr-only">Language</span>
               </Button>
               <Button
@@ -238,7 +237,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
                 size="icon"
                 className="hidden md:inline-flex"
               >
-                <User className="h-5 w-5 text-gray-600" />
+                <User className="h-5 w-5 text-[black] -600" />
                 <span className="sr-only">Account</span>
               </Button>
             </>
@@ -255,7 +254,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
               <nav className="flex flex-col gap-4 py-6 pl-4">
                 {showSearchInput ? (
                   <div className="flex items-center w-full mb-4">
-                    <Search className="h-5 w-5 text-gray-600 mr-2" />
+                    <Search className="h-5 w-5 text-[black] -600 mr-2" />
                     <input
                       type="text"
                       placeholder="Search mavencode.com"
@@ -267,7 +266,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
                       onClick={toggleSearchInput}
                       className="ml-2"
                     >
-                      <X className="h-5 w-5 text-gray-600" />
+                      <X className="h-5 w-5 text-[black] -600" />
                       <span className="sr-only">Cancel search</span>
                     </Button>
                   </div>
@@ -359,19 +358,19 @@ export default function Header({ children }: { children: React.ReactNode }) {
                 <div className="border-t border-gray-200 pt-4 mt-4 flex flex-col gap-2">
                   <Link
                     href="#"
-                    className="text-sm text-gray-600 hover:text-[#0054aa] font-normal"
+                    className="text-sm text-[black] -600 hover:text-[#0054aa] font-normal"
                   >
                     Chat
                   </Link>
                   <Link
                     href="#"
-                    className="text-sm text-gray-600 hover:text-[#0054aa] font-normal"
+                    className="text-sm text-[black] -600 hover:text-[#0054aa] font-normal"
                   >
                     Language
                   </Link>
                   <Link
                     href="#"
-                    className="text-sm text-gray-600 hover:text-[#0054aa] font-normal"
+                    className="text-sm text-[black] -600 hover:text-[#0054aa] font-normal"
                   >
                     Account
                   </Link>
@@ -379,6 +378,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
               </nav>
             </SheetContent>
           </Sheet>
+        </div>
         </div>
       </header>
       {children}

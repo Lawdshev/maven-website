@@ -1,9 +1,8 @@
-"use client"
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
 import {
-  ArrowRight,
   Target,
   Shield,
   Lightbulb,
@@ -11,11 +10,9 @@ import {
   Zap,
   RefreshCw,
   Layers,
-  CheckCircle,
-  Heart,
-  Award,
-  Rocket,
-} from "lucide-react"
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function AboutPage() {
   const commitments = [
@@ -23,98 +20,89 @@ export default function AboutPage() {
       title: "Impact that lasts",
       description: "Solutions that adapt and scale with your needs",
       icon: Target,
-      color: "#0054aa",
     },
     {
       title: "Integrity in execution",
       description: "Clear, transparent processes from start to finish",
       icon: Shield,
-      color: "#0054aa",
     },
     {
       title: "Innovation with purpose",
       description: "AI that solves real problems, not just creates hype",
       icon: Lightbulb,
-      color: "#0054aa",
     },
-  ]
+  ];
 
   const workingMethods = [
     {
       title: "Co-creation",
-      description: "Working alongside your teams to align technology with business goals",
+      description:
+        "Working alongside your teams to align technology with business goals",
       icon: Users,
-      gradient: "#0054aa",
     },
     {
       title: "Agility",
       description: "Rapid prototyping, testing, and scaling for faster results",
       icon: Zap,
-      gradient: "#0054aa",
     },
     {
       title: "Integration",
-      description: "Solutions designed to fit seamlessly into your existing systems",
+      description: "Solutions designed to fit seamlessly into your systems",
       icon: Layers,
-      gradient: "#0054aa",
     },
     {
       title: "Continuous improvement",
       description: "AI that learns, adapts, and grows with your business",
       icon: RefreshCw,
-      gradient: "#0054aa",
     },
-  ]
+  ];
 
   return (
-    <div className="text-gray-900">
+    <div className=" text-black max-w-[1800px] w-[95%] mx-auto font-normal">
       {/* Hero Section */}
-      <main className="w-full min-h-[700px] bg-[#0054aa] bg-center mx-auto px-6 md:px-12 py-8 lg:py-16 grid grid-cols-1 lg:grid-cols-1 gap-8">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+      <main className="w-full min-h-[500px] bg-[#0054aa] text-white px-6 md:px-12 py-16 ">
+        <div className="max-w-[750px]">
           <div className="text-sm text-blue-200 mb-4">
-            <Link href="/" className="text-blue-200 hover:text-white font-normal">
+            <Link href="/" className="hover:underline">
               Home
             </Link>{" "}
             / About Us
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] leading-tight mb-8 text-white">
+          <h1 className="text-2xl md:text-3xl lg:text-6xl  lg:leading-[70px] mb-6 font-normal">
             We help organizations transform
             <br />
-            <span className="text-blue-200">ambition into AI-powered results</span>
+            <span className="text-blue-200">
+              ambition into AI-powered results
+            </span>
           </h1>
-          <p className="text-xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed">
-            At MavenCode, technology is more than systems and software—it's a force for meaningful change. We blend
-            strategic insight, engineering excellence, and a deep understanding of AI to help clients innovate, scale,
-            and lead with confidence.
+          <p className="text-xl text-black mb-8 max-w-2xl leading-[35px] text-white">
+            At MavenCode, technology is more than systems and software—it’s a
+            force for meaningful change. We blend strategy, engineering, and AI
+            to help clients innovate, scale, and lead with confidence.
           </p>
         </div>
       </main>
 
       {/* Our Commitment */}
-      <section className="w-full mx-auto px-6 md:px-8 py-12 lg:py-16 ">
-        <div className="max-w-[1300px] mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">Our Commitment</h2>
-            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              We measure success by the outcomes we create. Every solution we design is built to deliver measurable
-              value, improve operational resilience, and open new opportunities for growth. We commit to:
+      <section className="w-full mx-auto px-6 md:px-12 py-16 border-t border-gray-200">
+        <div className=" flex flex-col gap-3 justify-between">
+          <div className="max-w-[650px]">
+            <h2 className="text-4xl mb-6 text-[#0054aa] font-normal">
+              Our Commitment
+            </h2>
+            <p className="text-xl leading-[35px]  text-black -700 ">
+              We measure success by outcomes. Every solution we design is built
+              to deliver measurable value, resilience, and new opportunities.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {commitments.map((commitment, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2"
-              >
-                <div
-                  className={`w-16 h-16  bg-[${commitment.color}] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <commitment.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-[medium] mb-4 text-gray-900">{commitment.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{commitment.description}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 border border-gray-200 divide-x divide-gray-200 min-h-[300px] max-w-[1200px] mt-[20px]">
+            {commitments.map((c, i) => (
+              <div key={i} className="p-8">
+                <c.icon className="h-8 w-8 text-[#0054aa] mb-4" />
+                <h3 className="text-xl mb-2 font-normal">{c.title}</h3>
+                <p className=" text-black -600 text-lg leading-[30px]">
+                  {c.description}
+                </p>
               </div>
             ))}
           </div>
@@ -122,30 +110,29 @@ export default function AboutPage() {
       </section>
 
       {/* How We Work */}
-      <section className="w-full mx-auto px-6 md:px-8 py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-[1300px] mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">How We Work</h2>
-            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+      <section className="w-full mx-auto px-6 md:px-12 py-16 border-t border-gray-200">
+        <div className=" flex gap-3 justify-between">
+          <div>
+            <h2 className="text-4xl mb-6 text-[#0054aa] font-normal">
+              How We Work
+            </h2>
+            <p className="text-xl  text-black -700 mb-12 max-w-3xl leading-[35px]">
               We work as partners, not just providers. Our approach combines:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {workingMethods.map((method, index) => (
-              <div key={index} className="group">
-                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-start space-x-6">
-                    <div
-                      className={`w-14 h-14  bg-[${method.gradient}] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <method.icon className="h-7 w-7 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-[medium] mb-3 text-gray-900">{method.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{method.description}</p>
-                    </div>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 border border-gray-200 divide-x divide-y divide-gray-200">
+            {workingMethods.map((m, i) => (
+              <div
+                key={i}
+                className="p-8 flex items-start space-x-4 min-h-[300px]"
+              >
+                <m.icon className="h-7 w-7 text-[#0054aa] flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl mb-1 font-normal">{m.title}</h3>
+                  <p className=" text-black -600 text-lg leading-[30px]">
+                    {m.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -154,141 +141,46 @@ export default function AboutPage() {
       </section>
 
       {/* Who We Are */}
-      <section className="w-full mx-auto px-6 md:px-8 py-12 lg:py-16">
-        <div className="max-w-[1300px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-[medium] mb-6 text-[#0054aa]">Who We Are</h2>
-                <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                  MavenCode is a team of engineers, strategists, and innovators with one mission — to help organizations
-                  operate at their highest potential through AI and automation.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  We bring together expertise in hybrid cloud, data engineering, and intelligent systems to solve
-                  challenges across industries. Our strength lies in blending deep technical knowledge with
-                  business-first thinking, ensuring every project delivers both innovation and impact.
-                </p>
-              </div>
-
-              {/* Key Strengths */}
-              <div className="bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl p-6 border border-blue-100">
-                <h3 className="text-lg font-normal mb-4 text-gray-900 flex items-center">
-                  <Award className="h-5 w-5 text-[#0054aa] mr-2" />
-                  Our Core Strengths
-                </h3>
-                <div className="space-y-3">
-                  {[
-                    "Deep technical expertise in AI and automation",
-                    "Business-first approach to technology solutions",
-                    "Cross-industry experience and domain knowledge",
-                    "Proven track record of measurable results",
-                  ].map((strength, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="h-4 w-4 text-[#0054aa] flex-shrink-0" />
-                      <span className="text-gray-700">{strength}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0054aa] to-blue-700 rounded-3xl transform rotate-3 opacity-10"></div>
-              <Image
-                src="/mavencode-team.png"
-                alt="MavenCode team of engineers, strategists, and AI innovators collaborating on solutions"
-                width={600}
-                height={400}
-                className="rounded-3xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-300"
-              />
-
-              {/* Stats Overlay */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border border-gray-100 z-20">
-                <div className="flex items-center space-x-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-[medium] text-[#0054aa]">50+</div>
-                    <div className="text-sm text-gray-600">Projects Delivered</div>
-                  </div>
-                  <div className="w-px h-12 bg-gray-200"></div>
-                  <div className="text-center">
-                    <div className="text-2xl font-[medium] text-[#0054aa]">10+</div>
-                    <div className="text-sm text-gray-600">Industries Served</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section className="w-full mx-auto px-6 md:px-12 py-16 border-t border-gray-200">
+        <div className=" mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl mb-6 text-[#0054aa] font-normal">
+              Who We Are
+            </h2>
           </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="w-full mx-auto px-6 md:px-8 py-12 lg:py-16 bg-gradient-to-br from-slate-50 to-gray-50">
-        <div className="max-w-[1300px] mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-[medium] mb-12 text-[#0054aa]">What Drives Us</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Heart,
-                title: "Purpose-Driven Innovation",
-                description: "Every solution we build serves a meaningful business purpose and creates lasting value.",
-              },
-              {
-                icon: Users,
-                title: "Partnership Mindset",
-                description: "We succeed when our clients succeed. Your goals become our mission.",
-              },
-              {
-                icon: Rocket,
-                title: "Continuous Evolution",
-                description: "We stay ahead of technology trends to deliver tomorrow's solutions today.",
-              },
-            ].map((value, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="w-16 h-16 bg-gradient-to-r from-[#0054aa] to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-[medium] mb-4 text-gray-900">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="bg-[#0054aa] py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-        <div className="w-full mx-auto px-6 md:px-12 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-[medium] mb-6 text-white leading-tight">Let's Shape Your AI Future</h2>
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Talk to our experts and discover how MavenCode can help you design, build, and scale AI solutions that
-              transform your business.
+          <div>
+            <p className="text-xl  text-black -700 leading-[35px] mb-6">
+              We are engineers, strategists, and problem solvers. Our mission is
+              to create AI systems that bring real impact—not just buzzwords.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact-us">
-                <Button className="bg-white text-[#0054aa] hover:bg-gray-100 px-10 py-6 text-lg font-normal rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  Book a Demo
-                  <ArrowRight className="ml-3 h-6 w-6" />
-                </Button>
-              </Link>
-              <Link href="/contact-us">
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white font-normal hover:text-[#0054aa] px-10 py-6 text-lg font-normal rounded-xl transition-all duration-300 bg-transparent"
-                >
-                  Contact Us
-                </Button>
-              </Link>
-            </div>
+            <p className="text-xl  text-black -700 leading-[35px]">
+              With a commitment to transparency, scalability, and human
+              collaboration, we make AI practical, reliable, and built for the
+              future.
+            </p>
           </div>
         </div>
       </section>
+
+      <div className="my-12 bg-gray-50 border border-gray-200  p-8 rounded-none flex flex-col md:flex-row text-lg items-center justify-between">
+        <div className="flex-1 mb-4 md:mb-0">
+          <h4 className="font-semibold text-3xl mb-2 text-black -900">
+            Let's Shape Your AI Future
+          </h4>
+          <p className="text-xl  text-black -700 leading-[35px] max-w-3xl">
+            Talk to our experts and discover how MavenCode can help you design,
+            build, and scale AI solutions that transform your business.
+          </p>
+        </div>
+        <Link href="/contact-us">
+          <Button
+            variant="outline"
+            className="bg-[#0054aa] hover:bg-[#003d7f] text-white text-xl rounded-none w-fit px-6 py-6 md:min-w-[200px]"
+          >
+            Contact Us
+          </Button>
+        </Link>
+      </div>
     </div>
-  )
+  );
 }
