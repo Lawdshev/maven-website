@@ -8,6 +8,6 @@ Make sure you have **Node.js (>=18)** and **npm** installed.
 
 ```bash
 # Install dependencies
-npm install
+npm install --legacy-peer-deps
 # Start the dev server
 npm run dev
