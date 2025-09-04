@@ -1,8 +1,6 @@
 "use client";
 
-import type React from "react";
-
-// Add imports for the new mega menu data and component
+import React from "react";
 import {
   aiMegaMenu,
   hybridCloudMegaMenu,
@@ -33,7 +31,6 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-// Update the Header component function signature to include a ref for click outside detection
 export default function Header({ children }: { children: React.ReactNode }) {
   const [showSearchInput, setShowSearchInput] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null); // State to track which mega menu is open
@@ -56,329 +53,264 @@ export default function Header({ children }: { children: React.ReactNode }) {
     setOpenMenu(null);
   };
 
-  // useEffect(() => {
-  //   const handleClickOutside = (event: MouseEvent) => {
-  //     const target = event.target as HTMLElement;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (openMenu) {
+        setOpenMenu(null);
+      }
+    };
 
-  //     // Close if not clicking a toggle and not inside an open mega menu
-  //     if (
-  //       !target.closest("[data-mega-toggle]") && // not a toggle
-  //       !target.closest(".mega-menu") // not inside mega menu itself
-  //     ) {
-  //       setOpenMenu(null);
-  //     }
-  //   };
-
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, []);
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (openMenu) setOpenMenu(null);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [openMenu]);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [openMenu]);
 
   return (
     <>
       <header
         ref={headerRef}
-        className="border-b border-gray-200 py-4 px-6 md:px-12 "
+        className="border-b border-gray-200 py-4 px-6 md:px-12 lg:py-8 "
       >
         <div className="flex items-center justify-between relative z-50 max-w-[1800px] w-[95%] mx-auto">
-
-        <div className="flex items-center space-x-8">
-          <Link href="/" className="flex items-center w-[200px]">
-            <Image
-              src="/logo-blue.png"
-              alt="Logo"
-              width={0}
-              height={0}
-              className="w-full"
-            />
-          </Link>
-          <nav className="hidden lg:flex space-x-6 text-sm font-medium">
-            <div className="relative">
-              <Link
-                href="/about-us"
-                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer font-normal"
-              >
-                About us{" "}
-              </Link>
-            </div>
-            {/* AI Mega Menu */}
-            <div className="relative">
-              <Link
-                href="#"
-                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer font-normal"
-                onClick={() => handleMenuToggle("ai")}
-              >
-                Services{" "}
-                {openMenu === "ai" ? (
-                  <ChevronUp className="ml-1 h-4 w-4" />
-                ) : (
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                )}
-              </Link>
-              {openMenu === "ai" && (
-                <MegaMenu columns={aiMegaMenu} onLinkClick={closeMegaMenu} />
-              )}
-            </div>
-
-            {/* Hybrid Cloud Mega Menu */}
-            <div className="relative">
-              <Link
-                href="#"
-                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer font-normal"
-                onClick={() => handleMenuToggle("hybrid-cloud")}
-              >
-                Industries{" "}
-                {openMenu === "hybrid-cloud" ? (
-                  <ChevronUp className="ml-1 h-4 w-4" />
-                ) : (
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                )}
-              </Link>
-              {openMenu === "hybrid-cloud" && (
-                <MegaMenu
-                  columns={hybridCloudMegaMenu}
-                  onLinkClick={closeMegaMenu}
-                />
-              )}
-            </div>
-
-            {/* Products Mega Menu */}
-            <div className="relative">
-              <Link
-                href="/solutions"
-                className="flex items-center hover:text-[#0054aa] text-lg cursor-pointer font-normal"
-                // onClick={() => handleMenuToggle("products")}
-              >
-                Solutions{" "}
-                {openMenu === "products" ? (
-                  <ChevronUp className="ml-1 h-4 w-4" />
-                ) : (
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                )}
-              </Link>
-              {openMenu === "products" && (
-                <MegaMenu
-                  columns={productsMegaMenu}
-                  onLinkClick={closeMegaMenu}
-                />
-              )}
-            </div>
-
+          <div className="flex items-center space-x-8">
             <Link
-              href="/consulting"
-              className="font-normal flex items-center hover:text-[#0054aa] text-lg"
+              href="/"
+              className="flex items-center w-[200px]"
+              onClick={() => setOpenMenu(null)}
             >
-              Consulting
-            </Link>
-
-            <Link
-              href="/blog"
-              className="font-normal flex items-center hover:text-[#0054aa] text-lg"
-            >
-              Blog
-            </Link>
-          </nav>
-        </div>
-        <div className="flex items-center space-x-4 flex-grow justify-end">
-          {showSearchInput ? (
-            <div className="flex items-center w-full max-w-[200px] lg:max-w-[700px]">
-              <input
-                type="text"
-                placeholder="Search mavencode.com"
-                className="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0054aa] -500 focus:border-[#0054aa] -500"
+              <Image
+                src="/logo-blue.png"
+                alt="Logo"
+                width={0}
+                height={0}
+                className="w-full"
               />
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleSearchInput}
-                className="ml-2"
+            </Link>
+            <nav className="hidden lg:flex space-x-6  2xl:space-x-12 font-medium">
+              <div className="relative">
+                <Link
+                  href="/about-us"
+                  className="flex items-center hover:text-[#0054aa]  text-base xl:text-lg cursor-pointer font-normal"
+                  onClick={() => setOpenMenu(null)}
+                >
+                  About us{" "}
+                </Link>
+              </div>
+              <div className="relative">
+                <Link
+                  href="#"
+                  className="flex items-center hover:text-[#0054aa]  text-base xl:text-lg cursor-pointer font-normal"
+                  onClick={() => handleMenuToggle("ai")}
+                >
+                  Services{" "}
+                  {openMenu === "ai" ? (
+                    <ChevronUp className="ml-1 h-4 w-4" />
+                  ) : (
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  )}
+                </Link>
+                {openMenu === "ai" && (
+                  <MegaMenu columns={aiMegaMenu} onLinkClick={closeMegaMenu} />
+                )}
+              </div>
+              <div className="relative">
+                <Link
+                  href="#"
+                  className="flex items-center hover:text-[#0054aa]  text-base xl:text-lg cursor-pointer font-normal"
+                  onClick={() => handleMenuToggle("hybrid-cloud")}
+                >
+                  Industries{" "}
+                  {openMenu === "hybrid-cloud" ? (
+                    <ChevronUp className="ml-1 h-4 w-4" />
+                  ) : (
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  )}
+                </Link>
+                {openMenu === "hybrid-cloud" && (
+                  <MegaMenu
+                    columns={hybridCloudMegaMenu}
+                    onLinkClick={closeMegaMenu}
+                  />
+                )}
+              </div>
+
+              {/* Products Mega Menu */}
+              <div className="relative">
+                <Link
+                  href="/solutions"
+                  className="flex items-center hover:text-[#0054aa]  text-base xl:text-lg cursor-pointer font-normal"
+                  onClick={() => setOpenMenu(null)}
+                >
+                  Solutions{" "}
+                </Link>
+              </div>
+
+              <Link
+                href="/consulting"
+                className="font-normal flex items-center hover:text-[#0054aa]  text-base xl:text-lg"
+                onClick={() => setOpenMenu(null)}
               >
-                <X className="h-5 w-5 text-[black] -600" />
-                <span className="sr-only">Cancel search</span>
-              </Button>
-            </div>
-          ) : (
+                Consulting
+              </Link>
+
+              <Link
+                href="/blog"
+                className="font-normal flex items-center hover:text-[#0054aa]  text-base xl:text-lg"
+                onClick={() => setOpenMenu(null)}
+              >
+                Blog
+              </Link>
+            </nav>
+          </div>
+          <div className="flex items-center space-x-4 flex-grow justify-end">
             <>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="hidden md:inline-flex"
-                onClick={toggleSearchInput}
-              >
-                <Search className="h-5 w-5 text-[black] -600" />
-                <span className="sr-only">Search</span>
-              </Button>
               <Link href={"/contact-us"}>
                 <Button className="font-normal md:min-w-[200px] w-fit rounded-none bg-[#0054aa] hover:bg-[#003d7f] cursor-pointer text-xl  text-white px-6 py-6 flex items-center justify-center">
                   Contact us
                 </Button>
               </Link>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="hidden md:inline-flex"
-              >
-                <Globe className="h-5 w-5 text-[black] -600" />
-                <span className="sr-only">Language</span>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="hidden md:inline-flex"
-              >
-                <User className="h-5 w-5 text-[black] -600" />
-                <span className="sr-only">Account</span>
-              </Button>
             </>
-          )}
-          {/* Mobile menu icon */}
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle mobile menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[250px] sm:w-[300px] pr-4">
-              <nav className="flex flex-col gap-4 py-6 pl-4">
-                {showSearchInput ? (
-                  <div className="flex items-center w-full mb-4">
-                    <Search className="h-5 w-5 text-[black] -600 mr-2" />
-                    <input
-                      type="text"
-                      placeholder="Search mavencode.com"
-                      className="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0054aa] -500 focus:border-[#0054aa] -500"
-                    />
-                    <Button
-                      variant="ghost"
-                      size="icon"
+            {/* Mobile menu icon */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="lg:hidden">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Toggle mobile menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="w-[250px] sm:w-[300px] pr-4"
+              >
+                <nav className="flex flex-col gap-4 py-6 pl-4">
+                  {showSearchInput ? (
+                    <div className="flex items-center w-full mb-4">
+                      <Search className="h-5 w-5 text-[black] -600 mr-2" />
+                      <input
+                        type="text"
+                        placeholder="Search mavencode.com"
+                        className="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0054aa] -500 focus:border-[#0054aa] -500"
+                      />
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={toggleSearchInput}
+                        className="ml-2"
+                      >
+                        <X className="h-5 w-5 text-[black] -600" />
+                        <span className="sr-only">Cancel search</span>
+                      </Button>
+                    </div>
+                  ) : (
+                    <Link
+                      href="#"
+                      className=" text-base xl:text-lg font-medium hover:text-[#0054aa] font-normal"
                       onClick={toggleSearchInput}
-                      className="ml-2"
                     >
-                      <X className="h-5 w-5 text-[black] -600" />
-                      <span className="sr-only">Cancel search</span>
-                    </Button>
+                      Search
+                    </Link>
+                  )}
+                  {/* Mobile Dropdown Menus (keeping simple for mobile) */}
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Link
+                        href="#"
+                        className="flex items-center  text-base xl:text-lg font-medium hover:text-[#0054aa] font-normal cursor-pointer"
+                      >
+                        AI <ChevronDown className="ml-1 h-4 w-4" />
+                      </Link>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-[200px]">
+                      {aiMegaMenu
+                        .flatMap((col) => col.links)
+                        .map((item, index) => (
+                          <DropdownMenuItem key={index}>
+                            <Link href={item.href} className="w-full block">
+                              {item.label}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Link
+                        href="#"
+                        className="flex items-center  text-base xl:text-lg font-medium hover:text-[#0054aa] font-normal cursor-pointer"
+                      >
+                        Hybrid Cloud <ChevronDown className="ml-1 h-4 w-4" />
+                      </Link>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-[200px]">
+                      {hybridCloudMegaMenu
+                        .flatMap((col) => col.links)
+                        .map((item, index) => (
+                          <DropdownMenuItem key={index}>
+                            <Link href={item.href} className="w-full block">
+                              {item.label}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Link
+                        href="#"
+                        className="flex items-center  text-base xl:text-lg font-medium hover:text-[#0054aa] font-normal cursor-pointer"
+                      >
+                        Products <ChevronDown className="ml-1 h-4 w-4" />
+                      </Link>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-[200px]">
+                      {productsMegaMenu
+                        .flatMap((col) => col.links)
+                        .map((item, index) => (
+                          <DropdownMenuItem key={index}>
+                            <Link href={item.href} className="w-full block">
+                              {item.label}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                  <Link
+                    href="#"
+                    className=" text-base xl:text-lg font-medium hover:text-[#0054aa] font-normal"
+                  >
+                    Consulting
+                  </Link>
+                  <Link
+                    href="/blog"
+                    className=" text-base xl:text-lg font-medium hover:text-[#0054aa] font-normal"
+                  >
+                    Think
+                  </Link>
+                  <div className="border-t border-gray-200 pt-4 mt-4 flex flex-col gap-2">
+                    <Link
+                      href="#"
+                      className="text-sm text-[black] -600 hover:text-[#0054aa] font-normal"
+                    >
+                      Chat
+                    </Link>
+                    <Link
+                      href="#"
+                      className="text-sm text-[black] -600 hover:text-[#0054aa] font-normal"
+                    >
+                      Language
+                    </Link>
+                    <Link
+                      href="#"
+                      className="text-sm text-[black] -600 hover:text-[#0054aa] font-normal"
+                    >
+                      Account
+                    </Link>
                   </div>
-                ) : (
-                  <Link
-                    href="#"
-                    className="text-lg font-medium hover:text-[#0054aa] font-normal"
-                    onClick={toggleSearchInput}
-                  >
-                    Search
-                  </Link>
-                )}
-                {/* Mobile Dropdown Menus (keeping simple for mobile) */}
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Link
-                      href="#"
-                      className="flex items-center text-lg font-medium hover:text-[#0054aa] font-normal cursor-pointer"
-                    >
-                      AI <ChevronDown className="ml-1 h-4 w-4" />
-                    </Link>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-[200px]">
-                    {aiMegaMenu
-                      .flatMap((col) => col.links)
-                      .map((item, index) => (
-                        <DropdownMenuItem key={index}>
-                          <Link href={item.href} className="w-full block">
-                            {item.label}
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Link
-                      href="#"
-                      className="flex items-center text-lg font-medium hover:text-[#0054aa] font-normal cursor-pointer"
-                    >
-                      Hybrid Cloud <ChevronDown className="ml-1 h-4 w-4" />
-                    </Link>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-[200px]">
-                    {hybridCloudMegaMenu
-                      .flatMap((col) => col.links)
-                      .map((item, index) => (
-                        <DropdownMenuItem key={index}>
-                          <Link href={item.href} className="w-full block">
-                            {item.label}
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Link
-                      href="#"
-                      className="flex items-center text-lg font-medium hover:text-[#0054aa] font-normal cursor-pointer"
-                    >
-                      Products <ChevronDown className="ml-1 h-4 w-4" />
-                    </Link>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-[200px]">
-                    {productsMegaMenu
-                      .flatMap((col) => col.links)
-                      .map((item, index) => (
-                        <DropdownMenuItem key={index}>
-                          <Link href={item.href} className="w-full block">
-                            {item.label}
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <Link
-                  href="#"
-                  className="text-lg font-medium hover:text-[#0054aa] font-normal"
-                >
-                  Consulting
-                </Link>
-                <Link
-                  href="/blog"
-                  className="text-lg font-medium hover:text-[#0054aa] font-normal"
-                >
-                  Think
-                </Link>
-                <div className="border-t border-gray-200 pt-4 mt-4 flex flex-col gap-2">
-                  <Link
-                    href="#"
-                    className="text-sm text-[black] -600 hover:text-[#0054aa] font-normal"
-                  >
-                    Chat
-                  </Link>
-                  <Link
-                    href="#"
-                    className="text-sm text-[black] -600 hover:text-[#0054aa] font-normal"
-                  >
-                    Language
-                  </Link>
-                  <Link
-                    href="#"
-                    className="text-sm text-[black] -600 hover:text-[#0054aa] font-normal"
-                  >
-                    Account
-                  </Link>
-                </div>
-              </nav>
-            </SheetContent>
-          </Sheet>
-        </div>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </header>
       {children}
