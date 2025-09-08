@@ -1,0 +1,188 @@
+from datetime import datetime
+from uuid import UUID
+from typing import Optional
+from pydantic import BaseModel, Field, EmailStr
+
+
+class UserResponse(BaseModel):
+    id: UUID = Field(
+        ...,
+        title="ID",
+        description="The ID of the user"
+    )
+    email: EmailStr = Field(
+        ...,
+        title="Email",
+        description="The email of the user",
+        min_length=10,
+        max_length=100
+    )
+    first_name: Optional[str] = Field(
+        ...,
+        title="First Name",
+        description="The first name of the user",
+        min_length=2,
+        max_length=50
+    )
+    last_name: Optional[str] = Field(
+        ...,
+        title="Last Name",
+        description="The last name of the user",
+        min_length=2,
+        max_length=50
+    )
+    username: Optional[str] = Field(
+        ...,
+        title="Username",
+        description="The username of the user",
+        min_length=2,
+        max_length=10
+    )
+    is_superuser: bool = Field(
+        ...,
+        title="Is Superuser",
+        description="Whether the user is a superuser"
+    )
+    is_admin: bool = Field(
+        ...,
+        title="Is Admin",
+        description="Whether the user is an admin"
+    )
+    is_active: bool = Field(
+        ...,
+        title="Is Active",
+        description="Whether the user is active"
+    )
+    created_at: datetime = Field(
+        ...,
+        title="Created At",
+        description="The created at of the user"
+    )
+    updated_at: Optional[datetime] = Field(
+        ...,
+        title="Updated At",
+        description="The updated at of the user"
+    )
+
+
+class User(BaseModel):
+    email: EmailStr = Field(
+        ...,
+        title="Email",
+        description="The email of the user",
+        min_length=10,
+        max_length=100
+    )
+    first_name: Optional[str] = Field(
+        ...,
+        title="First Name",
+        description="The first name of the user",
+        min_length=2,
+        max_length=50
+    )
+    last_name: Optional[str] = Field(
+        ...,
+        title="Last Name",
+        description="The last name of the user",
+        min_length=2,
+        max_length=50
+    )
+    username: Optional[str] = Field(
+        ...,
+        title="Username",
+        description="The username of the user",
+        min_length=2,
+        max_length=10
+    )
+    password: str = Field(
+        ...,
+        title="Password",
+        description="The password of the user",
+        min_length=10,
+        max_length=100,
+        examples=["Adj@kf243Wf&fj9dQ"]
+    )
+    is_superuser: bool = Field(
+        ...,
+        title="Is Superuser",
+        description="Whether the user is a superuser"
+    )
+    is_admin: bool = Field(
+        ...,
+        title="Is Admin",
+        description="Whether the user is an admin"
+    )
+    is_active: bool = Field(
+        ...,
+        title="Is Active",
+        description="Whether the user is active"
+    )
+
+
+class UserInDB(UserResponse):
+    hashed_password: str
+
+
+class UserUpdateRequest(BaseModel):
+    first_name: Optional[str] = Field(
+        ...,
+        title="First Name",
+        description="The first name of the user",
+        min_length=2,
+        max_length=50
+    )
+    last_name: Optional[str] = Field(
+        ...,
+        title="Last Name",
+        description="The last name of the user",
+        min_length=2,
+        max_length=50
+    )
+    username: Optional[str] = Field(
+        ...,
+        title="Username",
+        description="The username of the user",
+        min_length=2,
+        max_length=10
+    )
+    email: Optional[EmailStr] = Field(
+        ...,
+        title="Email",
+        description="The email of the user",
+        min_length=10,
+        max_length=100
+    )
+    is_superuser: Optional[bool] = Field(
+        ...,
+        title="Is Superuser",
+        description="Whether the user is a superuser"
+    )
+    is_admin: Optional[bool] = Field(
+        ...,
+        title="Is Admin",
+        description="Whether the user is an admin"
+    )
+    is_active: Optional[bool] = Field(
+        ...,
+        title="Is Active",
+        description="Whether the user is active"
+    )
+
+
+class UserPasswordUpdateRequest(BaseModel):
+    old_password: str = Field(
+        ...,
+        title="Old Password",
+        description="The old password of the user",
+        min_length=10,
+        max_length=100,
+        examples=["Adj@kf243Wf&fj9dQ"]
+    )
+    new_password: str = Field(
+        ...,
+        title="New Password",
+        description="The new password of the user",
+        min_length=10,
+        max_length=100,
+        examples=["Adj#kf043Wf&fj9dQ"]
+    )
