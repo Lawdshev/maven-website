@@ -36,7 +36,7 @@ function Footer() {
     <div>
       {/* Footer */}
       <footer className="bg-black text-gray-300 py-12 px-6 md:px-12 ">
-        <div className="w-[95%] mx-auto max-w-[1800px]">
+        <div className="w-[95%] mx-auto max-w-[1780px]">
 
         <div className=" grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="md:col-span-1">

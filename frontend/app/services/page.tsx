@@ -15,10 +15,14 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { Modal } from "antd";
+import ContactForm from "../contact-us/contact-form";
 
 export default function ServicesPage() {
+  const [open, setOpen] = useState(false);
   return (
-    <div className=" text-black max-w-[1800px] w-[95%] mx-auto font-normal">
+    <div className=" text-black max-w-[1780px] w-[95%] mx-auto font-normal">
       {/* Hero Section */}
       <section className="w-full min-h-[500px] bg-[#0054aa] text-white px-6 md:px-12 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -39,11 +43,12 @@ export default function ServicesPage() {
               opportunities.
             </p>
             <div className="mt-8">
-              <Link href="/contact-us">
-                <Button className="bg-white text-[#0054aa] text-xl border border-[#0054aa] hover:bg-blue-100 rounded-none px-6 py-6 min-w-[200px]">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+              <Button
+                className="bg-white text-[#0054aa] text-xl border border-[#0054aa] hover:bg-blue-100 rounded-none px-6 py-6 min-w-[200px]"
+                onClick={() => setOpen(true)}
+              >
+                Get Started <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
           </div>
           <div className="flex justify-center lg:justify-end">
@@ -59,87 +64,85 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid (AI + Cloud) */}
-{/* Services Grid (AI + Cloud) */}
-<section className="w-full border-b px-6 md:px-12 py-16 border-t border-gray-200">
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 divide-x">
-    {/* AI + DATA */}
-    <div className="p-10 flex flex-col justify-between min-h-[450px]">
-      <Image
-        src="/ai-data-interface.png"
-        alt="AI and Data visualization"
-        width={600}
-        height={350}
-        className="rounded-none border-none  mb-6"
-      />
-      <div>
-        <div className="flex items-center space-x-3">
-          <Brain className="h-8 w-8 text-[#0054aa]" />
-          <h2 className="text-2xl font-normal text-black">AI + DATA</h2>
-        </div>
-        <p className="text-xl text-black leading-[35px] my-3">
-          Harness the potential of artificial intelligence to solve
-          industry-defining challenges.
-        </p>
-        <ul className="space-y-3 mb-8">
-          {[
-            "Machine learning models tailored to retail, healthcare, finance, and energy operations",
-            "Predictive analytics to optimize decisions and anticipate trends",
-            "Natural language processing for smarter, faster interactions",
-            "AI governance to ensure fairness, transparency, and ethical deployment",
-          ].map((item, i) => (
-            <li key={i} className="flex items-start space-x-3">
-              <CheckCircle className="h-5 w-5 text-green-600 mt-1" />
-              <span className="text-black text-xl leading-[35px]">
-                {item}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      {/* AI Image */}
-      
-    </div>
+      {/* Services Grid (AI + Cloud) */}
+      <section className="w-full border-b px-6 md:px-12 py-16 border-t border-gray-200">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 divide-x">
+          {/* AI + DATA */}
+          <div className="p-10 flex flex-col justify-between min-h-[450px]">
+            <Image
+              src="/ai-data-interface.png"
+              alt="AI and Data visualization"
+              width={600}
+              height={350}
+              className="rounded-none border-none  mb-6"
+            />
+            <div>
+              <div className="flex items-center space-x-3">
+                <Brain className="h-8 w-8 text-[#0054aa]" />
+                <h2 className="text-2xl font-normal text-black">AI + DATA</h2>
+              </div>
+              <p className="text-xl text-black leading-[35px] my-3">
+                Harness the potential of artificial intelligence to solve
+                industry-defining challenges.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Machine learning models tailored to retail, healthcare, finance, and energy operations",
+                  "Predictive analytics to optimize decisions and anticipate trends",
+                  "Natural language processing for smarter, faster interactions",
+                  "AI governance to ensure fairness, transparency, and ethical deployment",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-600 mt-1" />
+                    <span className="text-black text-xl leading-[35px]">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* AI Image */}
+          </div>
 
-    {/* CLOUD ENGINEERING */}
-    <div className="p-10 flex flex-col justify-between min-h-[450px]">
-      <div>
-        <div className="flex items-center space-x-3 mb-6">
-          <Cloud className="h-8 w-8 text-[#0054aa]" />
-          <h2 className="text-2xl font-normal  text-black -900">
-            CLOUD ENGINEERING
-          </h2>
+          {/* CLOUD ENGINEERING */}
+          <div className="p-10 flex flex-col justify-between min-h-[450px]">
+            <div>
+              <div className="flex items-center space-x-3 mb-6">
+                <Cloud className="h-8 w-8 text-[#0054aa]" />
+                <h2 className="text-2xl font-normal  text-black -900">
+                  CLOUD ENGINEERING
+                </h2>
+              </div>
+              <p className="text-xl text-black leading-[35px] my-3">
+                Scalable, secure, and future-ready cloud architecture.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "End-to-end cloud migration strategies",
+                  "Backend systems built on Google Cloud, AWS, and Microsoft Azure",
+                  "Cloud-native architecture for high availability and performance",
+                  "Security-first design for compliance in regulated industries",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-600 mt-1" />
+                    <span className="text-black text-xl leading-[35px]">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Cloud Image */}
+            <Image
+              src="/cloud-engineering.png"
+              alt="Cloud engineering visualization"
+              width={600}
+              height={350}
+              className="rounded-none border-none"
+            />
+          </div>
         </div>
-        <p className="text-xl text-black leading-[35px] my-3">
-          Scalable, secure, and future-ready cloud architecture.
-        </p>
-        <ul className="space-y-3 mb-8">
-          {[
-            "End-to-end cloud migration strategies",
-            "Backend systems built on Google Cloud, AWS, and Microsoft Azure",
-            "Cloud-native architecture for high availability and performance",
-            "Security-first design for compliance in regulated industries",
-          ].map((item, i) => (
-            <li key={i} className="flex items-start space-x-3">
-              <CheckCircle className="h-5 w-5 text-green-600 mt-1" />
-              <span className="text-black text-xl leading-[35px]">
-                {item}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      {/* Cloud Image */}
-      <Image
-        src="/cloud-engineering.png"
-        alt="Cloud engineering visualization"
-        width={600}
-        height={350}
-        className="rounded-none border-none"
-      />
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* Data Infrastructure */}
       <section className="w-full px-6 md:px-12 py-16 border-t border-gray-200">
@@ -189,15 +192,33 @@ export default function ServicesPage() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-gray-200 divide-x divide-y">
           {[
-            { title: "Retail", icon: Building, text: "Demand forecasting, dynamic pricing, personalized customer experiences" },
-            { title: "Healthcare", icon: Heart, text: "Data-driven patient care, operational optimization, regulatory compliance" },
-            { title: "Finance", icon: DollarSign, text: "Fraud detection, risk modeling, real-time trading analytics" },
-            { title: "Oil & Gas", icon: Zap, text: "Predictive maintenance, field data analytics, energy optimization" },
+            {
+              title: "Retail",
+              icon: Building,
+              text: "Demand forecasting, dynamic pricing, personalized customer experiences",
+            },
+            {
+              title: "Healthcare",
+              icon: Heart,
+              text: "Data-driven patient care, operational optimization, regulatory compliance",
+            },
+            {
+              title: "Finance",
+              icon: DollarSign,
+              text: "Fraud detection, risk modeling, real-time trading analytics",
+            },
+            {
+              title: "Oil & Gas",
+              icon: Zap,
+              text: "Predictive maintenance, field data analytics, energy optimization",
+            },
           ].map((s, i) => (
             <div key={i} className="p-8 min-h-[250px]">
               <s.icon className="h-7 w-7 text-[#0054aa] mb-4" />
               <h3 className="text-2xl font-normal mb-2">{s.title}</h3>
-              <p className=" text-black -600 text-xl leading-[35px]">{s.text}</p>
+              <p className=" text-black -600 text-xl leading-[35px]">
+                {s.text}
+              </p>
             </div>
           ))}
         </div>
@@ -217,7 +238,10 @@ export default function ServicesPage() {
               "Technology-agnostic approach to choose the right tools",
               "Managed services for monitoring, updates, and performance tuning",
             ].map((item, i) => (
-              <div key={i} className="p-8 flex items-start space-x-3 min-h-[250px]">
+              <div
+                key={i}
+                className="p-8 flex items-start space-x-3 min-h-[250px]"
+              >
                 <CheckCircle className="h-12 w-12 text-green-600 mt-1" />
                 <p className="text-black text-xl leading-[35px]">{item}</p>
               </div>
@@ -243,6 +267,15 @@ export default function ServicesPage() {
           </Button>
         </Link>
       </div>
+      <Modal
+        open={open}
+        onCancel={() => setOpen(false)}
+        footer={null}
+        className="contact-modal-wrapper"
+        style={{ top: 20 }}
+      >
+        <ContactForm />
+      </Modal>
     </div>
   );
 }

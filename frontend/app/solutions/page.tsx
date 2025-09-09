@@ -229,7 +229,7 @@ export default function SolutionsPage() {
   ];
 
   return (
-    <div className="text-black max-w-[1800px] mx-auto">
+    <div className="text-black max-w-[1780px] mx-auto">
       {/* Hero Section */}
       <main className="w-full  border-b border-gray-200 px-6 md:px-12 py-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
         <div>

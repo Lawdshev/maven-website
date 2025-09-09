@@ -58,7 +58,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className=" text-black max-w-[1800px] w-[95%] mx-auto font-normal">
+    <div className=" text-black max-w-[1780px] w-[95%] mx-auto font-normal">
       {/* Hero Section */}
       <main className="w-full min-h-[500px] bg-[#0054aa] text-white px-6 md:px-12 py-16 ">
         <div className="max-w-[750px]">

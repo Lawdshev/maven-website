@@ -10,24 +10,20 @@ interface MegaMenuProps {
 }
 
 export default function MegaMenu({ columns, onLinkClick }: MegaMenuProps) {
-  console.log("columns", columns);
   return (
-    <div className="lg:fixed min-h-[100px] left-0 top-[110px] bg-[white] shadow-lg border border-gray-200 z-50 w-full py-8 px-12 hidden lg:block">
-      <div className="flex justify-between items-center flex-wrap gap-6 w-full max-w-[1800px] mx-auto">
+    <div className="absolute left-0 top-full mt-2 bg-white shadow-lg border border-gray-200 rounded-lg z-50 min-w-[260px] py-4 px-2">
+      <div className="flex flex-col gap-2">
         {columns.flatMap((column, colIndex) =>
           column.links.map((link, linkIndex) => (
-            <button
+            <Link
               key={`${colIndex}-${linkIndex}`}
-              // href={link.href}
-              className="flex items-center text-lg font-medium text-gray-900 hover:text-[#0054aa] cursor-pointer transition-colors"
-              onClick={() => {
-                console.log("link", link);
-                onLinkClick?.(link.href);
-              }}
+              href={link.href}
+              className="flex items-center justify-between text-base font-normal text-gray-800 hover:text-[#0054aa] hover:bg-gray-50 px-3 py-2 rounded-md transition-colors"
+              onClick={() => onLinkClick?.(link.href)}
             >
               {link.label}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
+              <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
+            </Link>
           ))
         )}
       </div>
