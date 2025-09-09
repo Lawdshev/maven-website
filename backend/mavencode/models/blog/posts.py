@@ -136,3 +136,8 @@ class BlogPostResponse(BlogPostCreate):
         title="Updated At",
         description="The updated at of the blog post"
     )
+
+
+class BlogPostPaginationResponse(BaseModel):
+    posts: list[BlogPostResponse]
+    number_of_posts: int

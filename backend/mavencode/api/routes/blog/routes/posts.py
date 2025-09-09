@@ -1,5 +1,5 @@
 import uuid
-from typing import List
+from typing import List, Optional
 from uuid import UUID
 from fastapi import APIRouter, Depends, UploadFile, File, HTTPException, Query, status
 from mavencode.core.config import S3_BUCKET
@@ -7,7 +7,8 @@ from mavencode.core.logger import logger
 from mavencode.db.database import get_repository
 from mavencode.db.repositories.blog.posts import BlogRepository
 from mavencode.models.blog.posts import (
-    BlogPostCreate, BlogPostResponse, BlogPostUpdate
+    BlogPostCreate, BlogPostResponse, BlogPostUpdate,
+    BlogPostPaginationResponse
 )
 from mavencode.models.users.user import UserInDB
 from mavencode.services.auth_service import get_current_user
@@ -71,17 +72,20 @@ async def create_blog_post(
         ) from e
 
 
-@router.get("/posts", response_model=List[BlogPostResponse])
+@router.get("/posts", response_model=Optional[BlogPostPaginationResponse])
 async def get_all_blog_posts(
     limit: int = 10, offset: int = 0,
     blog_repo: BlogRepository = Depends(get_repository(BlogRepository))
-) -> List[BlogPostResponse] | list:
+) -> Optional[BlogPostPaginationResponse]:
     try:
         logger.info("Getting all blog posts, limit: %s, offset: %s", limit, offset)
         posts = await blog_repo.get_all_blog_posts(limit, offset)
 
         if not posts:
-            return []
+            return {
+                "posts": [],
+                "number_of_posts": 0
+            }
 
         return posts
     except HTTPException:
@@ -94,12 +98,12 @@ async def get_all_blog_posts(
         ) from e
 
 
-@router.get("/posts/unpublished", response_model=List[BlogPostResponse])
+@router.get("/posts/unpublished", response_model=Optional[BlogPostPaginationResponse])
 async def get_all_unpublished_blog_posts(
     limit: int = 10, offset: int = 0,
     blog_repo: BlogRepository = Depends(get_repository(BlogRepository)),
     current_user: UserInDB = Depends(get_current_user)
-) -> List[BlogPostResponse] | list:
+) -> Optional[BlogPostPaginationResponse]:
     try:
         logger.info("Getting all unpublished blog posts, limit: %s, offset: %s", limit, offset)
 
@@ -111,7 +115,10 @@ async def get_all_unpublished_blog_posts(
         posts = await blog_repo.get_all_unpublished_blog_posts(limit, offset)
 
         if not posts:
-            return []
+            return {
+                "posts": [],
+                "number_of_posts": 0
+            }
 
         return posts
     except HTTPException:
@@ -124,17 +131,20 @@ async def get_all_unpublished_blog_posts(
         ) from e
 
 
-@router.get("/posts/search", response_model=List[BlogPostResponse])
+@router.get("/posts/search", response_model=Optional[BlogPostPaginationResponse])
 async def search_blog_posts(
     search_term: str = Query(..., title="Search blog posts", min_length=1),
     blog_repo: BlogRepository = Depends(get_repository(BlogRepository))
-) -> list | List[BlogPostResponse]:
+) -> Optional[BlogPostPaginationResponse]:
     try:
         logger.info("Searching for blog posts by title or content: %s", search_term)
         posts = await blog_repo.search_blog_posts(search_term)
 
         if not posts:
-            return []
+            return {
+                "posts": [],
+                "number_of_posts": 0
+            }
 
         return posts
     except HTTPException:
@@ -147,17 +157,20 @@ async def search_blog_posts(
         ) from e
 
 
-@router.get("/posts/filter", response_model=List[BlogPostResponse])
+@router.get("/posts/filter", response_model=Optional[BlogPostPaginationResponse])
 async def filter_blog_posts(
     category_id: UUID,
     blog_repo: BlogRepository = Depends(get_repository(BlogRepository))
-) -> List[BlogPostResponse] | list:
+) -> Optional[BlogPostPaginationResponse]:
     try:
         logger.info("Filtering blog posts by category id: %s", category_id)
         posts = await blog_repo.filter_blog_posts(category_id)
 
         if not posts:
-            return []
+            return {
+                "posts": [],
+                "number_of_posts": 0
+            }
 
         return posts
     except HTTPException:
