@@ -6,7 +6,10 @@ from fastapi import HTTPException, status
 from mavencode.core.logger import logger
 from mavencode.core.utils.read_time import calculate_read_time
 from mavencode.db.repositories.base import BaseRepository
-from mavencode.models.blog.posts import BlogPostResponse, BlogPostUpdate
+from mavencode.models.blog.posts import (
+    BlogPostResponse, BlogPostUpdate,
+    BlogPostPaginationResponse
+)
 
 CREATE_POST_QUERY = """
     INSERT INTO blog_posts
@@ -71,11 +74,23 @@ SEARCH_POSTS_QUERY = """
     ORDER BY created_at DESC
 """
 
+COUNT_SEARCHED_POSTS_QUERY = """
+    SELECT COUNT(*) FROM blog_posts
+    WHERE is_published = :is_published
+    AND (title ILIKE COALESCE(:search_term, '%') OR content ILIKE COALESCE(:search_term, '%'))
+"""
+
 FILTER_POSTS_QUERY = """
     SELECT * FROM blog_posts
     WHERE is_published = :is_published
     AND category_id = :category_id
     ORDER BY created_at DESC
+"""
+
+COUNT_FILTERED_POSTS_QUERY = """
+    SELECT COUNT(*) FROM blog_posts
+    WHERE is_published = :is_published
+    AND category_id = :category_id
 """
 
 
@@ -119,9 +134,16 @@ class BlogRepository(BaseRepository):
             count_posts = count_posts["count"]
 
             if not posts:
-                return []
+                return {
+                "posts": [],
+                "number_of_posts": 0
+            }
 
-            return [BlogPostResponse(**post) for post in posts]
+            blog_posts = [BlogPostResponse(**post) for post in posts]
+            return BlogPostPaginationResponse(
+                posts=blog_posts,
+                number_of_posts=count_posts
+            )
         except Exception as e:
             logger.exception("Error: %s", e)
             raise e
@@ -139,9 +161,16 @@ class BlogRepository(BaseRepository):
             count_posts = count_posts["count"]
 
             if not posts:
-                return []
+                return {
+                "posts": [],
+                "number_of_posts": 0
+            }
 
-            return [BlogPostResponse(**post) for post in posts]
+            blog_posts = [BlogPostResponse(**post) for post in posts]
+            return BlogPostPaginationResponse(
+                posts=blog_posts,
+                number_of_posts=count_posts
+            )
         except Exception as e:
             logger.exception("Error: %s", e)
             raise e
@@ -215,16 +244,25 @@ class BlogRepository(BaseRepository):
                 "is_published": True
             }
             posts = await self.db.fetch_all(SEARCH_POSTS_QUERY, values)
+            count_posts = await self.db.fetch_one(COUNT_SEARCHED_POSTS_QUERY, values)
+            count_posts = count_posts["count"]
 
             if not posts:
-                return []
+                return {
+                "posts": [],
+                "number_of_posts": 0
+            }
 
-            return [BlogPostResponse(**post) for post in posts]
+            blog_posts = [BlogPostResponse(**post) for post in posts]
+            return BlogPostPaginationResponse(
+                posts=blog_posts,
+                number_of_posts=count_posts
+            )
         except Exception as e:
             logger.exception("Error: %s", e)
             raise e
     
-    async def filter_blog_posts(self, category_id: UUID) -> Optional[List[BlogPostResponse]]:
+    async def filter_blog_posts(self, category_id: UUID) -> Optional[BlogPostPaginationResponse]:
         try:
             logger.info("Filtering blog posts by category id: %s", category_id)
             values = {
@@ -232,11 +270,20 @@ class BlogRepository(BaseRepository):
                 "is_published": True
             }
             posts = await self.db.fetch_all(FILTER_POSTS_QUERY, values)
+            count_posts = await self.db.fetch_one(COUNT_FILTERED_POSTS_QUERY, values)
+            count_posts = count_posts["count"]
 
             if not posts:
-                return []
+                return {
+                "posts": [],
+                "number_of_posts": 0
+            }
 
-            return [BlogPostResponse(**post) for post in posts]
+            blog_posts = [BlogPostResponse(**post) for post in posts]
+            return BlogPostPaginationResponse(
+                posts=blog_posts,
+                number_of_posts=count_posts
+            )
         except Exception as e:
             logger.exception("Error: %s", e)
             raise e

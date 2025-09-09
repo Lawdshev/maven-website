@@ -72,6 +72,14 @@ def create_users_table() -> None:
 
     op.execute(
         """
+        CREATE UNIQUE INDEX one_superuser_only
+        ON users ((is_superuser))
+        WHERE is_superuser = TRUE;
+        """
+    )
+
+    op.execute(
+        """
         CREATE TRIGGER update_users_modtime
             BEFORE UPDATE
             ON users
@@ -145,6 +153,7 @@ def upgrade() -> None:
 def downgrade() -> None:
     """Downgrade schema."""
     op.drop_index("ix_users_email", table_name="users")
+    op.drop_index("one_superuser_only", table_name="users")
     op.drop_table("users")
     op.drop_index("ix_blog_posts_is_published", table_name="blog_posts")
     op.drop_index("ix_blog_posts_author_id", table_name="blog_posts")
