@@ -156,8 +156,8 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
                 <Eye className="h-6 w-6 text-green-600" />
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Published Posts</p>
-                <p className="text-2xl font-[medium] text-gray-900">{publishedPosts.length}</p>
+                <p className="text-sm font-medium  text-black -600">Published Posts</p>
+                <p className="text-2xl font-[medium]  text-black -900">{publishedPosts.length}</p>
               </div>
             </div>
           </div>
@@ -168,8 +168,8 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
                 <Edit className="h-6 w-6 text-yellow-600" />
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Draft Posts</p>
-                <p className="text-2xl font-[medium] text-gray-900">{draftPosts.length}</p>
+                <p className="text-sm font-medium  text-black -600">Draft Posts</p>
+                <p className="text-2xl font-[medium]  text-black -900">{draftPosts.length}</p>
               </div>
             </div>
           </div>
@@ -180,8 +180,8 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
                 <BarChart3 className="h-6 w-6 text-blue-600" />
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Total Posts</p>
-                <p className="text-2xl font-[medium] text-gray-900">{blogPosts.length}</p>
+                <p className="text-sm font-medium  text-black -600">Total Posts</p>
+                <p className="text-2xl font-[medium]  text-black -900">{blogPosts.length}</p>
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
         {editingPost && (
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-8">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-[medium] text-gray-900">Edit Blog Post</h2>
+              <h2 className="text-xl font-[medium]  text-black -900">Edit Blog Post</h2>
               <Button variant="outline" onClick={handleCancelEdit}>
                 <X className="h-4 w-4 mr-2" />
                 Cancel
@@ -214,7 +214,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
             <form ref={editFormRef} action={editFormAction} className="space-y-6">
               {/* Title Field */}
               <div>
-                <label htmlFor="edit-title" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="edit-title" className="block text-sm font-medium  text-black -700 mb-1">
                   Title
                 </label>
                 <Input
@@ -233,7 +233,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
 
               {/* Author Field */}
               <div>
-                <label htmlFor="edit-author" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="edit-author" className="block text-sm font-medium  text-black -700 mb-1">
                   Author
                 </label>
                 <Input
@@ -252,7 +252,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
 
               {/* Featured Image Upload */}
               <div>
-                <label htmlFor="edit-featuredImage" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="edit-featuredImage" className="block text-sm font-medium  text-black -700 mb-1">
                   Featured Image
                 </label>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md hover:border-gray-400 transition-colors">
@@ -276,8 +276,8 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
                       </div>
                     ) : (
                       <>
-                        <ImageIcon className="mx-auto h-12 w-12 text-gray-400" />
-                        <div className="flex text-sm text-gray-600">
+                        <ImageIcon className="mx-auto h-12 w-12  text-black -400" />
+                        <div className="flex text-sm  text-black -600">
                           <label
                             htmlFor="edit-featuredImage"
                             className="relative cursor-pointer bg-white rounded-md font-medium text-[#0054aa] hover:text-[#003d7a] focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-[#0054aa]"
@@ -295,7 +295,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
                           </label>
                           <p className="pl-1">or drag and drop</p>
                         </div>
-                        <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                        <p className="text-xs  text-black -500">PNG, JPG, GIF up to 10MB</p>
                       </>
                     )}
                   </div>
@@ -304,7 +304,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
 
               {/* Excerpt Field */}
               <div>
-                <label htmlFor="edit-excerpt" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="edit-excerpt" className="block text-sm font-medium  text-black -700 mb-1">
                   Excerpt
                 </label>
                 <Textarea
@@ -323,7 +323,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
 
               {/* Content Field */}
               <div>
-                <label htmlFor="edit-content" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="edit-content" className="block text-sm font-medium  text-black -700 mb-1">
                   Content
                 </label>
                 <Textarea
@@ -342,7 +342,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
 
               {/* Status Field */}
               <div>
-                <label htmlFor="edit-status" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="edit-status" className="block text-sm font-medium  text-black -700 mb-1">
                   Status
                 </label>
                 <select
@@ -383,12 +383,12 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
         {/* Create Post Form */}
         {showCreateForm && !editingPost && (
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-8">
-            <h2 className="text-xl font-[medium] text-gray-900 mb-6">Create New Blog Post</h2>
+            <h2 className="text-xl font-[medium]  text-black -900 mb-6">Create New Blog Post</h2>
 
             <form ref={createFormRef} action={createFormAction} className="space-y-6">
               {/* Title Field */}
               <div>
-                <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="title" className="block text-sm font-medium  text-black -700 mb-1">
                   Title
                 </label>
                 <Input
@@ -406,7 +406,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
 
               {/* Author Field */}
               <div>
-                <label htmlFor="author" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="author" className="block text-sm font-medium  text-black -700 mb-1">
                   Author
                 </label>
                 <Input id="author" name="author" type="text" placeholder="Author name" required className="w-full" />
@@ -417,7 +417,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
 
               {/* Featured Image Upload */}
               <div>
-                <label htmlFor="featuredImage" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="featuredImage" className="block text-sm font-medium  text-black -700 mb-1">
                   Featured Image
                 </label>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md hover:border-gray-400 transition-colors">
@@ -441,8 +441,8 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
                       </div>
                     ) : (
                       <>
-                        <ImageIcon className="mx-auto h-12 w-12 text-gray-400" />
-                        <div className="flex text-sm text-gray-600">
+                        <ImageIcon className="mx-auto h-12 w-12  text-black -400" />
+                        <div className="flex text-sm  text-black -600">
                           <label
                             htmlFor="featuredImage"
                             className="relative cursor-pointer bg-white rounded-md font-medium text-[#0054aa] hover:text-[#003d7a] focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-[#0054aa]"
@@ -460,7 +460,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
                           </label>
                           <p className="pl-1">or drag and drop</p>
                         </div>
-                        <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                        <p className="text-xs  text-black -500">PNG, JPG, GIF up to 10MB</p>
                       </>
                     )}
                   </div>
@@ -469,7 +469,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
 
               {/* Excerpt Field */}
               <div>
-                <label htmlFor="excerpt" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="excerpt" className="block text-sm font-medium  text-black -700 mb-1">
                   Excerpt
                 </label>
                 <Textarea
@@ -487,7 +487,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
 
               {/* Content Field */}
               <div>
-                <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="content" className="block text-sm font-medium  text-black -700 mb-1">
                   Content
                 </label>
                 <Textarea
@@ -505,7 +505,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
 
               {/* Status Field */}
               <div>
-                <label htmlFor="status" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="status" className="block text-sm font-medium  text-black -700 mb-1">
                   Status
                 </label>
                 <select
@@ -545,12 +545,12 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
         {/* Blog Posts List */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
           <div className="px-6 py-4 border-b border-gray-200">
-            <h2 className="text-xl font-[medium] text-gray-900">Blog Posts</h2>
+            <h2 className="text-xl font-[medium]  text-black -900">Blog Posts</h2>
           </div>
 
           {blogPosts.length === 0 ? (
-            <div className="p-6 text-center text-gray-500">
-              <FileText className="h-12 w-12 mx-auto mb-4 text-gray-300" />
+            <div className="p-6 text-center  text-black -500">
+              <FileText className="h-12 w-12 mx-auto mb-4  text-black -300" />
               <p>No blog posts yet. Create your first post!</p>
             </div>
           ) : (
@@ -571,7 +571,7 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
                         )}
                         <div className="flex-1">
                           <div className="flex items-center space-x-2 mb-2">
-                            <h3 className="text-lg font-normal text-gray-900">{post.title}</h3>
+                            <h3 className="text-lg font-normal  text-black -900">{post.title}</h3>
                             <span
                               className={`px-2 py-1 text-xs font-medium rounded-full ${
                                 post.status === "published"
@@ -582,8 +582,8 @@ export default function AdminDashboard({ blogPosts, logoutAction }: AdminDashboa
                               {post.status}
                             </span>
                           </div>
-                          <p className="text-gray-600 mb-3">{post.excerpt}</p>
-                          <div className="flex items-center space-x-4 text-sm text-gray-500">
+                          <p className=" text-black -600 mb-3">{post.excerpt}</p>
+                          <div className="flex items-center space-x-4 text-sm  text-black -500">
                             <div className="flex items-center">
                               <User className="h-4 w-4 mr-1" />
                               {post.author}

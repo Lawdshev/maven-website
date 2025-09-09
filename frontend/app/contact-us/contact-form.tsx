@@ -45,10 +45,10 @@ export default function ContactForm() {
       {/* Form side */}
       <div className="px-6 md:px-10 py-10 overflow-y-auto">
         <div className="text-center mb-6">
-          <h1 className="text-xl lg:text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-50">
+          <h1 className="text-xl lg:text-3xl font-semibold tracking-tight text-black -900 dark:text-black -50">
             Contact Us
           </h1>
-          <p className="mt-2 text-lg text-gray-700 dark:text-gray-300">
+          <p className="mt-2 text-lg text-black -700 dark:text-black -300">
             Have questions or need support? Send us a message!
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-800 mb-2"
+              className="block text-sm font-medium text-black -800 mb-2"
             >
               Name
             </label>
@@ -81,7 +81,7 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-800 mb-2"
+              className="block text-sm font-medium text-black -800 mb-2"
             >
               Email
             </label>
@@ -104,7 +104,7 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="subject"
-              className="block text-sm font-medium text-gray-800 mb-2"
+              className="block text-sm font-medium text-black -800 mb-2"
             >
               Subject
             </label>
@@ -127,7 +127,7 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-gray-800 mb-2"
+              className="block text-sm font-medium text-black -800 mb-2"
             >
               Message
             </label>

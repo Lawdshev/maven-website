@@ -10,12 +10,12 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-4 flex flex-col justify-between">
       <div className="space-y-2">
-        <h3 className="text-xl font-normal text-gray-900 dark:text-gray-50">{product.title}</h3>
-        <p className="text-gray-700 dark:text-gray-300 text-sm">{product.description}</p>
+        <h3 className="text-xl font-normal text-black -900 dark:text-black -50">{product.title}</h3>
+        <p className="text-black -700 dark:text-black -300 text-sm">{product.description}</p>
       </div>
       <div className="flex flex-col space-y-4">
         {product.freeTrial && (
-          <span className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-400">
+          <span className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-black -600 dark:bg-gray-800 dark:text-black -400">
             Free Trial
           </span>
         )}

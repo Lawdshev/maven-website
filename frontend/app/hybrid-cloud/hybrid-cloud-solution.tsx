@@ -9,12 +9,12 @@ export default function HybridCloudSolutions() {
         {/* Top Section */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight text-gray-900 dark:text-gray-50">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight text-black -900 dark:text-black -50">
               Optimize your IT to maximize ROI
             </h2>
           </div>
           <div className="space-y-4">
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-black -700 dark:text-black -300">
               Get more out of data and AI where your workloads reside with a high-performance, cost-effective hybrid
               cloud platform that's open and secure. Explore our technologies, expertise and ecosystem of partners to
               capitalize on cloud-based and on-prem environments of your choice.
@@ -27,7 +27,7 @@ export default function HybridCloudSolutions() {
         </div>
 
         {/* Bottom Section - Hybrid Cloud Solutions */}
-        <h2 className="text-4xl md:text-5xl font-light tracking-tight text-gray-900 dark:text-gray-50 mb-12">
+        <h2 className="text-4xl md:text-5xl font-light tracking-tight text-black -900 dark:text-black -50 mb-12">
           Hybrid Cloud solutions
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -40,10 +40,10 @@ export default function HybridCloudSolutions() {
               alt="Abstract binary code icon"
               className="h-16 w-16"
             />
-            <h3 className="text-xl font-normal text-gray-900 dark:text-gray-50">
+            <h3 className="text-xl font-normal text-black -900 dark:text-black -50">
               Modernize & migrate applications with AI
             </h3>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="text-black -700 dark:text-black -300">
               Modernize and containerize legacy applications and accelerate the time-to-value of hybrid cloud
               environments.
             </p>
@@ -62,10 +62,10 @@ export default function HybridCloudSolutions() {
               alt="Abstract grid of squares icon"
               className="h-16 w-16"
             />
-            <h3 className="text-xl font-normal text-gray-900 dark:text-gray-50">
+            <h3 className="text-xl font-normal text-black -900 dark:text-black -50">
               Leverage an AI-ready infrastructure
             </h3>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="text-black -700 dark:text-black -300">
               Servers, storage and software designed to run mission-critical apps with resiliency, security and
               performance.
             </p>
@@ -84,10 +84,10 @@ export default function HybridCloudSolutions() {
               alt="Abstract circular shape icon"
               className="h-16 w-16"
             />
-            <h3 className="text-xl font-normal text-gray-900 dark:text-gray-50">
+            <h3 className="text-xl font-normal text-black -900 dark:text-black -50">
               Enable an open hybrid cloud to run AI anywhere
             </h3>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="text-black -700 dark:text-black -300">
               Adopt platform-centric approach for your AI investments to scale with security and consistency.
             </p>
             <Link href="#" className="inline-flex items-center text-[#0054aa] -600 hover:underline text-sm font-medium">
@@ -105,8 +105,8 @@ export default function HybridCloudSolutions() {
               alt="Abstract grid of diagonal lines icon"
               className="h-16 w-16"
             />
-            <h3 className="text-xl font-normal text-gray-900 dark:text-gray-50">Harness the full power of Linux®</h3>
-            <p className="text-gray-700 dark:text-gray-300">
+            <h3 className="text-xl font-normal text-black -900 dark:text-black -50">Harness the full power of Linux®</h3>
+            <p className="text-black -700 dark:text-black -300">
               Run Linux on Mavencode servers to bring a new level of reliability, security and scalability to your
               business-critical workloads.
             </p>

@@ -18,7 +18,7 @@ export default function MegaMenu({ columns, onLinkClick }: MegaMenuProps) {
             <Link
               key={`${colIndex}-${linkIndex}`}
               href={link.href}
-              className="flex items-center justify-between text-base font-normal text-gray-800 hover:text-[#0054aa] hover:bg-gray-50 px-3 py-2 rounded-md transition-colors"
+              className="flex items-center justify-between text-base font-normal text-black -800 hover:text-[#0054aa] hover:bg-gray-50 px-3 py-2 rounded-md transition-colors"
               onClick={() => onLinkClick?.(link.href)}
             >
               {link.label}

@@ -81,8 +81,8 @@ export default function BlogsPage() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Blog Posts</h1>
-            <p className="text-gray-600 mt-1">
+            <h1 className="text-3xl font-bold text-black -900">Blog Posts</h1>
+            <p className="text-black -600 mt-1">
               Manage your blog content and articles
             </p>
           </div>
@@ -101,7 +101,7 @@ export default function BlogsPage() {
           <CardContent className="p-6">
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black -400 w-5 h-5" />
                 <Input
                   placeholder="Search blogs by title or author..."
                   value={searchTerm}
@@ -132,11 +132,11 @@ export default function BlogsPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-gray-200">
-                    <th className="text-left py-3 px-4 font-medium text-gray-700">Title</th>
-                    <th className="text-left py-3 px-4 font-medium text-gray-700">Author</th>
-                    <th className="text-left py-3 px-4 font-medium text-gray-700">Published</th>
-                    <th className="text-left py-3 px-4 font-medium text-gray-700">Status</th>
-                    <th className="text-left py-3 px-4 font-medium text-gray-700">Actions</th>
+                    <th className="text-left py-3 px-4 font-medium text-black -700">Title</th>
+                    <th className="text-left py-3 px-4 font-medium text-black -700">Author</th>
+                    <th className="text-left py-3 px-4 font-medium text-black -700">Published</th>
+                    <th className="text-left py-3 px-4 font-medium text-black -700">Status</th>
+                    <th className="text-left py-3 px-4 font-medium text-black -700">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -146,8 +146,8 @@ export default function BlogsPage() {
                       className="border-b border-gray-100 hover:bg-gray-50"
                     >
                       <td className="py-4 px-4">
-                        <h3 className="font-medium text-gray-900">{blog.title}</h3>
-                        <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+                        <h3 className="font-medium text-black -900">{blog.title}</h3>
+                        <p className="text-sm text-black -600 mt-1 line-clamp-2">
                           {blog.excerpt}
                         </p>
                       </td>
@@ -195,7 +195,7 @@ export default function BlogsPage() {
 
             {filteredBlogs.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-500">No blog posts found.</p>
+                <p className="text-black -500">No blog posts found.</p>
               </div>
             )}
           </CardContent>

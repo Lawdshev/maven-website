@@ -26,17 +26,17 @@ export default function BlogListing() {
 
               {/* Content */}
               <div className="p-5 space-y-3">
-                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex items-center text-sm   text-black -500 dark:  text-black -400">
                   <span className="font-medium">{post.category}</span>
                   <span className="mx-2">•</span>
                   <span>{post.date}</span>
                 </div>
 
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 group-hover:text-[#0054aa] transition-colors">
+                <h3 className="text-xl font-semibold   text-black -900 dark:  text-black -100 group-hover:text-[#0054aa] transition-colors">
                   {post.title}
                 </h3>
 
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-3">
+                <p className="  text-black -600 dark:  text-black -300 leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
 

@@ -9,7 +9,7 @@ export default function HybridCloudHero() {
       <div className="container px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
-            <div className="text-sm text-gray-500 dark:text-gray-400">
+            <div className="text-sm  text-black -500 dark: text-black -400">
               <Link href="#" className="text-[#0054aa] -600 hover:underline">
                 Home
               </Link>{" "}
@@ -19,10 +19,10 @@ export default function HybridCloudHero() {
               </Link>{" "}
               / Hybrid Cloud
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] tracking-tight text-gray-900 dark:text-gray-50">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-[medium] tracking-tight  text-black -900 dark: text-black -50">
               Hybrid Cloud Solutions
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-lg">
+            <p className="text-lg md:text-xl  text-black -700 dark: text-black -300 max-w-lg">
               Manage your hybrid cloud environment to run workloads where and
               when you need them.
             </p>
