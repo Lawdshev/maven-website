@@ -9,6 +9,7 @@ import {
   ShoppingCart,
   Factory,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ConsultingPage() {
   const industries = [
@@ -45,7 +46,12 @@ export default function ConsultingPage() {
   return (
     <div className="text-black max-w-[1780px] w-[95%] mx-auto">
       {/* Hero Section */}
-      <main className="w-full border-b border-gray-200 px-6 md:px-12 py-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
+      <motion.main
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="w-full border-b border-gray-200 px-6 md:px-12 py-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-8"
+      >
         <div>
           <div className="text-sm text-black/70 mb-4">
             <Link href="/" className="text-[#0054aa] hover:underline">
@@ -67,7 +73,12 @@ export default function ConsultingPage() {
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
-        <div className="flex justify-center">
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex justify-center"
+        >
           <Image
             src="/consulting-hero.png"
             alt="Consulting overview"
@@ -75,13 +86,19 @@ export default function ConsultingPage() {
             height={400}
             className="border border-gray-200"
           />
-        </div>
-      </main>
+        </motion.div>
+      </motion.main>
 
       {/* Industry Expertise */}
       <section className="w-full mx-auto px-6 md:px-12 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
             <h2 className="text-3xl font-medium mb-6 text-[#0054aa]">
               Industry Expertise
             </h2>
@@ -90,13 +107,24 @@ export default function ConsultingPage() {
               operate intelligent systems that solve today’s challenges and
               evolve for tomorrow’s opportunities.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 border border-gray-200 divide-y md:divide-y-0 md:divide-x divide-gray-200 overflow-hidden">
             {industries.map((industry, index) => (
-              <div key={index} className={`p-8 ${index >= 2 ? "md:border-t" : ""}`}>
-                <h3 className="text-2xl font-medium mb-4 text-black">{industry.title}</h3>
-                <p className="text-xl leading-[35px] text-black/80 mb-6">{industry.description}</p>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className={`p-8 ${index >= 2 ? "md:border-t" : ""}`}
+              >
+                <h3 className="text-2xl font-medium mb-4 text-black">
+                  {industry.title}
+                </h3>
+                <p className="text-xl leading-[35px] text-black/80 mb-6">
+                  {industry.description}
+                </p>
                 <Image
                   src={industry.image || "/placeholder.svg"}
                   alt={`${industry.title} AI consulting solutions`}
@@ -108,14 +136,20 @@ export default function ConsultingPage() {
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Closing CTA */}
-      <section className="bg-gray-50 border-t border-gray-200 py-16 px-6 md:px-12 text-center">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="bg-gray-50 border-t border-gray-200 py-16 px-6 md:px-12 text-center"
+      >
         <h2 className="text-3xl font-medium mb-6 text-[#0054aa]">What’s Next</h2>
         <p className="text-xl leading-[35px] text-black/80 max-w-3xl mx-auto mb-8">
           Ready to see how MavenCode Consulting can accelerate your business? 
@@ -125,7 +159,7 @@ export default function ConsultingPage() {
         <Button className="bg-[#0054aa] text-white px-8 py-6 text-xl rounded-none hover:bg-[#004080]">
           Book a Consultation
         </Button>
-      </section>
+      </motion.section>
     </div>
   );
 }

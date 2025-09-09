@@ -138,9 +138,13 @@
 }
 
 .contact-modal-wrapper{
-    max-width: 869px !important;
+    max-width: 1269px !important;
   width: 90% !important;
 
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 

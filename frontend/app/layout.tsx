@@ -1,36 +1,23 @@
-import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { Space_Grotesk, Work_Sans } from "next/font/google";
-import { Dancing_Script } from "next/font/google";
-import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-export const metadata: Metadata = {
+import { ReactQueryProvider } from "./providers";
+import "./globals.css";
+import { Space_Grotesk } from "next/font/google";
+import ClientWrapper from "./ClientWrapper";
+
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
+
+export const metadata = {
   title: "mavencode",
-  description: "",
-  generator: "",
 };
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-});
-
-
-
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-     className={spaceGrotesk.className}
-    >
-      <body >
-        <Header>
-          {children}
-          <Footer />
-        </Header>
+    <html lang="en" className={spaceGrotesk.className}>
+      <body>
+        <ReactQueryProvider>
+          <ClientWrapper>{children}</ClientWrapper>
+        </ReactQueryProvider>
       </body>
     </html>
   );

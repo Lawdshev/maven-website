@@ -13,6 +13,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
   const commitments = [
@@ -57,10 +58,27 @@ export default function AboutPage() {
     },
   ];
 
+  // Animation variants
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const stagger = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.2 } },
+  };
+
   return (
     <div className=" text-black max-w-[1780px] w-[95%] mx-auto font-normal">
       {/* Hero Section */}
-      <main className="w-full min-h-[500px] bg-[#0054aa] text-white px-6 md:px-12 py-16 ">
+      <motion.main
+        className="w-full min-h-[500px] bg-[#0054aa] text-white px-6 md:px-12 py-16 "
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
+      >
         <div className="max-w-[750px]">
           <div className="text-sm text-blue-200 mb-4">
             <Link href="/" className="hover:underline">
@@ -81,12 +99,18 @@ export default function AboutPage() {
             to help clients innovate, scale, and lead with confidence.
           </p>
         </div>
-      </main>
+      </motion.main>
 
       {/* Our Commitment */}
-      <section className="w-full mx-auto px-6 md:px-12 py-16 border-t border-gray-200">
+      <motion.section
+        className="w-full mx-auto px-6 md:px-12 py-16 border-t border-gray-200"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={stagger}
+      >
         <div className=" flex flex-col gap-3 justify-between">
-          <div className="max-w-[650px]">
+          <motion.div className="max-w-[650px]" variants={fadeUp}>
             <h2 className="text-4xl mb-6 text-[#0054aa] font-normal">
               Our Commitment
             </h2>
@@ -94,38 +118,45 @@ export default function AboutPage() {
               We measure success by outcomes. Every solution we design is built
               to deliver measurable value, resilience, and new opportunities.
             </p>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 border border-gray-200 divide-x divide-gray-200 min-h-[300px] max-w-[1200px] mt-[20px]">
             {commitments.map((c, i) => (
-              <div key={i} className="p-8">
+              <motion.div key={i} className="p-8" variants={fadeUp}>
                 <c.icon className="h-8 w-8 text-[#0054aa] mb-4" />
                 <h3 className="text-xl mb-2 font-normal">{c.title}</h3>
                 <p className=" text-black -600 text-lg leading-[30px]">
                   {c.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* How We Work */}
-      <section className="w-full mx-auto px-6 md:px-12 py-16 border-t border-gray-200">
+      <motion.section
+        className="w-full mx-auto px-6 md:px-12 py-16 border-t border-gray-200"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={stagger}
+      >
         <div className=" flex gap-3 justify-between">
-          <div>
+          <motion.div variants={fadeUp}>
             <h2 className="text-4xl mb-6 text-[#0054aa] font-normal">
               How We Work
             </h2>
             <p className="text-xl  text-black -700 mb-12 max-w-3xl leading-[35px]">
               We work as partners, not just providers. Our approach combines:
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 border border-gray-200 divide-x divide-y divide-gray-200">
             {workingMethods.map((m, i) => (
-              <div
+              <motion.div
                 key={i}
                 className="p-8 flex items-start space-x-4 min-h-[300px]"
+                variants={fadeUp}
               >
                 <m.icon className="h-7 w-7 text-[#0054aa] flex-shrink-0" />
                 <div>
@@ -134,14 +165,20 @@ export default function AboutPage() {
                     {m.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Who We Are */}
-      <section className="w-full mx-auto px-6 md:px-12 py-16 border-t border-gray-200">
+      <motion.section
+        className="w-full mx-auto px-6 md:px-12 py-16 border-t border-gray-200"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
+      >
         <div className=" mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl mb-6 text-[#0054aa] font-normal">
@@ -160,9 +197,16 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <div className="my-12 bg-gray-50 border border-gray-200  p-8 rounded-none flex flex-col md:flex-row text-lg items-center justify-between">
+      {/* CTA */}
+      <motion.div
+        className="my-12 bg-gray-50 border border-gray-200  p-8 rounded-none flex flex-col md:flex-row text-lg items-center justify-between"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
+      >
         <div className="flex-1 mb-4 md:mb-0">
           <h4 className="font-semibold text-3xl mb-2 text-black -900">
             Let's Shape Your AI Future
@@ -180,7 +224,7 @@ export default function AboutPage() {
             Contact Us
           </Button>
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 }
