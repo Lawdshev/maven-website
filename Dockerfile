@@ -3,11 +3,10 @@
 # ===========================
 FROM node:20-alpine AS frontend-build
 
-WORKDIR /app
+WORKDIR /app/frontend
 
 # Install dependencies
-COPY frontend/package*.json ./frontend/
-WORKDIR /app/frontend
+COPY frontend/package*.json ./
 RUN npm install --legacy-peer-deps
 
 # Copy frontend source
@@ -47,7 +46,7 @@ COPY backend/ ./
 # ===========================
 # BACKEND RUNTIME STAGE
 # ===========================
-FROM python:3.12-slim AS runtime
+FROM python:3.12-slim AS backend-runtime
 
 WORKDIR /app
 
@@ -66,15 +65,17 @@ CMD python3 -m ${SERVER}
 
 
 # ===========================
-# FRONTEND RUNTIME (NGINX)
+# FRONTEND RUNTIME (NEXT.JS SERVER)
 # ===========================
-FROM nginx:alpine AS frontend-runtime
+FROM node:20-alpine AS frontend-runtime
 
-# Copy frontend build output into nginx html folder
-COPY --from=frontend-build /app/frontend/build /usr/share/nginx/html
+WORKDIR /app/frontend
 
-# Expose port 80 (Nginx default)
-EXPOSE 80
+# Copy built frontend (and node_modules for runtime)
+COPY --from=frontend-build /app/frontend ./
 
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Expose port 3000 (Next.js default)
+EXPOSE 3000
+
+# Start Next.js server
+CMD ["npm", "start"]
