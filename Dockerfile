@@ -3,11 +3,12 @@
 # ===========================
 FROM node:20-alpine AS frontend-build
 
-WORKDIR /app/frontend
+WORKDIR /app
 
 # Install dependencies
-COPY frontend/package*.json ./
-RUN npm ci
+COPY frontend/package*.json ./frontend/
+WORKDIR /app/frontend
+RUN npm install --legacy-peer-deps
 
 # Copy frontend source
 COPY frontend/ ./
@@ -54,14 +55,26 @@ WORKDIR /app
 COPY --from=backend-build /app/.venv .venv
 COPY --from=backend-build /app ./backend
 
-# Copy frontend build output into backend static folder
-COPY --from=frontend-build /app/frontend/build ./backend/static
-
 # Add venv to PATH
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Environment (can be overridden by docker-compose)
 ENV SERVER=mavencode.api.server
 
-# Start backend
+# Start backend (make sure it binds 0.0.0.0:9012)
 CMD python3 -m ${SERVER}
+
+
+# ===========================
+# FRONTEND RUNTIME (NGINX)
+# ===========================
+FROM nginx:alpine AS frontend-runtime
+
+# Copy frontend build output into nginx html folder
+COPY --from=frontend-build /app/frontend/build /usr/share/nginx/html
+
+# Expose port 80 (Nginx default)
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]

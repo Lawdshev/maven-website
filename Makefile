@@ -4,11 +4,11 @@
 COMPOSE_FILE = docker-compose.yml
 
 # Service names
-SERVICES = blog-service
+SERVICES = mavencode
 
 # Docker image names
 REGISTRY = 
-PROJECT = vine
+PROJECT = mavencode
 VERSION = latest
 
 # Database settings (change these if needed)
@@ -43,7 +43,7 @@ build-%:
 up:
 	@echo "Starting all services..."
 	docker compose -f $(COMPOSE_FILE) up -d
-	@echo "MavenCode backend docs => http://localhost:9001/v1/mvc/docs"
+	@echo "MavenCode backend docs => http://localhost:9012/v1/mvc/docs"
 	@echo "MavenCode frontend Service => http://localhost:3000"
 
 # Start a specific service
@@ -78,7 +78,7 @@ clean:
 all: build up createdb migrate
 	@echo "======================================"
 	@echo "✅ All services are up and database is ready!"
-	@echo "👉 Vine Family Medicine docs: http://localhost:9001/v1/mvc/docs"
+	@echo "👉 Vine Family Medicine docs: http://localhost:9012/v1/mvc/docs"
 	@echo "======================================"
 
 # Show help information
