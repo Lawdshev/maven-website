@@ -21,10 +21,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: runtime
-    container_name: vine
+      target: backend-runtime   # <-- corrected
+    container_name: mavencode
     ports:
-      - "90012:90012"
+      - "9012:9012"             # <-- fixed to match backend CMD
     depends_on:
       db:
         condition: service_healthy
@@ -39,10 +39,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: frontend-build
+      target: frontend-runtime  # <-- run Next.js server
     container_name: react-frontend
     ports:
-      - "3000:3000"
+      - "3000:3000"             # Next.js default
     depends_on:
       - backend
     restart: unless-stopped

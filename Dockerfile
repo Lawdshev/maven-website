@@ -7,7 +7,7 @@ WORKDIR /app/frontend
 
 # Install dependencies
 COPY frontend/package*.json ./
-RUN npm ci
+RUN npm install --legacy-peer-deps
 
 # Copy frontend source
 COPY frontend/ ./
@@ -46,7 +46,7 @@ COPY backend/ ./
 # ===========================
 # BACKEND RUNTIME STAGE
 # ===========================
-FROM python:3.12-slim AS runtime
+FROM python:3.12-slim AS backend-runtime
 
 WORKDIR /app
 
@@ -54,14 +54,28 @@ WORKDIR /app
 COPY --from=backend-build /app/.venv .venv
 COPY --from=backend-build /app ./backend
 
-# Copy frontend build output into backend static folder
-COPY --from=frontend-build /app/frontend/build ./backend/static
-
 # Add venv to PATH
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Environment (can be overridden by docker-compose)
 ENV SERVER=mavencode.api.server
 
-# Start backend
+# Start backend (make sure it binds 0.0.0.0:9012)
 CMD python3 -m ${SERVER}
+
+
+# ===========================
+# FRONTEND RUNTIME (NEXT.JS SERVER)
+# ===========================
+FROM node:20-alpine AS frontend-runtime
+
+WORKDIR /app/frontend
+
+# Copy built frontend (and node_modules for runtime)
+COPY --from=frontend-build /app/frontend ./
+
+# Expose port 3000 (Next.js default)
+EXPOSE 3000
+
+# Start Next.js server
+CMD ["npm", "start"]

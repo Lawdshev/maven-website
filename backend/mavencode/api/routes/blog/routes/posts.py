@@ -159,12 +159,13 @@ async def search_blog_posts(
 
 @router.get("/posts/filter", response_model=Optional[BlogPostPaginationResponse])
 async def filter_blog_posts(
-    category_id: UUID,
+    category_id: Optional[UUID] = None,
+    author_id: Optional[UUID] = None,
     blog_repo: BlogRepository = Depends(get_repository(BlogRepository))
 ) -> Optional[BlogPostPaginationResponse]:
     try:
-        logger.info("Filtering blog posts by category id: %s", category_id)
-        posts = await blog_repo.filter_blog_posts(category_id)
+        logger.info("Filtering blog posts")
+        posts = await blog_repo.filter_blog_posts(category_id, author_id)
 
         if not posts:
             return {
