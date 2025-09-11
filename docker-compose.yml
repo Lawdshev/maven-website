@@ -29,7 +29,7 @@ services:
       db:
         condition: service_healthy
     env_file:
-      - ./backend/.env
+      - ./backend/mavencode/core/.env
     environment:
       SERVER: mavencode.api.server
       DATABASE_URL: postgresql://db:db@db:5432/db

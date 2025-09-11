@@ -40,7 +40,7 @@ RUN poetry config virtualenvs.in-project true
 RUN poetry install --no-root --no-interaction --no-ansi
 
 # Copy backend source code
-COPY backend/ ./
+COPY backend/mavencode /app/mavencode
 
 
 # ===========================
@@ -52,13 +52,10 @@ WORKDIR /app
 
 # Copy virtualenv and backend code
 COPY --from=backend-build /app/.venv .venv
-COPY --from=backend-build /app ./backend
+COPY --from=backend-build /app/mavencode ./mavencode
 
 # Add venv to PATH
 ENV PATH="/app/.venv/bin:$PATH"
-
-# Environment (can be overridden by docker-compose)
-ENV SERVER=mavencode.api.server
 
 # Start backend (make sure it binds 0.0.0.0:9012)
 CMD python3 -m ${SERVER}

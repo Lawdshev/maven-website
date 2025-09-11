@@ -64,7 +64,7 @@ def main():
     uvicorn.run(
         "mavencode.api.server:app",
         host="0.0.0.0",
-        port=9000,
+        port=9012,
         reload=False if config.ENV.startswith("deployment") else True,
         workers=1
     )
