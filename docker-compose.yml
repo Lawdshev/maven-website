@@ -11,6 +11,7 @@ services:
     restart: unless-stopped
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./seed_data.sql:/docker-entrypoint-initdb.d/seed_data.sql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U db"]
       interval: 10s

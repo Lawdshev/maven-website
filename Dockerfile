@@ -39,6 +39,9 @@ COPY backend/pyproject.toml backend/poetry.lock ./
 RUN poetry config virtualenvs.in-project true
 RUN poetry install --no-root --no-interaction --no-ansi
 
+# Copy Alembic config (so migrations can run inside container)
+COPY alembic.ini ./
+
 # Copy backend source code
 COPY backend/mavencode /app/mavencode
 
@@ -53,6 +56,7 @@ WORKDIR /app
 # Copy virtualenv and backend code
 COPY --from=backend-build /app/.venv .venv
 COPY --from=backend-build /app/mavencode ./mavencode
+COPY --from=backend-build /app/alembic.ini ./alembic.ini
 
 # Add venv to PATH
 ENV PATH="/app/.venv/bin:$PATH"

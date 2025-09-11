@@ -1,20 +1,15 @@
-.PHONY: build migrate up down clean createdb
+.PHONY: build migrate up down clean createdb seed logs all help
 
 # Docker and Docker Compose configurations
 COMPOSE_FILE = docker-compose.yml
 
 # Service names
-SERVICES = mavencode
-
-# Docker image names
-REGISTRY = 
-PROJECT = mavencode
-VERSION = latest
+BACKEND_CONTAINER = backend
+DB_CONTAINER = db
 
 # Database settings (change these if needed)
 DB_NAME = db
 DB_USER = db
-DB_CONTAINER = db
 
 # Create database if it does not exist
 createdb:
@@ -23,11 +18,16 @@ createdb:
 	psql -U $(DB_USER) -tc "SELECT 1 FROM pg_database WHERE datname = '$(DB_NAME)'" | grep -q 1 \
 	|| docker compose -f $(COMPOSE_FILE) exec -T $(DB_CONTAINER) createdb -U $(DB_USER) $(DB_NAME)
 
-# Run DB Migration
-migrate: createdb
+# Run DB Migration inside backend container
+migrate:
 	@echo "Migrating database schemas..."
-	alembic upgrade head
-	@echo "✅ Database migration completed!"
+	docker compose exec -T backend alembic upgrade head
+
+# Seed database with initial data
+seed:
+	@echo "Seeding database with seed_data.sql..."
+	docker compose exec -T db \
+		psql -U db -d db -f /docker-entrypoint-initdb.d/seed_data.sql
 
 # Build all Docker images
 build:
@@ -96,7 +96,10 @@ help:
 	@echo "  make logs-SERVICE  Show logs for a specific service"
 	@echo "  make clean         Clean up Docker resources"
 	@echo "  make createdb      Create database if it does not exist"
-	@echo "  make migrate       Migrate database schemas"
+	@echo "  make migrate       Migrate database schemas (inside backend)"
+	@echo "  make seed          Run seed data for database schema"
 	@echo ""
 	@echo "Services:"
-	@echo "  - blog-service"
+	@echo "  - backend"
+	@echo "  - frontend"
+	@echo "  - db"
