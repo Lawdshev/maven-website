@@ -18,15 +18,15 @@ const navItems = [
       { title: "Categories", href: "/admin/categories" },
     ],
   },
-  {
-    title: "Contacts",
-    href: "/admin/contacts",
-    icon: Mail,
-    children: [
-      { title: "All Contacts", href: "/admin/contacts" },
-      { title: "Contact Categories", href: "/admin/contacts/categories" },
-    ],
-  },
+  // {
+  //   title: "Contacts",
+  //   href: "/admin/contacts",
+  //   icon: Mail,
+  //   children: [
+  //     { title: "All Contacts", href: "/admin/contacts" },
+  //     { title: "Contact Categories", href: "/admin/contacts/categories" },
+  //   ],
+  // },
 ];
 
 export default function AdminSidebar() {
