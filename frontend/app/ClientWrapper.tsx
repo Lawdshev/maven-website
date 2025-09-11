@@ -1,13 +1,17 @@
-"use client"
+"use client";
 import { usePathname } from "next/navigation";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
-export default function ClientWrapper({ children }: { children: React.ReactNode }) {
+export default function ClientWrapper({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const pathname = usePathname();
-  const isAuthPage = pathname === "/admin/login";
+  const isAdminPage = pathname.startsWith("/admin");
 
-  if (isAuthPage) return <>{children}</>;
+  if (isAdminPage) return <>{children}</>;
   return (
     <>
       <Header>{children}</Header>

@@ -3,27 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import {
-  LayoutDashboard,
-  FileText,
-  Users,
-  Settings,
-  LogOut,
-  Menu,
-  X,
-  Plus,
-  List,
-  Mail,
-} from "lucide-react";
+import { FileText, LogOut, Menu, X, Plus, List, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const navItems = [
-  {
-    title: "Dashboard",
-    href: "/admin/dashboard",
-    icon: LayoutDashboard,
-  },
   {
     title: "Blogs",
     href: "/admin/blogs",
@@ -33,20 +17,6 @@ const navItems = [
       { title: "Create Blog", href: "/admin/blogs/create" },
       { title: "Categories", href: "/admin/categories" },
     ],
-  },
-  {
-    title: "Providers",
-    href: "/admin/providers",
-    icon: Users,
-    children: [
-      { title: "All Providers", href: "/admin/providers" },
-      { title: "Add Provider", href: "/admin/providers/create" },
-    ],
-  },
-  {
-    title: "Services",
-    href: "/admin/services",
-    icon: Settings,
   },
   {
     title: "Contacts",
@@ -91,7 +61,13 @@ export default function AdminSidebar() {
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="p-6 border-b border-gray-200">
-                       <Image src="/logo.png" alt="Logo" width={0} height={0} className="w-full"/>
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={0}
+              height={0}
+              className="w-full"
+            />
           </div>
 
           {/* Navigation */}
