@@ -12,8 +12,12 @@ import {
   Star,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Modal } from "antd";
+import { useState } from "react";
+import ContactForm from "../contact-us/contact-form";
 
 export default function IndustriesPage() {
+  const [open, setOpen] = useState(false);
   // Animation variants
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -73,10 +77,19 @@ export default function IndustriesPage() {
           icon: ShoppingCart,
           desc: "Retail thrives on timing, precision, and customer experience. Our AI-powered systems give retailers the tools to respond instantly to shifts in demand, supply chain disruptions, and customer preferences.",
           applications: [
-            { title: "Demand Forecasting", desc: "Predict future sales with precision." },
+            {
+              title: "Demand Forecasting",
+              desc: "Predict future sales with precision.",
+            },
             { title: "Dynamic Pricing", desc: "Adjust prices in real time." },
-            { title: "Customer Personalization", desc: "Recommend tailored products." },
-            { title: "Supply Chain Optimization", desc: "Monitor inventory and vendors in real time." },
+            {
+              title: "Customer Personalization",
+              desc: "Recommend tailored products.",
+            },
+            {
+              title: "Supply Chain Optimization",
+              desc: "Monitor inventory and vendors in real time.",
+            },
           ],
           benefits: [
             "Fewer stockouts and reduced waste",
@@ -92,10 +105,22 @@ export default function IndustriesPage() {
           icon: Heart,
           desc: "In healthcare, every decision affects outcomes. Our AI and data solutions help providers, researchers, and administrators make smarter choices in seconds, not days.",
           applications: [
-            { title: "Predictive Diagnostics", desc: "Identify disease risk early with AI." },
-            { title: "Operational Efficiency", desc: "Automate scheduling and resource allocation." },
-            { title: "Clinical Decision Support", desc: "Deliver recommendations to clinicians." },
-            { title: "Regulatory Compliance", desc: "Ensure adherence to HIPAA and privacy rules." },
+            {
+              title: "Predictive Diagnostics",
+              desc: "Identify disease risk early with AI.",
+            },
+            {
+              title: "Operational Efficiency",
+              desc: "Automate scheduling and resource allocation.",
+            },
+            {
+              title: "Clinical Decision Support",
+              desc: "Deliver recommendations to clinicians.",
+            },
+            {
+              title: "Regulatory Compliance",
+              desc: "Ensure adherence to HIPAA and privacy rules.",
+            },
           ],
           benefits: [
             "Faster, more accurate diagnoses",
@@ -111,10 +136,22 @@ export default function IndustriesPage() {
           icon: TrendingUp,
           desc: "The financial sector has always been data-driven, but AI is redefining how firms assess risk, detect fraud, and make investment decisions.",
           applications: [
-            { title: "Time Series Prediction", desc: "Forecast market movements with stacked models." },
-            { title: "Automated Due Diligence", desc: "Use AI to review contracts and reduce errors." },
-            { title: "Fraud Detection & Risk Management", desc: "Identify anomalies and detect threats early." },
-            { title: "Portfolio Management", desc: "Adjust strategies based on real-time data." },
+            {
+              title: "Time Series Prediction",
+              desc: "Forecast market movements with stacked models.",
+            },
+            {
+              title: "Automated Due Diligence",
+              desc: "Use AI to review contracts and reduce errors.",
+            },
+            {
+              title: "Fraud Detection & Risk Management",
+              desc: "Identify anomalies and detect threats early.",
+            },
+            {
+              title: "Portfolio Management",
+              desc: "Adjust strategies based on real-time data.",
+            },
           ],
           benefits: [
             "Faster, more accurate insights",
@@ -130,10 +167,22 @@ export default function IndustriesPage() {
           icon: Zap,
           desc: "Energy operations span vast geographies. Our AI-enabled platforms turn raw sensor and field data into actionable intelligence for operators and decision-makers.",
           applications: [
-            { title: "Predictive Maintenance", desc: "Detect issues before costly downtime." },
-            { title: "Load Forecasting", desc: "Predict demand to optimize distribution." },
-            { title: "Remote Monitoring", desc: "Track asset performance in real time." },
-            { title: "Sustainability Optimization", desc: "Analyze usage to reduce footprint." },
+            {
+              title: "Predictive Maintenance",
+              desc: "Detect issues before costly downtime.",
+            },
+            {
+              title: "Load Forecasting",
+              desc: "Predict demand to optimize distribution.",
+            },
+            {
+              title: "Remote Monitoring",
+              desc: "Track asset performance in real time.",
+            },
+            {
+              title: "Sustainability Optimization",
+              desc: "Analyze usage to reduce footprint.",
+            },
           ],
           benefits: [
             "Reduced downtime and costs",
@@ -146,7 +195,7 @@ export default function IndustriesPage() {
       ].map((industry, idx) => (
         <motion.section
           key={industry.id}
-           id={industry.id}
+          id={industry.id}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -157,7 +206,9 @@ export default function IndustriesPage() {
             {/* Heading */}
             <div className="flex items-center space-x-3 mb-6">
               <industry.icon className="h-8 w-8 text-[#0054aa]" />
-              <h2 className="text-3xl font-normal text-black">{industry.title}</h2>
+              <h2 className="text-3xl font-normal text-black">
+                {industry.title}
+              </h2>
             </div>
             <p className="text-xl text-black leading-[35px] mb-10 max-w-2xl">
               {industry.desc}
@@ -166,7 +217,9 @@ export default function IndustriesPage() {
             <div className="flex flex-col lg:flex-row justify-between gap-6">
               {/* Applications */}
               <motion.div variants={fadeUp} whileHover={{ scale: 1.02 }}>
-                <h4 className="text-2xl font-normal mb-4 text-[#0054aa]">Applications</h4>
+                <h4 className="text-2xl font-normal mb-4 text-[#0054aa]">
+                  Applications
+                </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 border border-gray-200 divide-x divide-y divide-gray-200 mb-10">
                   {industry.applications.map((app, i) => (
                     <motion.div
@@ -177,7 +230,9 @@ export default function IndustriesPage() {
                     >
                       <ClipboardList className="h-6 w-6 text-[#0054aa] mb-3" />
                       <h3 className="text-xl font-medium mb-2">{app.title}</h3>
-                      <p className="text-black leading-[30px] text-lg">{app.desc}</p>
+                      <p className="text-black leading-[30px] text-lg">
+                        {app.desc}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -185,7 +240,9 @@ export default function IndustriesPage() {
 
               {/* Benefits */}
               <motion.div variants={fadeUp} whileHover={{ scale: 1.02 }}>
-                <h4 className="text-2xl font-normal mb-4 text-[#0054aa]">Key Benefits</h4>
+                <h4 className="text-2xl font-normal mb-4 text-[#0054aa]">
+                  Key Benefits
+                </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 border border-gray-200 divide-x divide-y divide-gray-200 mb-10">
                   {industry.benefits.map((benefit, i) => (
                     <motion.div
@@ -195,7 +252,9 @@ export default function IndustriesPage() {
                       className="p-6 min-h-[200px]"
                     >
                       <Star className="h-6 w-6 text-[#0054aa] mb-3" />
-                      <p className="text-black text-lg leading-[30px]">{benefit}</p>
+                      <p className="text-black text-lg leading-[30px]">
+                        {benefit}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -204,16 +263,27 @@ export default function IndustriesPage() {
 
             {/* CTA */}
             <motion.div variants={fadeUp} whileHover={{ scale: 1.05 }}>
-              <Link href="/contact-us">
-                <Button className="bg-[#0054aa] text-white px-6 py-6 text-xl rounded-none hover:bg-[#004080]">
-                  {industry.button}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+              <Button
+                className="bg-[#0054aa] text-white px-6 py-6 text-xl rounded-none hover:bg-[#004080]"
+                onClick={() => setOpen(true)}
+              >
+                {industry.button}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </motion.div>
           </motion.div>
         </motion.section>
       ))}
+
+      <Modal
+        open={open}
+        onCancel={() => setOpen(false)}
+        footer={null}
+        className="contact-modal-wrapper"
+        style={{ top: 20 }}
+      >
+        <ContactForm />
+      </Modal>
     </div>
   );
 }

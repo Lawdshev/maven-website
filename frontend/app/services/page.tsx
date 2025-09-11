@@ -88,7 +88,7 @@ export default function ServicesPage() {
       <motion.section
         className="w-full border-b px-6 md:px-12 py-16 border-t border-gray-200"
         initial="hidden"
-         id="ai-data"
+        id="ai-data"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
         variants={stagger}
@@ -179,7 +179,7 @@ export default function ServicesPage() {
       <motion.section
         className="w-full px-6 md:px-12 py-16 border-t border-gray-200"
         initial="hidden"
-          id="cloud-engineering"
+        id="cloud-engineering"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
         variants={fadeUp}
@@ -230,7 +230,7 @@ export default function ServicesPage() {
       <motion.section
         className="w-full px-6 md:px-12 py-16 border-t border-gray-200"
         initial="hidden"
-          id="data-infrastructure"
+        id="data-infrastructure"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
         variants={stagger}
@@ -322,11 +322,13 @@ export default function ServicesPage() {
             business? Book a discovery call with MavenCode today.
           </p>
         </div>
-        <Link href="/contact-us">
-          <Button className="bg-[#0054aa] hover:bg-[#003d7f] text-white text-xl rounded-none w-fit px-6 py-6 md:min-w-[200px]">
-            Book Discovery Call
-          </Button>
-        </Link>
+
+        <Button
+          className="bg-[#0054aa] hover:bg-[#003d7f] text-white text-xl rounded-none w-fit px-6 py-6 md:min-w-[200px]"
+          onClick={() => setOpen(true)}
+        >
+          Book Discovery Call
+        </Button>
       </motion.div>
 
       <Modal

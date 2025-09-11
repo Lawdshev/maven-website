@@ -14,8 +14,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Modal } from "antd";
+import { useState } from "react";
+import ContactForm from "../contact-us/contact-form";
 
 export default function AboutPage() {
+  const [open, setOpen] = useState(false);
   const commitments = [
     {
       title: "Impact that lasts",
@@ -216,15 +220,26 @@ export default function AboutPage() {
             build, and scale AI solutions that transform your business.
           </p>
         </div>
-        <Link href="/contact-us">
+        
           <Button
             variant="outline"
-            className="bg-[#0054aa] hover:bg-[#003d7f] text-white text-xl rounded-none w-fit px-6 py-6 md:min-w-[200px]"
+            className="bg-[#0054aa] hover:bg-[#003d7f] text-white text-xl rounded-none w-fit px-6 py-6 md:min-w-[200px]" 
+            onClick={() => setOpen(true)}
           >
             Contact Us
           </Button>
-        </Link>
+    
       </motion.div>
+
+      <Modal
+        open={open}
+        onCancel={() => setOpen(false)}
+        footer={null}
+        className="contact-modal-wrapper"
+        style={{ top: 20 }}
+      >
+        <ContactForm />
+      </Modal>
     </div>
   );
 }
