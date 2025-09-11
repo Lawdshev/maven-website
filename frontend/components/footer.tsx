@@ -35,8 +35,8 @@ function Footer() {
   return (
     <div>
       {/* Footer */}
-      <footer className="bg-black text-gray-300 py-12 px-6 md:px-12 ">
-        <div className="w-[95%] mx-auto max-w-[1800px]">
+      <footer className="bg-black text-black -300 py-12 px-6 md:px-12 ">
+        <div className="w-[95%] mx-auto max-w-[1780px]">
 
         <div className=" grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="md:col-span-1">
@@ -180,7 +180,7 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
+        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-black -400 space-y-4 md:space-y-0">
           <div className="flex space-x-4">
             <Link href="#" className="hover:underline">
               Contact Mavencode
@@ -224,11 +224,11 @@ function Footer() {
               Assistant
             </h3>
             <Button variant="ghost" size="icon" onClick={toggleChatbox}>
-              <X className="h-5 w-5 text-gray-600" />
+              <X className="h-5 w-5 text-black -600" />
               <span className="sr-only">Close chat</span>
             </Button>
           </div>
-          <div className="flex-1 p-4 overflow-y-auto text-sm text-gray-700">
+          <div className="flex-1 p-4 overflow-y-auto text-sm text-black -700">
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -240,7 +240,7 @@ function Footer() {
                   className={`inline-block p-2 rounded-lg ${
                     message.sender === "user"
                       ? "bg-[#0054aa] -500 text-white"
-                      : "bg-gray-100 text-gray-800"
+                      : "bg-gray-100 text-black -800"
                   }`}
                 >
                   {message.text}

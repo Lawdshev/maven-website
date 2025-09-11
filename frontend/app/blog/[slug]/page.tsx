@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   return (
-    <div className="text-black max-w-[1800px] w-[95%] mx-auto">
+    <div className="text-black max-w-[1780px] w-[95%] mx-auto">
       <BlogPostDetail slug={params.slug} />
     </div>
   );

@@ -137,4 +137,14 @@
   }
 }
 
+.contact-modal-wrapper{
+    max-width: 1269px !important;
+  width: 90% !important;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 

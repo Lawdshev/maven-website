@@ -30,12 +30,16 @@ import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
+import ContactForm from "@/app/contact-us/contact-form";
+import { Modal } from "antd";
 
 export default function Header({ children }: { children: React.ReactNode }) {
   const [showSearchInput, setShowSearchInput] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null); // State to track which mega menu is open
   const headerRef = useRef<HTMLElement>(null); // Ref for the header to detect clicks outside
   const router = useRouter();
+  const [open, setOpen] = useState(false);
 
   const toggleSearchInput = () => {
     setShowSearchInput(!showSearchInput);
@@ -72,7 +76,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
         ref={headerRef}
         className="border-b border-gray-200 py-4 px-6 md:px-12 lg:py-8 "
       >
-        <div className="flex items-center justify-between relative z-50 max-w-[1800px] w-[95%] mx-auto">
+        <div className="flex items-center justify-between relative z-50 max-w-[1710px] w-[95%] mx-auto">
           <div className="flex items-center space-x-8">
             <Link
               href="/"
@@ -165,13 +169,17 @@ export default function Header({ children }: { children: React.ReactNode }) {
           </div>
           <div className="flex items-center space-x-4 flex-grow justify-end">
             <>
-              <Link href={"/contact-us"}>
-                <Button className="font-normal md:min-w-[200px] w-fit rounded-none bg-[#0054aa] hover:bg-[#003d7f] cursor-pointer text-xl  text-white px-6 py-6 flex items-center justify-center">
-                  Contact us
-                </Button>
-              </Link>
+              <Button
+                className="font-normal md:min-w-[200px] w-fit rounded-none bg-[#0054aa] hover:bg-[#003d7f] cursor-pointer text-xl  text-white px-6 py-6 flex items-center justify-center"
+                onClick={() => setOpen(true)}
+              >
+                Contact us
+              </Button>
+
+              <Modal open={open} onCancel={() => setOpen(false)} footer={null} className="contact-modal-wrapper" style={{ top: 20 }} >
+                <ContactForm />
+              </Modal>
             </>
-            {/* Mobile menu icon */}
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="lg:hidden">

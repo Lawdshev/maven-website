@@ -15,41 +15,34 @@ export const aiMegaMenu: MegaMenuColumn[] = [
   {
     links: [
       { label: "Overview", href: "/services" },
-      { label: "AI Agents", href: "#" },
-      { label: "Real-Time Data Pipelines", href: "#" },
-      { label: "Cloud Native Architecture", href: "#" },
+      { label: "AI Agents", href: "/services#ai-data" },
+      { label: "Real-Time Data Pipelines", href: "/services#data-infrastructure" },
+      { label: "Cloud Native Architecture", href: "/services#cloud-engineering" },
     ],
   },
-  // {
-  //   links: [
-  //     { label: "Consulting", href: "#" },
-  //     { label: "Research", href: "#" },
-  //     { label: "Ethics and governance", href: "#" },
-  //     { label: "Security", href: "#" },
-  //   ],
-  // },
-  // You can add more columns here if needed for the AI menu
-]
+];
+
 
 // Data for the 'Hybrid Cloud' mega menu
 export const hybridCloudMegaMenu: MegaMenuColumn[] = [
   {
     links: [
       { label: "Overview", href: "/industries" },
-      { label: "Cloud Services", href: "#" },
-      { label: "Hybrid Cloud Platform", href: "#" },
-      { label: "Cloud Security", href: "#" },
+      { label: "Cloud Services", href: "/industries#cloud-services" }, // placeholder
+      { label: "Hybrid Cloud Platform", href: "/industries#hybrid-cloud" }, // placeholder
+      { label: "Cloud Security", href: "/industries#cloud-security" }, // placeholder
     ],
   },
   {
     links: [
-      { label: "Data Management", href: "#" },
-      { label: "Integration", href: "#" },
-      { label: "Automation", href: "#" },
-      { label: "Containers", href: "#" },
+      { label: "Data Management", href: "/industries#retail" },
+      { label: "Integration", href: "/industries#healthcare" },
+      { label: "Automation", href: "/industries#finance" },
+      { label: "Containers", href: "/industries#energy" },
     ],
   },
-]
+];
+
 
 // Data for the 'Products' mega menu
 export const productsMegaMenu: MegaMenuColumn[] = [

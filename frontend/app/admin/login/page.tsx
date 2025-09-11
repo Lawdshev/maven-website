@@ -21,19 +21,19 @@ export default function AdminLogin() {
           <div className="mx-auto h-12 w-12 bg-[#0054aa] rounded-full flex items-center justify-center">
             <Lock className="h-6 w-6 text-white" />
           </div>
-          <h2 className="mt-6 text-3xl font-[medium] text-gray-900">Admin Login</h2>
-          <p className="mt-2 text-sm text-gray-600">Sign in to manage your blog posts</p>
+          <h2 className="mt-6 text-3xl font-[medium] text-black -900">Admin Login</h2>
+          <p className="mt-2 text-sm text-black -600">Sign in to manage your blog posts</p>
         </div>
 
         <div className="bg-white py-8 px-6 shadow-lg rounded-lg border border-gray-200">
           <form ref={formRef} action={formAction} className="space-y-6">
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-black -700 mb-1">
                 Email Address
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-black -400" />
                 <Input
                   id="email"
                   name="email"
@@ -48,11 +48,11 @@ export default function AdminLogin() {
 
             {/* Password Field */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="password" className="block text-sm font-medium text-black -700 mb-1">
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-black -400" />
                 <Input
                   id="password"
                   name="password"
@@ -86,7 +86,7 @@ export default function AdminLogin() {
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-xs text-gray-500">Demo credentials: admin@mavencode.com / admin123</p>
+            <p className="text-xs text-black -500">Demo credentials: admin@mavencode.com / admin123</p>
           </div>
         </div>
       </div>
