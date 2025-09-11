@@ -1,50 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Plus, Search, Edit, Trash2, Eye } from "lucide-react";
 import Link from "next/link";
 import { WarningModal } from "@/components/ui/warning-modal";
-
-
-interface Article {
-  id: string;
-  title: string;
-  excerpt: string;
-  author: string;
-  publishedAt: string;
-  status: "published" | "draft";
-}
+import {
+  getBlogPosts,
+  deleteBlogPost,
+  type BlogPost,
+} from "../../server-actions/blog";
 
 export default function BlogsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isDeleting, setIsDeleting] = useState<string | null>(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [blogToDelete, setBlogToDelete] = useState<Article | null>(null);
+  const [blogToDelete, setBlogToDelete] = useState<BlogPost | null>(null);
+  const [blogs, setBlogs] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // 📝 Dummy blog list
-  const blogs: Article[] = [
-    {
-      id: "1",
-      title: "Getting Started with Next.js 15",
-      excerpt:
-        "Next.js 15 introduces exciting new features for faster builds and better developer experience...",
-      author: "Jane Doe",
-      publishedAt: "2025-08-01T10:00:00Z",
-      status: "published",
-    },
-    {
-      id: "2",
-      title: "Understanding React Server Components",
-      excerpt:
-        "Server Components are a new way to build fast, scalable React apps without shipping unnecessary JavaScript...",
-      author: "John Smith",
-      publishedAt: "2025-07-15T15:30:00Z",
-      status: "draft",
-    },
-  ];
+  // Fetch blog posts
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const blogPosts = await getBlogPosts();
+        setBlogs(blogPosts);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
 
   const filteredBlogs = blogs.filter(
     (blog) =>
@@ -52,7 +43,7 @@ export default function BlogsPage() {
       blog.author.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleDeleteClick = (blog: Article) => {
+  const handleDeleteClick = (blog: BlogPost) => {
     setBlogToDelete(blog);
     setShowDeleteModal(true);
   };
@@ -61,19 +52,39 @@ export default function BlogsPage() {
     if (!blogToDelete?.id) return;
     setIsDeleting(blogToDelete.id);
 
-    // ⏳ Mock delete delay
-    await new Promise((res) => setTimeout(res, 800));
-
-    setIsDeleting(null);
-    setShowDeleteModal(false);
-    setBlogToDelete(null);
-    alert(`Deleted "${blogToDelete.title}" (mock only)`);
+    try {
+      const result = await deleteBlogPost(blogToDelete.id);
+      if (result.success) {
+        // Remove the blog from the local state
+        setBlogs(blogs.filter((blog) => blog.id !== blogToDelete.id));
+        setShowDeleteModal(false);
+        setBlogToDelete(null);
+      } else {
+        alert(`Error: ${result.message}`);
+      }
+    } catch (error) {
+      console.error("Error deleting blog:", error);
+      alert("Error deleting blog post");
+    } finally {
+      setIsDeleting(null);
+    }
   };
 
   const handleDeleteCancel = () => {
     setShowDeleteModal(false);
     setBlogToDelete(null);
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p>Loading blogs...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -112,7 +123,8 @@ export default function BlogsPage() {
               <div className="flex gap-2">
                 <Button variant="outline">All ({blogs.length})</Button>
                 <Button variant="outline">
-                  Published ({blogs.filter((b) => b.status === "published").length})
+                  Published (
+                  {blogs.filter((b) => b.status === "published").length})
                 </Button>
                 <Button variant="outline">
                   Drafts ({blogs.filter((b) => b.status === "draft").length})
@@ -132,11 +144,21 @@ export default function BlogsPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-gray-200">
-                    <th className="text-left py-3 px-4 font-medium text-black -700">Title</th>
-                    <th className="text-left py-3 px-4 font-medium text-black -700">Author</th>
-                    <th className="text-left py-3 px-4 font-medium text-black -700">Published</th>
-                    <th className="text-left py-3 px-4 font-medium text-black -700">Status</th>
-                    <th className="text-left py-3 px-4 font-medium text-black -700">Actions</th>
+                    <th className="text-left py-3 px-4 font-medium text-black -700">
+                      Title
+                    </th>
+                    <th className="text-left py-3 px-4 font-medium text-black -700">
+                      Author
+                    </th>
+                    <th className="text-left py-3 px-4 font-medium text-black -700">
+                      Published
+                    </th>
+                    <th className="text-left py-3 px-4 font-medium text-black -700">
+                      Status
+                    </th>
+                    <th className="text-left py-3 px-4 font-medium text-black -700">
+                      Actions
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -146,7 +168,9 @@ export default function BlogsPage() {
                       className="border-b border-gray-100 hover:bg-gray-50"
                     >
                       <td className="py-4 px-4">
-                        <h3 className="font-medium text-black -900">{blog.title}</h3>
+                        <h3 className="font-medium text-black -900">
+                          {blog.title}
+                        </h3>
                         <p className="text-sm text-black -600 mt-1 line-clamp-2">
                           {blog.excerpt}
                         </p>
@@ -168,11 +192,19 @@ export default function BlogsPage() {
                       </td>
                       <td className="py-4 px-4">
                         <div className="flex items-center space-x-2">
-                          <Button variant="outline" size="sm" className="text-blue-600 hover:text-blue-700">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="text-blue-600 hover:text-blue-700"
+                          >
                             <Eye className="w-4 h-4" />
                           </Button>
                           <Link href={`/admin/blogs/edit/${blog.id}`}>
-                            <Button variant="outline" size="sm" className="text-green-600 hover:text-green-700">
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="text-green-600 hover:text-green-700"
+                            >
                               <Edit className="w-4 h-4" />
                             </Button>
                           </Link>
