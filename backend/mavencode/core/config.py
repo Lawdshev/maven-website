@@ -2,11 +2,13 @@
 Centralized logic for declaring application environment variables
 """
 
+import pathlib
 from databases import DatabaseURL
 from starlette.config import Config
 from starlette.datastructures import Secret
 
-config = Config(".env")
+env_path = pathlib.Path(__file__).resolve().parents[0] / ".env"
+config = Config(env_path)
 
 PROJECT_NAME = config("APP_NAME", cast=str)
 VERSION = config("APP_VERSION", cast=str)

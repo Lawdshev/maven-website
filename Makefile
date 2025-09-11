@@ -26,7 +26,7 @@ createdb:
 # Run DB Migration
 migrate: createdb
 	@echo "Migrating database schemas..."
-	cd backend && alembic upgrade head
+	alembic upgrade head
 	@echo "✅ Database migration completed!"
 
 # Build all Docker images
