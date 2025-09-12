@@ -12,16 +12,23 @@ from mavencode.models.blog.posts import (
 )
 
 CREATE_POST_QUERY = """
-    INSERT INTO blog_posts
-    (title, content, thumbnail, category_id, is_published, read_time, author_id)
-    VALUES (:title, :content, :thumbnail, :category_id, :is_published, :read_time, :author_id)
-    RETURNING *;
+    WITH inserted AS (
+        INSERT INTO blog_posts
+        (title, content, thumbnail, category_id, is_published, read_time, author_id)
+        VALUES (:title, :content, :thumbnail, :category_id, :is_published, :read_time, :author_id)
+        RETURNING *
+    )
+    SELECT i.*, CONCAT(u.first_name, ' ', u.last_name) AS author_name
+    FROM inserted i
+    JOIN users u ON i.author_id = u.id;
 """
 
-GET_ALL_POSTS_QUERY = """
-    SELECT * FROM blog_posts
-    WHERE is_published = :is_published
-    ORDER BY created_at DESC
+GET_ALL_PUBLISHED_POSTS_QUERY = """
+    SELECT bp.*, CONCAT(u.first_name, ' ', u.last_name) AS author_name
+    FROM blog_posts bp
+    JOIN users u ON bp.author_id = u.id
+    WHERE bp.is_published = :is_published
+    ORDER BY bp.created_at DESC
     OFFSET :offset
     LIMIT :limit;
 """
@@ -32,9 +39,11 @@ COUNT_ALL_PUBLISHED_POSTS_QUERY = """
 """
 
 GET_ALL_UNPUBLISHED_POSTS_QUERY = """
-    SELECT * FROM blog_posts
-    WHERE is_published = :is_published
-    ORDER BY created_at DESC
+    SELECT bp.*, CONCAT(u.first_name, ' ', u.last_name) AS author_name
+    FROM blog_posts bp
+    JOIN users u ON bp.author_id = u.id
+    WHERE bp.is_published = :is_published
+    ORDER BY bp.created_at DESC
     OFFSET :offset
     LIMIT :limit;
 """
@@ -45,33 +54,57 @@ COUNT_ALL_UNPUBLISHED_POSTS_QUERY = """
 """
 
 GET_POST_BY_ID_QUERY = """
+    SELECT bp.*, CONCAT(u.first_name, ' ', u.last_name) AS author_name
+    FROM blog_posts bp
+    JOIN users u ON bp.author_id = u.id
+    WHERE bp.id = :id
+      AND bp.is_published = :is_published;
+"""
+
+GET_POST_BY_ID = """
     SELECT * FROM blog_posts
-    WHERE id = :id AND is_published = :is_published
+    WHERE id = :id
 """
 
 DELETE_POST_BY_ID_QUERY = """
-    DELETE FROM blog_posts
-    WHERE id = :id AND is_published = :is_published
-    RETURNING *;
+    WITH deleted AS (
+        DELETE FROM blog_posts
+        WHERE id = :id
+          AND is_published = :is_published
+        RETURNING *
+    )
+    SELECT d.*, CONCAT(u.first_name, ' ', u.last_name) AS author_name
+    FROM deleted d
+    JOIN users u ON d.author_id = u.id;
 """
 
 UPDATE_POST_BY_ID_QUERY = """
-    UPDATE blog_posts
-    SET title = :title,
-        content = :content,
-        thumbnail = :thumbnail,
-        category_id = :category_id,
-        is_published = :is_published,
-        read_time = :read_time
-    WHERE id = :id
-    RETURNING *;
+    WITH updated AS (
+        UPDATE blog_posts
+        SET title = :title,
+            content = :content,
+            thumbnail = :thumbnail,
+            category_id = :category_id,
+            is_published = :is_published,
+            read_time = :read_time
+        WHERE id = :id
+        RETURNING *
+    )
+    SELECT up.*, CONCAT(a.first_name, ' ', a.last_name) AS author_name
+    FROM updated up
+    JOIN users a ON up.author_id = a.id;
 """
 
 SEARCH_POSTS_QUERY = """
-    SELECT * FROM blog_posts
-    WHERE is_published = :is_published
-    AND (title ILIKE COALESCE(:search_term, '%') OR content ILIKE COALESCE(:search_term, '%'))
-    ORDER BY created_at DESC
+    SELECT bp.*, CONCAT(u.first_name, ' ', u.last_name) AS author_name
+    FROM blog_posts bp
+    JOIN users u ON bp.author_id = u.id
+    WHERE bp.is_published = :is_published
+      AND (
+          bp.title ILIKE COALESCE(:search_term, '%')
+          OR bp.content ILIKE COALESCE(:search_term, '%')
+      )
+    ORDER BY bp.created_at DESC;
 """
 
 COUNT_SEARCHED_POSTS_QUERY = """
@@ -81,16 +114,21 @@ COUNT_SEARCHED_POSTS_QUERY = """
 """
 
 FILTER_POSTS_QUERY = """
-    SELECT * FROM blog_posts
-    WHERE is_published = :is_published
-    AND category_id = :category_id
-    ORDER BY created_at DESC
+    SELECT bp.*, CONCAT(u.first_name, ' ', u.last_name) AS author_name
+    FROM blog_posts bp
+    JOIN users u ON bp.author_id = u.id
+    WHERE bp.is_published = :is_published
+      AND bp.category_id = COALESCE(:category_id, bp.category_id)
+      AND bp.author_id   = COALESCE(:author_id, bp.author_id)
+    ORDER BY bp.created_at DESC;
 """
 
 COUNT_FILTERED_POSTS_QUERY = """
-    SELECT COUNT(*) FROM blog_posts
+    SELECT COUNT(*)
+    FROM blog_posts
     WHERE is_published = :is_published
-    AND category_id = :category_id
+      AND category_id = COALESCE(:category_id, category_id)
+      AND author_id   = COALESCE(:author_id, author_id)
 """
 
 
@@ -121,7 +159,7 @@ class BlogRepository(BaseRepository):
             logger.exception("Error: %s", e)
             raise e
 
-    async def get_all_blog_posts(self, limit: int, offset: int) -> Optional[List[BlogPostResponse]]:
+    async def get_all_blog_posts(self, limit: int, offset: int) -> Optional[BlogPostPaginationResponse]:
         try:
             logger.info("Getting all blog posts, limit: %s, offset: %s", limit, offset)
             values = {
@@ -129,7 +167,7 @@ class BlogRepository(BaseRepository):
                 "offset": offset,
                 "is_published": True
             }
-            posts = await self.db.fetch_all(GET_ALL_POSTS_QUERY, values)
+            posts = await self.db.fetch_all(GET_ALL_PUBLISHED_POSTS_QUERY, values)
             count_posts = await self.db.fetch_one(COUNT_ALL_PUBLISHED_POSTS_QUERY, {"is_published": True})
             count_posts = count_posts["count"]
 
@@ -148,7 +186,7 @@ class BlogRepository(BaseRepository):
             logger.exception("Error: %s", e)
             raise e
     
-    async def get_all_unpublished_blog_posts(self, limit: int, offset: int) -> Optional[List[BlogPostResponse]]:
+    async def get_all_unpublished_blog_posts(self, limit: int, offset: int) -> Optional[BlogPostPaginationResponse]:
         try:
             logger.info("Getting all blog posts, limit: %s, offset: %s", limit, offset)
             values = {
@@ -214,7 +252,7 @@ class BlogRepository(BaseRepository):
     ) -> Optional[BlogPostResponse]:
         try:
             logger.info("Updating blog post id: %s", post_id)
-            post = await self.db.fetch_one(GET_POST_BY_ID_QUERY, {"id": post_id, "is_published": True})
+            post = await self.db.fetch_one(GET_POST_BY_ID, {"id": post_id})
 
             if not post:
                 return None
@@ -236,7 +274,7 @@ class BlogRepository(BaseRepository):
         except Exception as e:
             logger.exception("Error: %s", e)
 
-    async def search_blog_posts(self, search_term: str) -> Optional[List[BlogPostResponse]]:
+    async def search_blog_posts(self, search_term: str) -> Optional[BlogPostPaginationResponse]:
         try:
             logger.info("Searching for blog posts by title or content: %s", search_term)
             values = {
@@ -262,28 +300,72 @@ class BlogRepository(BaseRepository):
             logger.exception("Error: %s", e)
             raise e
     
-    async def filter_blog_posts(self, category_id: UUID) -> Optional[BlogPostPaginationResponse]:
+    async def filter_blog_posts(
+        self, category_id: Optional[UUID] = None,
+        author_id: Optional[UUID] = None,
+    ) -> Optional[BlogPostPaginationResponse]:
         try:
-            logger.info("Filtering blog posts by category id: %s", category_id)
-            values = {
-                "category_id": category_id,
-                "is_published": True
-            }
-            posts = await self.db.fetch_all(FILTER_POSTS_QUERY, values)
-            count_posts = await self.db.fetch_one(COUNT_FILTERED_POSTS_QUERY, values)
-            count_posts = count_posts["count"]
+            if category_id is not None and author_id is not None:
+                logger.info("Filtering blog posts by category id: %s and author id: %s", category_id, author_id)
+                values = {
+                    "category_id": category_id,
+                    "author_id": author_id,
+                    "is_published": True
+                }
+            
+                posts = await self.db.fetch_all(FILTER_POSTS_QUERY, values)
+                count_posts = await self.db.fetch_one(COUNT_FILTERED_POSTS_QUERY, values)
+                count = count_posts["count"]
 
-            if not posts:
-                return {
-                "posts": [],
-                "number_of_posts": 0
-            }
+                if not posts:
+                    return {"posts": [], "number_of_posts": 0}
+                
+                blog_posts = [BlogPostResponse(**post) for post in posts]
 
-            blog_posts = [BlogPostResponse(**post) for post in posts]
-            return BlogPostPaginationResponse(
-                posts=blog_posts,
-                number_of_posts=count_posts
-            )
+                return BlogPostPaginationResponse(
+                    posts=blog_posts,
+                    number_of_posts=count
+                )
+
+            if category_id is not None and author_id is None:
+                logger.info("Filtering blog posts by category id: %s", category_id)
+                values = {
+                    "category_id": category_id,
+                    "is_published": True
+                }
+                posts = await self.db.fetch_all(FILTER_POSTS_QUERY, values)
+                count_posts = await self.db.fetch_one(COUNT_FILTERED_POSTS_QUERY, values)
+                count = count_posts["count"]
+
+                if not posts:
+                    return {"posts": [], "number_of_posts": 0}
+                
+                blog_posts = [BlogPostResponse(**post) for post in posts]
+
+                return BlogPostPaginationResponse(
+                    posts=blog_posts,
+                    number_of_posts=count
+                )
+
+            if category_id is None and author_id is not None:
+                logger.info("Filtering blog posts by author id: %s", author_id)
+                values = {
+                    "author_id": author_id,
+                    "is_published": True
+                }
+                posts = await self.db.fetch_all(FILTER_POSTS_QUERY, values)
+                count_posts = await self.db.fetch_one(COUNT_FILTERED_POSTS_QUERY, values)
+                count = count_posts["count"]
+
+                if not posts:
+                    return {"posts": [], "number_of_posts": 0}
+                
+                blog_posts = [BlogPostResponse(**post) for post in posts]
+
+                return BlogPostPaginationResponse(
+                    posts=blog_posts,
+                    number_of_posts=count
+                )
         except Exception as e:
             logger.exception("Error: %s", e)
             raise e

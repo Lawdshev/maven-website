@@ -7,9 +7,7 @@ class CreateCategory(BaseModel):
     name: str = Field(
         ...,
         title="Category Name",
-        description="Name of the category",
-        min_length=2,
-        max_length=50
+        description="Name of the category"
     )
 
 
@@ -22,9 +20,7 @@ class CategoryResponse(BaseModel):
     name: str = Field(
         ...,
         title="Category Name",
-        description="Name of the category",
-        min_length=2,
-        max_length=50
+        description="Name of the category"
     )
     created_at: datetime = Field(
         ...,
@@ -42,7 +38,5 @@ class UpdateCategory(BaseModel):
     name: Optional[str] = Field(
         ...,
         title="Category Name",
-        description="Name of the category",
-        min_length=2,
-        max_length=50
+        description="Name of the category"
     )

@@ -8,23 +8,17 @@ class BaseBlogPost(BaseModel):
     title: str = Field(
         ...,
         title="Title",
-        description="The title of the blog post",
-        min_length=10,
-        max_length=150
+        description="The title of the blog post"
     )
     content: str = Field(
         ...,
         title="Content",
-        description="The content of the blog post",
-        min_length=10,
-        max_length=1000
+        description="The content of the blog post"
     )
     thumbnail: Optional[str] = Field(
         None,
         title="Thumbnail",
-        description="The thumbnail of the blog post",
-        min_length=10,
-        max_length=200
+        description="The thumbnail of the blog post"
     )
     category_id: UUID = Field(
         ...,
@@ -42,23 +36,17 @@ class BlogPostCreate(BaseModel):
     title: str = Field(
         ...,
         title="Title",
-        description="The title of the blog post",
-        min_length=10,
-        max_length=150,
+        description="The title of the blog post"
     )
     content: str = Field(
         ...,
         title="Content",
-        description="The content of the blog post",
-        min_length=10,
-        max_length=1000,
+        description="The content of the blog post"
     )
     thumbnail: Optional[str] = Field(
         None,
         title="Thumbnail",
-        description="The thumbnail of the blog post",
-        min_length=10,
-        max_length=200,
+        description="The thumbnail of the blog post"
     )
     category_id: UUID = Field(
         ...,
@@ -120,6 +108,11 @@ class BlogPostResponse(BlogPostCreate):
         ...,
         title="Author ID",
         description="The ID of the author"
+    )
+    author_name: str = Field(
+        ...,
+        title="Author Name",
+        description="The name of the author"
     )
     read_time: int = Field(
         ...,

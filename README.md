@@ -10,7 +10,7 @@ The application is designed as a collection of applications that communicate wit
 
 The system is composed of seven (7) applications:
 Application entry point: `mavencode.api.server`
-Base URL: `http://<ip>:<port>/v1/mvc` in this case `http://0.0.0.0:9000/v1/mvc`
+Base URL: `http://<ip>:<port>/v1/mvc` in this case `http://0.0.0.0:9012/v1/mvc`
 
 ### 1. User Application
 
@@ -82,25 +82,32 @@ Base URL: `http://<ip>:<port>/v1/mvc` in this case `http://0.0.0.0:9000/v1/mvc`
 
    ```bash
    git clone https://github.com/MavenCode/MavenCode2025.git
-   cd vfm
+   cd MavenCode2025
    ```
+
 2. Set up environment variables (optional for development):
-   Create `.env` files in each component directory for custom configurations, or rely on the defaults provided in the Docker Compose file.
+   Create `.env` files in core directory for custom configurations.
 
 ### Local Development
 
 #### Using Make
 
 ```bash
-# Start all services
-make up
-
 # Build all Docker images, migrate database and start the services
 make all
 
 # Or just build all Docker images
 
 make build
+
+# Start all services
+make up
+
+# Run database migrations
+make migrate
+
+# Initialize/populate database with seed data
+make seed
 
 # Run tests
 make test
@@ -119,7 +126,7 @@ make clean
 
 After starting the application, you can access them at:
 
-- MavenCode Backend: http://0.0.0.0:9000/v1/mvc/docs
+- MavenCode Backend: http://0.0.0.0:9012/v1/mvc/docs
 - MavenCode Frontend: http://127.0.0.1:3000
 
 Each section provides Swagger UI documentation for testing the APIs.
@@ -153,11 +160,12 @@ make deploy-prod
 │   ├── db/                   # Database files
 │   └── models/               # Pydantic models
 │   └── services/             # Services
-│   └── alembic.ini           # Alembic config file
 │   └── poetry.lock           # Poetry dependecies lock file
 │   └── pyproject.toml        # Poetry settings
+├── Dockerfile                # Docker image configs setup
 ├── docker-compose.yml        # Local development setup
 ├── Makefile                  # Build and deployment commands
+│── alembic.ini               # Alembic config file
 └── README.md                 # This file
 ```
 
