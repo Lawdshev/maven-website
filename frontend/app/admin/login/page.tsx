@@ -16,20 +16,20 @@ export default function AdminLogin() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+      <div className="max-w-[600px] w-full space-y-8">
         <div className="text-center">
           <div className="mx-auto h-12 w-12 bg-[#0054aa] rounded-full flex items-center justify-center">
             <Lock className="h-6 w-6 text-white" />
           </div>
-          <h2 className="mt-6 text-3xl font-[medium] text-black -900">Admin Login</h2>
-          <p className="mt-2 text-sm text-black -600">Sign in to manage your blog posts</p>
+          <h2 className="mt-6 text-3xl font-medium text-black -900">Admin Login</h2>
+          <p className="mt-2 text-base xl:text-lg text-black -600">Sign in to manage your blog posts</p>
         </div>
 
         <div className="bg-white py-8 px-6 shadow-lg rounded-lg border border-gray-200">
-          <form ref={formRef} action={formAction} className="space-y-6">
+          <form ref={formRef} action={formAction} className="space-y-6 xl:space-y-8">
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-black -700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium xl:text-base text-black -700 mb-2 xl:mb-3">
                 Email Address
               </label>
               <div className="relative">
@@ -48,7 +48,7 @@ export default function AdminLogin() {
 
             {/* Password Field */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-black -700 mb-1">
+              <label htmlFor="password" className="block text-sm font-medium xl:text-base text-black -700 mb-2 xl:mb-3">
                 Password
               </label>
               <div className="relative">
@@ -70,7 +70,7 @@ export default function AdminLogin() {
             {/* Submit Button */}
             <Button
               type="submit"
-              className="w-full bg-[#0054aa] hover:bg-[#003d7a] text-white py-2"
+              className="w-full bg-[#0054aa] hover:bg-[#003d7a] text-white py-4 px-4 rounded-none flex items-center justify-center"
               disabled={isPending}
             >
               {isPending ? "Signing in..." : "Sign In"}
@@ -86,7 +86,7 @@ export default function AdminLogin() {
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-xs text-black -500">Demo credentials: admin@mavencode.com / admin123</p>
+            <p className="text-xs xl:text-sm text-black -500">Demo credentials: admin@mavencode.com / admin123</p>
           </div>
         </div>
       </div>

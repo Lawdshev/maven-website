@@ -37,7 +37,7 @@ interface Category {
 const ReactQuill = dynamic(() => import("react-quill-new"), {
   ssr: false,
   loading: () => (
-    <div className="h-64 bg-gray-100 rounded-lg animate-pulse"></div>
+    <div className="h-64 bg-black -100 rounded-lg animate-pulse"></div>
   ),
 });
 
@@ -115,20 +115,19 @@ export default function CreateBlogPage() {
 
   return (
     <>
-      <div className="space-y-6 text-gray-500">
+      <div className="space-y-6 text-black -500 max-w-[1780px] mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <Link href="/admin/blogs">
-              <Button variant="outline" size="sm">
+   
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Blogs
-              </Button>
+         
             </Link>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">
+              <h1 className="text-3xl font-bold text-black -900">
                 Create New Blog Post
               </h1>
-              <p className="text-gray-600 mt-1">
+              <p className="text-black -600 mt-1">
                 Write and publish a new blog article
               </p>
             </div>
@@ -148,16 +147,16 @@ export default function CreateBlogPage() {
         <form onSubmit={submit} className="space-y-6">
           {/* Basic Info Card */}
           <Card>
-            <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-100">
-              <CardTitle className="flex items-center space-x-2 text-blue-800">
+            <CardHeader>
+              <CardTitle className="flex items-center space-x-2 text-[#0054aa]">
                 <FileText className="w-5 h-5" />
-                <span>Basic Blog Information</span>
+                <span className="text-sm xl:text-base">Basic Blog Information</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 p-4">
               {/* Title */}
               <div>
-                <Label htmlFor="title">Blog Title *</Label>
+                <Label htmlFor="title" className="text-sm xl:text-base mb-2 xl:mb-3">Blog Title *</Label>
                 <Controller
                   name="title"
                   control={control}
@@ -178,7 +177,7 @@ export default function CreateBlogPage() {
 
               {/* Category */}
               <div>
-                <Label htmlFor="category_id">Category *</Label>
+                <Label htmlFor="category_id" className="text-sm xl:text-base mb-2 xl:mb-3">Category *</Label>
                 <Controller
                   name="category_id"
                   control={control}
@@ -209,9 +208,10 @@ export default function CreateBlogPage() {
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="mt-1 self-start"
+                        
                         onClick={() => setIsCategoryModalOpen(true)}
                         type="button"
+                        className="text-sm xl:text-base mb-2 xl:mb-3 self-start"
                       >
                         + Add New Category
                       </Button>
@@ -227,7 +227,7 @@ export default function CreateBlogPage() {
 
               {/* Image */}
               <div>
-                <Label htmlFor="image">Featured Image</Label>
+                <Label htmlFor="image" className="text-sm xl:text-base mb-2 xl:mb-3">Featured Image</Label>
                 <Controller
                   name="image"
                   control={control}
@@ -250,7 +250,7 @@ export default function CreateBlogPage() {
 
               {/* Publish toggle */}
               <div>
-                <Label htmlFor="is_published">Publish</Label>
+                <Label htmlFor="is_published" className="text-sm xl:text-base mb-2 xl:mb-3">Publish</Label>
                 <Controller
                   name="is_published"
                   control={control}
@@ -263,7 +263,7 @@ export default function CreateBlogPage() {
                         className="!w-4 !h-4"
                         error={errors.is_published?.message}
                       />
-                      <p>Publish Blog Immediately</p>
+                      <p className="text-sm xl:text-base">Publish Blog Immediately</p>
                     </div>
                   )}
                 />
@@ -273,10 +273,10 @@ export default function CreateBlogPage() {
 
           {/* Content Card */}
           <Card>
-            <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50 border-b border-green-100">
-              <CardTitle className="flex items-center space-x-2 text-green-800">
+            <CardHeader>
+              <CardTitle className="flex items-center  space-x-2 text-green-800">
                 <FileText className="w-5 h-5" />
-                <span className="mb-8">Blog Content</span>
+                <span>Blog Content</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6 !min-h-[300px]">
@@ -288,7 +288,7 @@ export default function CreateBlogPage() {
                     theme="snow"
                     value={field.value}
                     onChange={field.onChange}
-                    className="text-black h-[200px]"
+                    className="text-black h-[200px] text-sm xl:text-base"
                   />
                 )}
               />

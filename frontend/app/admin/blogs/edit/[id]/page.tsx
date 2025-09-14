@@ -169,10 +169,10 @@ export default function EditBlogPage() {
   if (!blogPost) {
     return (
       <div className="text-center py-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+        <h2 className="text-2xl font-bold text-black -900 mb-4">
           Blog Post Not Found
         </h2>
-        <p className="text-gray-600 mb-6">
+        <p className="text-black -600 mb-6">
           The blog post you're looking for doesn't exist.
         </p>
         <Link href="/admin/blogs">
@@ -187,20 +187,19 @@ export default function EditBlogPage() {
 
   return (
     <>
-      <div className="space-y-6 text-gray-500">
+      <div className="space-y-6 text-black -500 max-w-[1780px] text-sm xl:text-base mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <Link href="/admin/blogs">
               <Button variant="outline" size="sm">
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Blogs
               </Button>
             </Link>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">
+              <h1 className="text-3xl font-bold text-black -900">
                 Edit Blog Post
               </h1>
-              <p className="text-gray-600 mt-1">Update your blog article</p>
+              <p className="text-black -600 mt-1">Update your blog article</p>
             </div>
           </div>
           <div className="flex space-x-2">
@@ -218,8 +217,8 @@ export default function EditBlogPage() {
         <form onSubmit={submit} className="space-y-6">
           {/* Basic Info Card */}
           <Card>
-            <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-100">
-              <CardTitle className="flex items-center space-x-2 text-blue-800">
+            <CardHeader>
+              <CardTitle className="flex items-center space-x-2 text-[#0054aa]">
                 <FileText className="w-5 h-5" />
                 <span>Basic Blog Information</span>
               </CardTitle>
@@ -227,7 +226,7 @@ export default function EditBlogPage() {
             <CardContent className="space-y-4 p-4">
               {/* Title */}
               <div>
-                <Label htmlFor="title">Blog Title *</Label>
+                <Label className="mb-2 xl:mb-3  text-sm xl:text-base" htmlFor="title">Blog Title *</Label>
                 <Controller
                   name="title"
                   control={control}
@@ -248,7 +247,7 @@ export default function EditBlogPage() {
 
               {/* Author */}
               <div>
-                <Label htmlFor="author">Author *</Label>
+                <Label className="mb-2 xl:mb-3  text-sm xl:text-base" htmlFor="author">Author *</Label>
                 <Controller
                   name="author"
                   control={control}
@@ -269,7 +268,7 @@ export default function EditBlogPage() {
 
               {/* Excerpt */}
               <div>
-                <Label htmlFor="excerpt">Excerpt *</Label>
+                <Label className="mb-2 xl:mb-3  text-sm xl:text-base" htmlFor="excerpt">Excerpt *</Label>
                 <Controller
                   name="excerpt"
                   control={control}
@@ -290,7 +289,7 @@ export default function EditBlogPage() {
 
               {/* Category */}
               <div>
-                <Label htmlFor="category_id">Category *</Label>
+                <Label className="mb-2 xl:mb-3  text-sm xl:text-base" htmlFor="category_id">Category *</Label>
                 <Controller
                   name="category_id"
                   control={control}
@@ -339,7 +338,7 @@ export default function EditBlogPage() {
 
               {/* Image */}
               <div>
-                <Label htmlFor="image">Featured Image</Label>
+                <Label className="mb-2 xl:mb-3  text-sm xl:text-base" htmlFor="image">Featured Image</Label>
                 <Controller
                   name="image"
                   control={control}
@@ -360,7 +359,7 @@ export default function EditBlogPage() {
                 )}
                 {blogPost.featuredImage && !watch("image") && (
                   <div className="mt-2">
-                    <p className="text-sm text-gray-600 mb-2">Current image:</p>
+                    <p className="text-sm text-black -600 mb-2">Current image:</p>
                     <img
                       src={blogPost.featuredImage}
                       alt="Current featured image"
@@ -372,7 +371,7 @@ export default function EditBlogPage() {
 
               {/* Publish toggle */}
               <div>
-                <Label htmlFor="is_published">Publish</Label>
+                <Label className="mb-2 xl:mb-3  text-sm xl:text-base" htmlFor="is_published">Publish</Label>
                 <Controller
                   name="is_published"
                   control={control}
@@ -395,10 +394,10 @@ export default function EditBlogPage() {
 
           {/* Content Card */}
           <Card>
-            <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50 border-b border-green-100">
+            <CardHeader>
               <CardTitle className="flex items-center space-x-2 text-green-800">
                 <FileText className="w-5 h-5" />
-                <span className="mb-8">Blog Content</span>
+                <span >Blog Content</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6 !min-h-[300px]">
@@ -410,7 +409,7 @@ export default function EditBlogPage() {
                     theme="snow"
                     value={field.value}
                     onChange={field.onChange}
-                    className="text-black h-[200px]"
+                    className="text-black h-[200px] text-sm xl:text-base"
                   />
                 )}
               />
