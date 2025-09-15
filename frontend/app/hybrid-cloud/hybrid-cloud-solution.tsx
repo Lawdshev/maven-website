@@ -7,7 +7,7 @@ export default function HybridCloudSolutions() {
     <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-950">
       <div className="container px-4 md:px-6">
         {/* Top Section */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 mb-5">
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight text-black -900 dark:text-black -50">
               Optimize your IT to maximize ROI

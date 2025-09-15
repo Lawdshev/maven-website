@@ -1,6 +1,7 @@
-import Link from "next/link"
-import Image from "next/image"
-import { blogPosts } from "../data/blog-posts"
+import Link from "next/link";
+import Image from "next/image";
+import { blogPosts } from "../data/blog-posts";
+import { ArrowRight } from "lucide-react";
 
 export default function BlogListing() {
   return (
@@ -11,7 +12,7 @@ export default function BlogListing() {
             <Link
               key={post.id}
               href={`/blog/${post.slug}`}
-              className="group block rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition-all duration-300"
+              className="group block bg-white border border-[#0054AA]  overflow-hidden shadow-sm transition-all duration-300"
             >
               {/* Image */}
               <div className="overflow-hidden">
@@ -26,7 +27,7 @@ export default function BlogListing() {
 
               {/* Content */}
               <div className="p-5 space-y-3">
-                <div className="flex items-center text-sm   text-black -500 dark:  text-black -400">
+                <div className="flex items-center text-base leading-6  text-black -500 dark:  text-black -400">
                   <span className="font-medium">{post.category}</span>
                   <span className="mx-2">•</span>
                   <span>{post.date}</span>
@@ -40,14 +41,18 @@ export default function BlogListing() {
                   {post.excerpt}
                 </p>
 
-                <p className="text-[#0054aa] font-medium text-sm group-hover:underline">
-                  Read more →
-                </p>
+                <div
+                  className="flex items-center text-base font-semibold pt-2"
+                  style={{ color: "#0054AA" }}
+                >
+                  <span>Read more</span>
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </div>
               </div>
             </Link>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

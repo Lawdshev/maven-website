@@ -52,7 +52,6 @@ export default function Header({ children }: { children: React.ReactNode }) {
   };
 
   const closeMegaMenu = (link: string) => {
-    console.log("link", link);
     router.push(link);
     setOpenMenu(null);
   };

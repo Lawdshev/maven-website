@@ -97,7 +97,7 @@ export default function ConsultingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-5"
           >
             <h2 className="text-3xl font-medium mb-6 text-[#0054aa]">
               Industry Expertise

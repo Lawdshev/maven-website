@@ -9,7 +9,7 @@ export default function DiscoverMore() {
         <h2 className="text-4xl md:text-5xl font-light tracking-tight text-black  -900 dark:text-black  -50 mb-8">
           Discover more of Mavencode Hybrid Cloud
         </h2>
-        <Button asChild className="bg-[#0054aa] -600 hover:bg-[#0054aa] -700 text-white px-6 py-3 rounded-md text-base mb-16">
+        <Button asChild className="bg-[#0054aa] -600 hover:bg-[#0054aa] -700 text-white px-6 py-3 rounded-md text-base mb-5">
           <Link href="#">
             Sign up for the Mavencode Cloud newsletter
             <ArrowRight className="ml-2 h-4 w-4" />
