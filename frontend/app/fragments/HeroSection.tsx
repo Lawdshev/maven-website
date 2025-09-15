@@ -3,13 +3,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
-
-// Simple animation helpers
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-};
 
 interface HeroSectionProps {
   onContactClick: () => void;
@@ -37,42 +30,28 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
 
       {/* Main Content - Left Aligned */}
       <div className="max-w-4xl w-full relative z-20">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.2 } },
-          }}
-          className="space-y-8"
-        >
+        <div className="space-y-8">
           {/* Main Headline */}
-          <motion.h1
-            className="text-5xl md:text-6xl xl:text-7xl font-bold leading-tight text-white"
-            variants={fadeUp}
-          >
+          <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold leading-tight text-white">
             Artificial Intelligence
-          </motion.h1>
+          </h1>
 
           {/* Subtitle */}
-          <motion.p
-            className="text-xl md:text-2xl max-w-3xl leading-relaxed text-white/90"
-            variants={fadeUp}
-          >
+          <p className="text-xl md:text-2xl max-w-3xl leading-relaxed text-white/90">
             Learn how we're helping capture the opportunity of generative AI
-          </motion.p>
+          </p>
 
           {/* Call to Action */}
-          <motion.div variants={fadeUp} className="pt-8">
+          <div className="pt-8">
             <Button
-              className="text-lg px-8 py-4 rounded-lg font-normal transition-all duration-300 hover:scale-105 bg-white text-black hover:bg-white/90"
+              className="text-lg px-8 py-4 rounded-lg font-normal bg-white text-black hover:bg-white/90"
               onClick={onContactClick}
             >
               Learn more
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </main>
   );

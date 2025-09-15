@@ -5,6 +5,7 @@ import HeroSection from "./fragments/HeroSection";
 import CapabilitiesSection from "./fragments/CapabilitiesSection";
 import TechStackSection from "./fragments/TechStackSection";
 import WhyMavenCodeSection from "./fragments/WhyMavenCodeSection";
+import BlogSection from "./fragments/BlogSection";
 
 export default function Component() {
   const [open, setOpen] = useState(false);
@@ -15,6 +16,7 @@ export default function Component() {
       <CapabilitiesSection />
       <TechStackSection />
       <WhyMavenCodeSection />
+      <BlogSection />
     </div>
   );
 }
