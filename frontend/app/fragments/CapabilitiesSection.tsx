@@ -10,10 +10,10 @@ export default function CapabilitiesSection() {
       {/* Section Background */}
       <div className="absolute inset-0 rounded-3xl blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 border border-blue-300 mb-6">
+        <div className="text-center mb-5">
+          <div className="inline-flex items-center px-4 py-2 rounded-full  border border-[#0054AA] mb-6">
             <Code className="w-4 h-4 mr-2" style={{ color: "#0054AA" }} />
             <span className="font-mono text-sm" style={{ color: "#0054AA" }}>
               Engineering Excellence
@@ -26,17 +26,17 @@ export default function CapabilitiesSection() {
               alt="AI Engineering"
               width={800}
               height={400}
-              className="mx-auto rounded-2xl shadow-lg"
+              className="mx-auto  shadow-lg"
             />
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-slate-800">Built for Autonomy.</span>
+          <h2 className="text-3xl md:text-4xl font-medium mb-6 leading-relaxed">
+            <span className="text-black -800">Built for Autonomy.</span>
             <br />
             <span style={{ color: "#0054AA" }}>Designed for Impact.</span>
           </h2>
 
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black -600 max-w-3xl mx-auto leading-relaxed">
             We engineer AI systems that{" "}
             <span className="font-semibold" style={{ color: "#0054AA" }}>
               think, decide, and adapt
@@ -55,18 +55,18 @@ export default function CapabilitiesSection() {
                 alt="AI Automation"
                 width={600}
                 height={400}
-                className="rounded-2xl shadow-lg w-full"
+                className=" shadow-lg w-full"
               />
             </div>
             <div className="order-1 md:order-2">
-              <div className="bg-white border border-blue-200 rounded-2xl p-8 shadow-sm">
-                <h3 className="text-2xl font-bold text-slate-800 mb-6">
+              <div className="bg-white border border-[#0054aa]  p-8 shadow-sm">
+                <h3 className="text-2xl font-bold text-black -800 mb-6">
                   Core Capabilities
                 </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed text-lg">
+                <p className="text-black -600 mb-6 leading-relaxed text-xl ">
                   This isn't about chasing abstract AI dreams...
                 </p>
-                <p className="text-slate-600 mb-8 leading-relaxed text-lg">
+                <p className="text-black -600 mb-8 leading-relaxed text-xl ">
                   We empower systems to handle repetitive tasks, freeing your
                   team to focus on{" "}
                   <span className="font-semibold" style={{ color: "#0054AA" }}>
@@ -79,22 +79,22 @@ export default function CapabilitiesSection() {
                     {
                       text: "Reduce friction",
                       icon: Zap,
-                      color: "text-yellow-400",
+                      color: "text-black",
                     },
                     {
                       text: "Scale at speed",
                       icon: Cpu,
-                      color: "text-blue-400",
+                      color: "text-black",
                     },
                     {
                       text: "Operate with minimal manual intervention",
                       icon: Network,
-                      color: "text-green-400",
+                      color: "text-black",
                     },
                   ].map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-center group cursor-pointer text-slate-600 hover:text-slate-800 transition-colors duration-200 text-lg"
+                      className="flex items-center group cursor-pointer text-black -600 hover:text-black -800 transition-colors duration-200 text-xl "
                     >
                       <div className={`mr-4 ${item.color}`}>
                         <item.icon size={24} />
@@ -110,14 +110,14 @@ export default function CapabilitiesSection() {
           {/* Second Row - Content Left, Image Right */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-1">
-              <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-slate-800 mb-6">
+              <div className="border border-[#0054aa]  p-8">
+                <h3 className="text-2xl font-bold text-black -800 mb-6">
                   Innovation Focus
                 </h3>
-                <p className="text-slate-600 mb-6 leading-relaxed text-lg">
+                <p className="text-black -600 mb-6 leading-relaxed text-xl ">
                   This isn't about chasing abstract AI dreams...
                 </p>
-                <p className="text-slate-600 mb-8 leading-relaxed text-lg">
+                <p className="text-black -600 mb-8 leading-relaxed text-xl ">
                   We empower systems to handle repetitive tasks, freeing your
                   team to focus on{" "}
                   <span className="font-semibold" style={{ color: "#0054AA" }}>
@@ -130,22 +130,22 @@ export default function CapabilitiesSection() {
                     {
                       text: "Adaptive agents for evolving tasks",
                       icon: Brain,
-                      color: "text-purple-400",
+                      color: "text-black",
                     },
                     {
                       text: "Self-learning models that grow smarter",
                       icon: Cpu,
-                      color: "text-cyan-400",
+                     color: "text-black",
                     },
                     {
                       text: "Scalable infrastructure built for speed",
                       icon: Network,
-                      color: "text-green-400",
+                      color: "text-black",
                     },
                   ].map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-center group cursor-pointer text-slate-600 hover:text-slate-800 transition-colors duration-200 text-lg"
+                      className="flex items-center group cursor-pointer text-black -600 hover:text-black -800 transition-colors duration-200 text-xl "
                     >
                       <div className={`mr-4 ${item.color}`}>
                         <item.icon size={24} />
@@ -162,7 +162,7 @@ export default function CapabilitiesSection() {
                 alt="AI Innovation"
                 width={600}
                 height={400}
-                className="rounded-2xl shadow-lg w-full"
+                className=" shadow-lg w-full"
               />
             </div>
           </div>

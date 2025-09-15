@@ -27,9 +27,9 @@ export default function BlogSection() {
       {/* Section Background */}
       <div className="absolute inset-0 rounded-3xl blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-5">
           <div className="inline-flex items-center px-4 py-2 rounded-full  border  mb-6">
             <BookOpen className="w-4 h-4 mr-2" style={{ color: "#0054AA" }} />
             <span className="font-mono text-sm" style={{ color: "#0054AA" }}>
@@ -37,23 +37,23 @@ export default function BlogSection() {
             </span>
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-slate-800">Thought Leadership</span>
+          <h2 className="text-3xl md:text-4xl font-medium mb-6">
+            <span className="text-black -800">Thought Leadership</span>
           </h2>
 
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black -600 max-w-3xl mx-auto leading-relaxed">
             Explore our latest insights on AI, cloud computing, and digital
             transformation
           </p>
         </div>
 
         {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-3">
           {featuredPosts.map((post, i) => (
             <div key={post.id}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="group block bg-white border border-blue-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
+                className="group block bg-white border border-[#0054AA]  overflow-hidden shadow-sm transition-all duration-300"
               >
                 <div className="relative w-full h-48 overflow-hidden">
                   <Image
@@ -66,18 +66,18 @@ export default function BlogSection() {
                 </div>
 
                 <div className="p-6 space-y-4">
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="flex text-black -600 text-sm items-center justify-between">
                     <span
                       className="font-medium bg-blue-50 px-3 py-1 rounded-full"
                       style={{ color: "#0054AA" }}
                     >
                       {post.category}
                     </span>
-                    <span className="text-slate-500">{post.date}</span>
+                    <span className="text-black -500">{post.date}</span>
                   </div>
 
                   <h3
-                    className="text-xl font-bold text-slate-800 transition-colors line-clamp-2"
+                    className="text-xl leading-[30px] font-bold text-black -800 transition-colors line-clamp-2"
                     onMouseEnter={(e) =>
                       (e.currentTarget.style.color = "#0054AA")
                     }
@@ -88,12 +88,12 @@ export default function BlogSection() {
                     {post.title}
                   </h3>
 
-                  <p className="text-slate-600 leading-relaxed text-sm line-clamp-3">
+                  <p className="text-black -600 leading-relaxed text-xl leading-[30px] line-clamp-3">
                     {post.excerpt}
                   </p>
 
                   <div
-                    className="flex items-center text-sm font-semibold pt-2"
+                    className="flex items-center text-base font-semibold pt-2"
                     style={{ color: "#0054AA" }}
                     onMouseEnter={(e) =>
                       (e.currentTarget.style.color = "#003d7a")
@@ -115,7 +115,7 @@ export default function BlogSection() {
         <div className="text-center mt-12">
           <Link
             href="/blog"
-            className="inline-flex items-center px-8 py-4 text-white rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+            className="inline-flex items-center px-8 py-4 text-white rounded-none text-lg transition-all duration-300 hover:scale-105 shadow-lg"
             style={{ backgroundColor: "#0054AA" }}
             onMouseEnter={(e) =>
               (e.currentTarget.style.backgroundColor = "#003d7a")

@@ -44,9 +44,9 @@ export default function WhyMavenCodeSection() {
       {/* Section Background */}
       <div className="absolute inset-0 rounded-3xl blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10  mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-5">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 border border-blue-300 mb-6">
             <Zap className="w-4 h-4 mr-2" style={{ color: "#0054AA" }} />
             <span className="font-mono text-sm" style={{ color: "#0054AA" }}>
@@ -54,7 +54,7 @@ export default function WhyMavenCodeSection() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-3xl md:text-4xl font-medium mb-6">
             <span className="text-slate-800">Not Automation.</span>
             <br />
             <span style={{ color: "#0054AA" }}>Actual Autonomy.</span>

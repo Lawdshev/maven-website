@@ -44,7 +44,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
           {/* Call to Action */}
           <div className="pt-8">
             <Button
-              className="text-lg px-8 py-4 rounded-lg font-normal bg-white text-black hover:bg-white/90"
+              className="text-lg px-8 py-4 rounded-none cursor-pointer font-normal bg-white text-black hover:bg-white/90"
               onClick={onContactClick}
             >
               Learn more
