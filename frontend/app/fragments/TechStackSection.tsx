@@ -99,7 +99,7 @@ export default function TechStackSection() {
       variants={stagger}
     >
       {/* Section Background */}
-      <div className="absolute inset-0 bg-blue-50/60 rounded-3xl blur-3xl" />
+      <div className="absolute inset-0 rounded-3xl blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
