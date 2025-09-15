@@ -48,8 +48,8 @@ export default function WhyMavenCodeSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 border border-blue-300 mb-6">
-            <Zap className="w-4 h-4 text-blue-600 mr-2" />
-            <span className="text-blue-700 font-mono text-sm">
+            <Zap className="w-4 h-4 mr-2" style={{ color: "#0054AA" }} />
+            <span className="font-mono text-sm" style={{ color: "#0054AA" }}>
               Why MavenCode?
             </span>
           </div>
@@ -57,7 +57,7 @@ export default function WhyMavenCodeSection() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             <span className="text-slate-800">Not Automation.</span>
             <br />
-            <span className="text-blue-600">Actual Autonomy.</span>
+            <span style={{ color: "#0054AA" }}>Actual Autonomy.</span>
           </h1>
 
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -74,7 +74,15 @@ export default function WhyMavenCodeSection() {
             >
               <div className="relative z-10">
                 <div className="min-h-[200px]">
-                  <h3 className="text-2xl font-bold mb-6 text-slate-800 hover:text-blue-600 transition-colors duration-200">
+                  <h3
+                    className="text-2xl font-bold mb-6 text-slate-800 transition-colors duration-200"
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "#0054AA")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = "#1e293b")
+                    }
+                  >
                     {item.title}
                   </h3>
                   <p className="text-slate-600 leading-relaxed text-lg">
@@ -83,11 +91,17 @@ export default function WhyMavenCodeSection() {
                 </div>
 
                 <div className="mt-8 flex justify-center">
-                  <item.icon className={`w-12 h-12 ${item.iconColor}`} />
+                  <item.icon
+                    className="w-12 h-12"
+                    style={{ color: "#0054AA" }}
+                  />
                 </div>
               </div>
 
-              <div className="absolute top-4 right-4 w-3 h-3 bg-blue-500 rounded-full opacity-60" />
+              <div
+                className="absolute top-4 right-4 w-3 h-3 rounded-full opacity-60"
+                style={{ backgroundColor: "#0054AA" }}
+              />
             </div>
           ))}
         </div>

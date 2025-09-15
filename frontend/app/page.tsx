@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import HeroSection from "./fragments/HeroSection";
 import CapabilitiesSection from "./fragments/CapabilitiesSection";
 import TechStackSection from "./fragments/TechStackSection";
-import WhyMavenCodeSection from "./fragments/WhyMavenCodeSection";
 import BlogSection from "./fragments/BlogSection";
 
 export default function Component() {
@@ -15,7 +14,6 @@ export default function Component() {
       <HeroSection onContactClick={() => setOpen(true)} />
       <CapabilitiesSection />
       <TechStackSection />
-      <WhyMavenCodeSection />
       <BlogSection />
     </div>
   );

@@ -79,8 +79,10 @@ export default function TechStackSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 border border-blue-300 mb-6">
-            <Terminal className="w-4 h-4 text-blue-600 mr-2" />
-            <span className="text-blue-700 font-mono text-sm">Tech Stack</span>
+            <Terminal className="w-4 h-4 mr-2" style={{ color: "#0054AA" }} />
+            <span className="font-mono text-sm" style={{ color: "#0054AA" }}>
+              Tech Stack
+            </span>
           </div>
 
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
@@ -110,10 +112,19 @@ export default function TechStackSection() {
                       className="rounded-lg"
                     />
                   </div>
-                  <item.icon className={`w-6 h-6 ${item.iconColor}`} />
+                  <item.icon className="w-6 h-6" style={{ color: "#0054AA" }} />
                 </div>
 
-                <h3 className="text-2xl font-bold mb-4 text-slate-800 hover:text-blue-600 transition-colors duration-200">
+                <h3
+                  className="text-2xl font-bold mb-4 text-slate-800 transition-colors duration-200"
+                  style={{ "--hover-color": "#0054AA" } as React.CSSProperties}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "#0054AA")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = "#1e293b")
+                  }
+                >
                   {item.title}
                 </h3>
 
@@ -121,10 +132,8 @@ export default function TechStackSection() {
               </div>
 
               <div
-                className={`absolute top-4 right-4 w-3 h-3 ${item.iconColor.replace(
-                  "text-",
-                  "bg-"
-                )} rounded-full opacity-60`}
+                className="absolute top-4 right-4 w-3 h-3 rounded-full opacity-60"
+                style={{ backgroundColor: "#0054AA" }}
               />
             </div>
           ))}
