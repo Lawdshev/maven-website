@@ -10,7 +10,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onContactClick }: HeroSectionProps) {
   return (
-    <main className="w-full h-screen max-h-[800px] relative flex items-center px-6 md:px-12 lg:px-24 py-16 overflow-hidden">
+    <main className="w-full h-[calc(100vh-100px)] max-h-[900px] relative flex items-center justify-end flex-col px-4 sm:px-6 md:px-12 lg:px-24 py-16 overflow-hidden">
       {/* Video Background */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -30,7 +30,8 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
 
       {/* Main Content - Left Aligned */}
       <div className="max-w-4xl w-full relative z-20">
-        <div className="space-y-8">
+        <div className="space-y-2">
+          
           {/* Main Headline */}
           <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold leading-tight text-white">
             Artificial Intelligence
@@ -42,15 +43,14 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
           </p>
 
           {/* Call to Action */}
-          <div className="pt-8">
+  
             <Button
-              className="text-lg px-8 py-4 rounded-none cursor-pointer font-normal bg-white text-black hover:bg-white/90"
+              className="text-lg px-8 py-4 rounded-none cursor-pointer font-normal text-white"
               onClick={onContactClick}
             >
               Learn more
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </div>
         </div>
       </div>
     </main>

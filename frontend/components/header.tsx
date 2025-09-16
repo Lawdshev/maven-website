@@ -73,7 +73,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
     <>
       <header
         ref={headerRef}
-        className="border-b border-gray-200 py-4 px-6 md:px-12 lg:py-8 "
+        className="border-b border-gray-200 py-4 px-6 md:px-12 lg:py-6"
       >
         <div className="flex items-center justify-between relative z-50 max-w-[1710px] w-[95%] mx-auto">
           <div className="flex items-center space-x-8">
