@@ -12,7 +12,7 @@ export default function Component() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      <div className="max-w-[1780px] mx-auto">
+      <div>
       <HeroSection onContactClick={() => setOpen(true)} />
         <AboutSummary/>
       <CapabilitiesSection />
