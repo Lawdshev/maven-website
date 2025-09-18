@@ -1,9 +1,18 @@
 "use client";
 import React, { useState } from "react";
-import { MessageSquare, ArrowRight, X } from "lucide-react";
+import {
+  MessageSquare,
+  ArrowRight,
+  X,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Youtube,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 function Footer() {
   const [showChatbox, setShowChatbox] = useState(false);
@@ -28,192 +37,168 @@ function Footer() {
     }
   };
 
+  // Animation variants
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const stagger = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.2 } },
+  };
+
   return (
     <div>
       {/* Footer */}
-      <footer className="bg-black text-white -300 py-12 px-6 md:px-12 ">
-        <div className="w-[95%] mx-auto max-w-[1780px]">
-          <div className=" grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div className="md:col-span-1">
-              <Link href="/" className="flex items-center w-[200px]">
+      <motion.footer
+        className="w-full mx-auto px-6 md:px-12 py-20 border-t border-gray-700 bg-black"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={stagger}
+      >
+        <div className="max-w-[1780px] w-[95%] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+            {/* Company Logo and Description */}
+            <motion.div variants={fadeUp} className="md:col-span-1">
+              <Link href="/" className="flex items-center mb-6">
                 <Image
                   src="/logo.png"
-                  alt="Logo"
-                  width={0}
-                  height={0}
-                  className="w-full"
+                  alt="MavenCode Logo"
+                  width={250}
+                  height={80}
+                  className="w-[250px]"
                 />
               </Link>
-            </div>
-            <div className="md:col-span-1">
-              <h4 className="font-normal text-white mb-4">Discover</h4>
-              <ul className="space-y-2 text-sm xl:text-base xl:space-y-4">
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Products
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Consulting services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Industries
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Case studies
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Financing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Research
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="md:col-span-1">
-              <h4 className="font-normal text-white mb-4">Connect</h4>
-              <ul className="space-y-2 text-sm xl:text-base xl:space-y-4">
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Business partners
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Documentation
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Events
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Subscription center
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Support
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    TechXchange community
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="md:col-span-1">
-              <h4 className="font-normal text-white mb-4">Follow</h4>
-              <ul className="space-y-2 text-sm xl:text-base xl:space-y-4">
-                <li>
-                  <Link
-                    href="https://www.linkedin.com/company/mavencode-llc"
-                    className="hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
+              <p className="text-white text-lg leading-[30px] mb-6">
+                Transform your business with AI, cloud, and data solutions. We
+                partner with organizations to build intelligent systems that
+                drive growth.
+              </p>
+              {/* Social Media Links */}
+              <div className="flex space-x-4">
+                <Link
+                  href="https://www.linkedin.com/company/mavencode-llc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#0054aa] transition-colors duration-300"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </Link>
+                <Link
+                  href="https://x.com/mavencode"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#0054aa] transition-colors duration-300"
+                >
+                  <Twitter className="h-6 w-6" />
+                </Link>
+                <Link
+                  href="#"
+                  className="text-white hover:text-[#0054aa] transition-colors duration-300"
+                >
+                  <Instagram className="h-6 w-6" />
+                </Link>
+                <Link
+                  href="#"
+                  className="text-white hover:text-[#0054aa] transition-colors duration-300"
+                >
+                  <Youtube className="h-6 w-6" />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Services */}
+            <motion.div variants={fadeUp}>
+              <h3 className="text-xl font-normal mb-6 text-white">Services</h3>
+              <ul className="space-y-3">
+                {[
+                  "AI + Data Solutions",
+                  "Cloud Engineering",
+                  "Data Infrastructure",
+                  "Security & Access Solutions",
+                ].map((service, i) => (
+                  <li
+                    key={i}
+                    className="text-gray-300 hover:text-white cursor-pointer transition-colors duration-300"
                   >
-                    LinkedIn
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://x.com/mavencode"
-                    className="hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    X
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Instagram
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    YouTube
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Podcasts
-                  </Link>
-                </li>
+                    {service}
+                  </li>
+                ))}
               </ul>
-            </div>
-            <div className="md:col-span-1">
-              <h4 className="font-normal text-white mb-4">About</h4>
-              <ul className="space-y-2 text-sm xl:text-base xl:space-y-4">
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Overview
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Investor relations
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Leadership
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Newsroom
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Security, privacy and trust
-                  </Link>
-                </li>
+            </motion.div>
+
+            {/* Company */}
+            <motion.div variants={fadeUp}>
+              <h3 className="text-xl font-normal mb-6 text-white">Company</h3>
+              <ul className="space-y-3">
+                {["About Us", "Training", "Careers", "Contact Us"].map(
+                  (item, i) => (
+                    <li
+                      key={i}
+                      className="text-gray-300 hover:text-white cursor-pointer transition-colors duration-300"
+                    >
+                      {item}
+                    </li>
+                  )
+                )}
               </ul>
-            </div>
+            </motion.div>
+
+            {/* Get In Touch */}
+            <motion.div variants={fadeUp}>
+              <h3 className="text-xl font-normal mb-6 text-white">
+                Get In Touch
+              </h3>
+              <div className="space-y-4">
+                <p className="text-gray-300">
+                  Ready to transform your business with AI, cloud, and data
+                  solutions?
+                </p>
+                <Button
+                  className="bg-[#0054aa] hover:bg-[#003d7f] text-white text-lg rounded-none px-8 py-4 transition-colors duration-300"
+                  onClick={() => {
+                    // You can add a contact modal or redirect to contact page
+                    window.location.href = "/contact-us";
+                  }}
+                >
+                  Book Discovery Call
+                </Button>
+              </div>
+            </motion.div>
           </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white -400 space-y-4 md:space-y-0">
-            <div className="flex space-x-4">
-              <Link href="#" className="hover:underline">
-                Contact Mavencode
-              </Link>
-              <Link href="#" className="hover:underline">
-                Privacy
-              </Link>
-            </div>
-            <div className="flex space-x-4">
-              <Link href="#" className="hover:underline">
-                Terms of use
-              </Link>
-              <Link href="#" className="hover:underline">
-                Accessibility
-              </Link>
-              <Link href="#" className="hover:underline">
-                Cookie Preferences
-              </Link>
+
+          {/* Bottom Border */}
+          <div className="border-t border-gray-700 mt-12 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-300 space-y-4 md:space-y-0">
+              <div className="flex space-x-6">
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Terms of Service
+                </Link>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  Cookie Preferences
+                </Link>
+              </div>
+              <div className="text-gray-300">
+                © 2025 MavenCode. All rights reserved.
+              </div>
             </div>
           </div>
         </div>
-      </footer>
+      </motion.footer>
 
       {/* Floating AI Button */}
       <div className="fixed bottom-8 right-8 z-50">

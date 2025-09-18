@@ -73,109 +73,82 @@ export default function Header({ children }: { children: React.ReactNode }) {
     <>
       <header
         ref={headerRef}
-        className="border-b border-gray-200 py-4 px-6 md:px-12 lg:py-6"
+        className="border-b border-gray-200 py-4 px-6 md:px-12 lg:py-6 bg-white/95 backdrop-blur-sm sticky top-0 z-50"
       >
-        <div className="flex items-center justify-between relative z-50 max-w-[1710px] w-[95%] mx-auto">
-          <div className="flex items-center space-x-8">
+        <div className="flex items-center justify-between relative z-50 max-w-[1780px] w-[95%] mx-auto">
+          <Link
+            href="/"
+            className="flex items-center w-[200px]"
+            onClick={() => setOpenMenu(null)}
+          >
+            <Image
+              src="/logo-blue.png"
+              alt="Logo"
+              width={0}
+              height={0}
+              className="w-full"
+            />
+          </Link>
+
+          <nav className="hidden lg:flex space-x-8 2xl:space-x-12 font-medium absolute left-1/2 transform -translate-x-1/2">
             <Link
               href="/"
-              className="flex items-center w-[200px]"
+              className="flex items-center hover:text-[#0054aa] text-base xl:text-lg cursor-pointer font-normal transition-colors duration-300"
               onClick={() => setOpenMenu(null)}
             >
-              <Image
-                src="/logo-blue.png"
-                alt="Logo"
-                width={0}
-                height={0}
-                className="w-full"
-              />
+              Home
             </Link>
-            <nav className="hidden lg:flex space-x-6  2xl:space-x-12 font-medium">
-              <div className="relative">
-                <Link
-                  href="/about-us"
-                  className="flex items-center hover:text-[#0054aa]  text-base xl:text-lg cursor-pointer font-normal"
-                  onClick={() => setOpenMenu(null)}
-                >
-                  About us{" "}
-                </Link>
-              </div>
-              <div className="relative">
-                <Link
-                  href="#"
-                  className="flex items-center hover:text-[#0054aa]  text-base xl:text-lg cursor-pointer font-normal"
-                  onClick={() => handleMenuToggle("ai")}
-                >
-                  Services{" "}
-                  {openMenu === "ai" ? (
-                    <ChevronUp className="ml-1 h-4 w-4" />
-                  ) : (
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  )}
-                </Link>
-                {openMenu === "ai" && (
-                  <MegaMenu columns={aiMegaMenu} onLinkClick={closeMegaMenu} />
-                )}
-              </div>
-              <div className="relative">
-                <Link
-                  href="#"
-                  className="flex items-center hover:text-[#0054aa]  text-base xl:text-lg cursor-pointer font-normal"
-                  onClick={() => handleMenuToggle("hybrid-cloud")}
-                >
-                  Industries{" "}
-                  {openMenu === "hybrid-cloud" ? (
-                    <ChevronUp className="ml-1 h-4 w-4" />
-                  ) : (
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  )}
-                </Link>
-                {openMenu === "hybrid-cloud" && (
-                  <MegaMenu
-                    columns={hybridCloudMegaMenu}
-                    onLinkClick={closeMegaMenu}
-                  />
-                )}
-              </div>
 
-              {/* Products Mega Menu */}
-              <div className="relative">
-                <Link
-                  href="/solutions"
-                  className="flex items-center hover:text-[#0054aa]  text-base xl:text-lg cursor-pointer font-normal"
-                  onClick={() => setOpenMenu(null)}
-                >
-                  Solutions{" "}
-                </Link>
-              </div>
+            <Link
+              href="/about-us"
+              className="flex items-center hover:text-[#0054aa] text-base xl:text-lg cursor-pointer font-normal transition-colors duration-300"
+              onClick={() => setOpenMenu(null)}
+            >
+              About Us
+            </Link>
 
+            <div className="relative">
               <Link
-                href="/consulting"
-                className="font-normal flex items-center hover:text-[#0054aa]  text-base xl:text-lg"
-                onClick={() => setOpenMenu(null)}
+                href="/services"
+                className="flex items-center hover:text-[#0054aa] text-base xl:text-lg cursor-pointer font-normal transition-colors duration-300"
+                onClick={() => handleMenuToggle("services")}
               >
-                Consulting
+                Services
+                {/* {openMenu === "services" ? (
+                  <ChevronUp className="ml-1 h-4 w-4" />
+                ) : (
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                )} */}
               </Link>
+              {/* {openMenu === "services" && (
+                <MegaMenu columns={aiMegaMenu} onLinkClick={closeMegaMenu} />
+              )} */}
+            </div>
 
-              <Link
-                href="/blog"
-                className="font-normal flex items-center hover:text-[#0054aa]  text-base xl:text-lg"
-                onClick={() => setOpenMenu(null)}
-              >
-                Blog
-              </Link>
-            </nav>
-          </div>
+            <Link
+              href="/blog"
+              className="flex items-center hover:text-[#0054aa] text-base xl:text-lg cursor-pointer font-normal transition-colors duration-300"
+              onClick={() => setOpenMenu(null)}
+            >
+              Blog
+            </Link>
+          </nav>
           <div className="flex items-center space-x-4 flex-grow justify-end">
             <>
               <Button
-                className="font-normal md:min-w-[200px] w-fit rounded-none bg-[#0054aa] hover:bg-[#003d7f] cursor-pointer text-xl  text-white px-6 py-6 flex items-center justify-center"
+                className="font-normal md:min-w-[180px] w-fit rounded-none bg-[#0054aa] hover:bg-[#003d7f] cursor-pointer text-lg text-white px-6 py-3 flex items-center justify-center transition-all duration-300 hover:shadow-lg"
                 onClick={() => setOpen(true)}
               >
-                Contact us
+                Contact Us
               </Button>
 
-              <Modal open={open} onCancel={() => setOpen(false)} footer={null} className="contact-modal-wrapper" style={{ top: 20 }} >
+              <Modal
+                open={open}
+                onCancel={() => setOpen(false)}
+                footer={null}
+                className="contact-modal-wrapper"
+                style={{ top: 20 }}
+              >
                 <ContactForm />
               </Modal>
             </>
@@ -191,41 +164,29 @@ export default function Header({ children }: { children: React.ReactNode }) {
                 className="w-[250px] sm:w-[300px] pr-4"
               >
                 <nav className="flex flex-col gap-4 py-6 pl-4">
-                  {showSearchInput ? (
-                    <div className="flex items-center w-full mb-4">
-                      <Search className="h-5 w-5 text-[black] -600 mr-2" />
-                      <input
-                        type="text"
-                        placeholder="Search mavencode.com"
-                        className="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0054aa] -500 focus:border-[#0054aa] -500"
-                      />
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={toggleSearchInput}
-                        className="ml-2"
-                      >
-                        <X className="h-5 w-5 text-[black] -600" />
-                        <span className="sr-only">Cancel search</span>
-                      </Button>
-                    </div>
-                  ) : (
-                    <Link
-                      href="#"
-                      className=" text-base xl:text-lg font-medium hover:text-[#0054aa] font-normal"
-                      onClick={toggleSearchInput}
-                    >
-                      Search
-                    </Link>
-                  )}
-                  {/* Mobile Dropdown Menus (keeping simple for mobile) */}
+                  <Link
+                    href="/"
+                    className="text-base xl:text-lg font-normal hover:text-[#0054aa] transition-colors duration-300"
+                    onClick={() => setOpenMenu(null)}
+                  >
+                    Home
+                  </Link>
+
+                  <Link
+                    href="/about-us"
+                    className="text-base xl:text-lg font-normal hover:text-[#0054aa] transition-colors duration-300"
+                    onClick={() => setOpenMenu(null)}
+                  >
+                    About Us
+                  </Link>
+
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Link
                         href="#"
-                        className="flex items-center  text-base xl:text-lg font-medium hover:text-[#0054aa] font-normal cursor-pointer"
+                        className="flex items-center text-base xl:text-lg font-normal hover:text-[#0054aa] cursor-pointer transition-colors duration-300"
                       >
-                        AI <ChevronDown className="ml-1 h-4 w-4" />
+                        Services <ChevronDown className="ml-1 h-4 w-4" />
                       </Link>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-[200px]">
@@ -240,79 +201,22 @@ export default function Header({ children }: { children: React.ReactNode }) {
                         ))}
                     </DropdownMenuContent>
                   </DropdownMenu>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Link
-                        href="#"
-                        className="flex items-center  text-base xl:text-lg font-medium hover:text-[#0054aa] font-normal cursor-pointer"
-                      >
-                        Hybrid Cloud <ChevronDown className="ml-1 h-4 w-4" />
-                      </Link>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-[200px]">
-                      {hybridCloudMegaMenu
-                        .flatMap((col) => col.links)
-                        .map((item, index) => (
-                          <DropdownMenuItem key={index}>
-                            <Link href={item.href} className="w-full block">
-                              {item.label}
-                            </Link>
-                          </DropdownMenuItem>
-                        ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Link
-                        href="#"
-                        className="flex items-center  text-base xl:text-lg font-medium hover:text-[#0054aa] font-normal cursor-pointer"
-                      >
-                        Products <ChevronDown className="ml-1 h-4 w-4" />
-                      </Link>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-[200px]">
-                      {productsMegaMenu
-                        .flatMap((col) => col.links)
-                        .map((item, index) => (
-                          <DropdownMenuItem key={index}>
-                            <Link href={item.href} className="w-full block">
-                              {item.label}
-                            </Link>
-                          </DropdownMenuItem>
-                        ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                  <Link
-                    href="#"
-                    className=" text-base xl:text-lg font-medium hover:text-[#0054aa] font-normal"
-                  >
-                    Consulting
-                  </Link>
+
                   <Link
                     href="/blog"
-                    className=" text-base xl:text-lg font-medium hover:text-[#0054aa] font-normal"
+                    className="text-base xl:text-lg font-normal hover:text-[#0054aa] transition-colors duration-300"
+                    onClick={() => setOpenMenu(null)}
                   >
-                    Think
+                    Blog
                   </Link>
-                  <div className="border-t border-gray-200 pt-4 mt-4 flex flex-col gap-2">
-                    <Link
-                      href="#"
-                      className="text-sm text-[black] -600 hover:text-[#0054aa] font-normal"
+
+                  <div className="border-t border-gray-200 pt-4 mt-4">
+                    <Button
+                      className="w-full bg-[#0054aa] hover:bg-[#003d7f] text-white font-normal"
+                      onClick={() => setOpen(true)}
                     >
-                      Chat
-                    </Link>
-                    <Link
-                      href="#"
-                      className="text-sm text-[black] -600 hover:text-[#0054aa] font-normal"
-                    >
-                      Language
-                    </Link>
-                    <Link
-                      href="#"
-                      className="text-sm text-[black] -600 hover:text-[#0054aa] font-normal"
-                    >
-                      Account
-                    </Link>
+                      Contact Us
+                    </Button>
                   </div>
                 </nav>
               </SheetContent>
