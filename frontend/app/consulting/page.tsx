@@ -16,28 +16,28 @@ export default function ConsultingPage() {
     {
       title: "Finance & Banking",
       description:
-        "Deploy AI-driven fraud detection, risk modeling, and automated compliance to protect assets and unlock smarter financial operations.",
+        "Enable smarter financial services with AI solutions for fraud prevention, credit risk modeling, customer insights, and regulatory compliance—driving security, trust, and efficiency.",
       icon: TrendingUp,
       image: "/finance-consulting.png",
     },
     {
       title: "Healthcare & Life Sciences",
       description:
-        "Leverage AI for faster diagnostics, predictive patient care, and automated administrative workflows to improve both outcomes and efficiency.",
+        "Transform patient care with predictive diagnostics, personalized treatment recommendations, and automated clinical workflows that reduce costs while improving outcomes.",
       icon: Heart,
       image: "/healthcare-consulting.png",
     },
     {
       title: "Retail & E-Commerce",
       description:
-        "Harness real-time demand forecasting, personalized recommendations, and supply chain optimization to maximize sales and customer loyalty.",
+        "Boost revenue and loyalty through AI-powered demand forecasting, hyper-personalized shopping experiences, and optimized supply chain management at scale.",
       icon: ShoppingCart,
       image: "/retail-consulting.png",
     },
     {
       title: "Manufacturing & Logistics",
       description:
-        "Integrate AI-powered quality control, predictive maintenance, and intelligent routing to increase uptime, reduce costs, and streamline operations.",
+        "Increase productivity and resilience with predictive maintenance, real-time quality control, and intelligent routing systems that minimize downtime and streamline operations.",
       icon: Factory,
       image: "/manufacturing-consulting.png",
     },
@@ -64,9 +64,10 @@ export default function ConsultingPage() {
             <br />
           </h1>
           <p className="text-xl text-black/80 max-w-2xl leading-[35px] mb-6">
-            We help businesses design, build, and operate AI-driven solutions
-            that deliver measurable impact—blending deep technical mastery with
-            a business-first mindset.
+            We partner with forward-thinking organizations to design, build, and
+            scale AI solutions that create measurable business impact. Our
+            approach blends deep technical expertise with a sharp focus on
+            strategy, adoption, and long-term value.
           </p>
           <Button className="bg-[#0054aa] text-white px-6 py-6 text-xl rounded-none hover:bg-[#004080]">
             Discover All We Offer
@@ -103,9 +104,9 @@ export default function ConsultingPage() {
               Industry Expertise
             </h2>
             <p className="text-xl leading-[35px] text-black/80 max-w-3xl mx-auto">
-              We work side-by-side with clients to advise, design, build, and
-              operate intelligent systems that solve today’s challenges and
-              evolve for tomorrow’s opportunities.
+              From strategy to execution, we help organizations harness AI to
+              tackle complex challenges, seize new opportunities, and stay ahead
+              of change in their industries.
             </p>
           </motion.div>
 
@@ -152,9 +153,9 @@ export default function ConsultingPage() {
       >
         <h2 className="text-3xl font-medium mb-6 text-[#0054aa]">What’s Next</h2>
         <p className="text-xl leading-[35px] text-black/80 max-w-3xl mx-auto mb-8">
-          Ready to see how MavenCode Consulting can accelerate your business? 
-          Connect with us to discuss your goals and discover how our experts 
-          can design and deliver a powerful AI transformation roadmap tailored to you.
+          Let’s turn your AI ambitions into business results. Our experts will
+          work with you to define the right strategy, build scalable solutions,
+          and deliver lasting transformation—tailored to your goals.
         </p>
         <Button className="bg-[#0054aa] text-white px-8 py-6 text-xl rounded-none hover:bg-[#004080]">
           Book a Consultation
