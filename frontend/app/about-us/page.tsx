@@ -130,7 +130,7 @@ export default function AboutPage() {
       >
         <div className="absolute inset-0 bg-[#0054aa]/80"></div>
 
-        <div className="relative z-10 max-w-[1780px] mx-auto flex justify-between items-center">
+        <div className="relative z-10 max-w-[1780px] w-[95%] mx-auto flex justify-between items-center">
           <div className="text-left max-w-[780px] mx-0">
             <div className="text-sm text-blue-200 mb-4">
               <Link href="/" className="hover:underline">
@@ -164,7 +164,7 @@ export default function AboutPage() {
 
       {/* Commitment Cards */}
       <section className="w-full mx-auto px-6 md:px-12 py-20 border-t border-gray-200">
-        <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
+        <div className="max-w-[1780px] w-[95%] mx-auto flex flex-col gap-16">
           <motion.div variants={fadeUp}>
             <h2 className="text-4xl mb-6 text-[#0054aa] font-normal">
               Our Commitment
@@ -207,7 +207,7 @@ export default function AboutPage() {
 
       {/* Working Methods */}
       <section className="w-full mx-auto px-6 md:px-12 py-20 border-t border-gray-200">
-        <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
+        <div className="max-w-[1780px] w-[95%] mx-auto flex flex-col gap-16">
           <motion.div variants={fadeUp}>
             <h2 className="text-4xl mb-6 text-[#0054aa] font-normal">
               How We Work
@@ -268,7 +268,7 @@ export default function AboutPage() {
 
       {/* Vertical Cards */}
       <section className="w-full mx-auto px-6 md:px-12 py-20 border-t border-gray-200">
-        <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
+        <div className="max-w-[1780px] w-[95%] mx-auto flex flex-col gap-16">
           <motion.div variants={fadeUp}>
             <h2 className="text-4xl mb-6 text-[#0054aa] font-normal">
               What Drives Us
@@ -312,7 +312,7 @@ export default function AboutPage() {
         viewport={{ once: true, amount: 0.2 }}
         variants={fadeUp}
       >
-        <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1780px] w-[95%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl mb-6 text-[#0054aa] font-normal">
               Who We Are
