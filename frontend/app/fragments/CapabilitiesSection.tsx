@@ -33,11 +33,11 @@ export default function CapabilitiesSection() {
             </span>{" "}
             — not just react to predefined scenarios.
           </p>
-
+          {/* 
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             From autonomous decision-making to self-healing infrastructure, our
             solutions evolve with your business needs.
-          </p>
+          </p> */}
         </div>
 
         {/* Capabilities Grid */}
