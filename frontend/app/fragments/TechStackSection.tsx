@@ -75,7 +75,7 @@ export default function TechStackSection() {
       {/* Section Background */}
       {/* <div className="absolute inset-0 rounded-3xl blur-3xl" /> */}
 
-      <div className="relative z-10 mx-auto">
+      <div className="relative z-10 mx-auto max-w-[1780px]">
         {/* Section Header */}
         <div className="text-center mb-5">
           <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#0054AA] mb-6">

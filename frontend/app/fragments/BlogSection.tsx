@@ -23,7 +23,7 @@ export default function BlogSection() {
   });
 
   return (
-    <section className="w-full mx-auto px-6 md:px-12 py-20 lg:py-32">
+    <section className="w-full mx-auto px-6 md:px-12 py-20 lg:py-32 max-w-[1780px]">
       {/* Section Background */}
       <div className="absolute inset-0 rounded-3xl blur-3xl" />
 
