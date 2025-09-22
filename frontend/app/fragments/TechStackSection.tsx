@@ -103,16 +103,12 @@ export default function TechStackSection() {
           variants={fadeUp}
         >
           <motion.div
-            className="inline-flex items-center px-4 py-2 rounded-full border border-[#0054AA] mb-6"
+            className="inline-flex items-center px-4 py-2 rounded-full border text-xl border-[#0054AA] mb-6"
             variants={fadeUp}
           >
-            <Terminal className="w-4 h-4 mr-2 text-[#0054AA]" />
-            <span className="font-mono text-sm text-[#0054AA]">Tech Stack</span>
+            <Terminal className=" mr-2 text-[#0054AA]" />
+            <span className="font-medium text-[#0054AA]">Tech Stack</span>
           </motion.div>
-
-          <h2 className="text-3xl md:text-4xl font-normal mb-6">
-            <span className="text-black">What We Build</span>
-          </h2>
 
           <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Cutting-edge technology stack designed for scale, performance, and
@@ -143,11 +139,6 @@ export default function TechStackSection() {
                   height={300}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-[#0054aa]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="p-3 rounded-full bg-white/90">
-                    <item.icon className="w-8 h-8 text-[#0054aa]" />
-                  </div>
-                </div>
               </div>
 
               {/* Content */}
@@ -164,7 +155,7 @@ export default function TechStackSection() {
                   {item.features.map((feature, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center text-sm text-gray-600"
+                      className="flex items-center text-sm text-black"
                     >
                       <ArrowRight className="w-3 h-3 mr-2 text-[#0054aa]" />
                       {feature}
