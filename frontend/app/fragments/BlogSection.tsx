@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight, BookOpen, Code } from "lucide-react";
 import { blogPosts } from "../data/blog-posts";
 
 export default function BlogSection() {
@@ -30,18 +30,13 @@ export default function BlogSection() {
       <div className="relative z-10 mx-auto">
         {/* Section Header */}
         <div className="text-center mb-5">
-          <div className="inline-flex items-center px-4 py-2 rounded-full  border  mb-6">
-            <BookOpen className="w-4 h-4 mr-2" style={{ color: "#0054AA" }} />
-            <span className="font-mono text-sm" style={{ color: "#0054AA" }}>
+          <div className="inline-flex items-center px-4 py-2 rounded-full border border-[#0054AA] mb-6 text-xl font-medium">
+            <span className=" " style={{ color: "#0054AA" }}>
               Latest Insights
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-medium mb-6">
-            <span className="text-black -800">Thought Leadership</span>
-          </h2>
-
-          <p className="text-xl text-black -600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
             Explore our latest insights on AI, cloud computing, and digital
             transformation
           </p>
@@ -53,7 +48,7 @@ export default function BlogSection() {
             <div key={post.id}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="group block bg-white border border-[#0054AA]  overflow-hidden shadow-sm transition-all duration-300"
+                className="group block bg-gray-100/70 backdrop-blur-sm overflow-hidden transition-all duration-300"
               >
                 <div className="relative w-full h-48 overflow-hidden">
                   <Image
@@ -66,44 +61,27 @@ export default function BlogSection() {
                 </div>
 
                 <div className="p-6 space-y-4">
-                  <div className="flex text-black -600 text-sm items-center justify-between">
+                  <div className="flex text-gray-600 text-sm items-center justify-between">
                     <span
-                      className="font-medium bg-blue-50 px-3 py-1 rounded-full"
+                      className="font-mono text-xs bg-blue-50 px-3 py-1 rounded-full"
                       style={{ color: "#0054AA" }}
                     >
                       {post.category}
                     </span>
-                    <span className="text-black -500">{post.date}</span>
+                    <span className="text-gray-500 text-xs">{post.date}</span>
                   </div>
 
-                  <h3
-                    className="text-xl leading-[30px] font-bold text-black -800 transition-colors line-clamp-2"
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "#0054AA")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "#1e293b")
-                    }
-                  >
+                  <h3 className="text-lg font-normal text-black transition-colors line-clamp-2 group-hover:text-[#0054aa]">
                     {post.title}
                   </h3>
 
-                  <p className="text-black -600 leading-relaxed text-xl leading-[30px] line-clamp-3">
+                  <p className="text-black leading-relaxed text-sm line-clamp-3">
                     {post.excerpt}
                   </p>
 
-                  <div
-                    className="flex items-center text-base font-semibold pt-2"
-                    style={{ color: "#0054AA" }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "#003d7a")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "#0054AA")
-                    }
-                  >
+                  <div className="flex items-center text-sm text-gray-600 ">
+                    <ArrowRight size={16} className=" mr-2 text-[#0054aa]" />
                     <span>Read more</span>
-                    <ArrowRight className="ml-2 h-4 w-4" />
                   </div>
                 </div>
               </Link>
