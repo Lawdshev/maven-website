@@ -71,28 +71,10 @@ export default function TechStackSection() {
         "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=300&fit=crop&crop=center",
       features: ["EC2 & ECS", "RDS & DynamoDB", "Lambda & API Gateway"],
     },
-    {
-      title: "Google Cloud",
-      description:
-        "Advanced AI and analytics capabilities powered by Google Cloud Platform.",
-      icon: Cpu,
-      image:
-        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop&crop=center",
-      features: ["BigQuery", "Vertex AI", "Cloud Functions"],
-    },
-    {
-      title: "Azure Services",
-      description:
-        "Enterprise-grade solutions with Microsoft Azure's comprehensive cloud platform.",
-      icon: Shield,
-      image:
-        "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=400&h=300&fit=crop&crop=center",
-      features: ["Azure ML", "Cosmos DB", "Azure Functions"],
-    },
   ];
 
   return (
-    <section className="w-full mx-auto px-6 md:px-12 py-20 lg:py-32 bg-white">
+    <section className="w-full mx-auto px-6 md:px-12 py-20 lg:py-32 bg-white border-b">
       <div className="relative z-10 mx-auto max-w-[1780px]">
         {/* Section Header */}
         <motion.div
@@ -106,7 +88,6 @@ export default function TechStackSection() {
             className="inline-flex items-center px-4 py-2 rounded-full border text-xl border-[#0054AA] mb-6"
             variants={fadeUp}
           >
-            <Terminal className=" mr-2 text-[#0054AA]" />
             <span className="font-medium text-[#0054AA]">Tech Stack</span>
           </motion.div>
 
@@ -118,7 +99,7 @@ export default function TechStackSection() {
 
         {/* Tech Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
@@ -127,37 +108,33 @@ export default function TechStackSection() {
           {techItems.map((item, i) => (
             <motion.div
               key={i}
-              className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 group hover:border-[#0054aa]"
+              className="bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 group   "
               variants={fadeUp}
             >
-              {/* Image Header */}
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+              {/* Icon Header */}
+              <div className="bg-gradient-to-br from-[#0054aa]/10 to-[#0054aa]/5 p-6 flex items-center justify-center">
+                <div className="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center transition-transform duration-300">
+                  <item.icon className="w-8 h-8 text-[#0054aa]" />
+                </div>
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-normal mb-4 text-black group-hover:text-[#0054aa] transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#0054aa] transition-colors duration-300">
                   {item.title}
                 </h3>
 
-                <p className="text-black mb-6 leading-relaxed text-sm">
+                <p className="text-gray-600 mb-6 leading-relaxed text-sm">
                   {item.description}
                 </p>
 
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {item.features.map((feature, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center text-sm text-black"
+                      className="flex items-center text-sm text-gray-700"
                     >
-                      <ArrowRight className="w-3 h-3 mr-2 text-[#0054aa]" />
+                      <div className="w-2 h-2 bg-[#0054aa] rounded-full mr-3 flex-shrink-0"></div>
                       {feature}
                     </div>
                   ))}

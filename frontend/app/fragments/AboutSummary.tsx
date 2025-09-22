@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function AboutSummary() {
   return (
-    <section className="w-full px-6 md:px-12 py-16 bg-[white] min-h-screen flex items-center justify-center border-b border-gray-200">
+    <section className="w-full px-6 md:px-12 py-48 bg-[white] flex items-center justify-center border-b border-gray-200">
       <div className="text-center max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl mb-6 text-[#0054aa] font-medium">
           Transform Ambition into AI-Powered Results

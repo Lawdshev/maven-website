@@ -18,7 +18,6 @@ export default function Component() {
       <CapabilitiesSection />
       <TechStackSection />
       <BlogSection />
-
       </div>
     </div>
   );
