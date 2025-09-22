@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function AboutSummary() {
   return (
-    <section className="w-full px-6 md:px-12 py-16 bg-[white]">
+    <section className="w-full px-6 md:px-12 py-16 bg-[white] min-h-screen flex items-center justify-center border-b border-gray-200">
       <div className="text-center max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl mb-6 text-[#0054aa] font-medium">
           Transform Ambition into AI-Powered Results
@@ -17,9 +17,12 @@ export default function AboutSummary() {
           lasting results and measurable value.
         </p>
         <Link href="/about-us">
-          <Button className="bg-[#0054aa] hover:bg-[#003d7f] text-white text-lg px-6 py-4 rounded-none cursor-pointer">
+          <Button
+            size={"lg"}
+            className="bg-[#0054aa] hover:bg-[#003d7f] text-white text-lg px-16 py-4 rounded-none cursor-pointer"
+          >
             <span>Learn More</span>
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight size={32} className="ml-2" />
           </Button>
         </Link>
       </div>
