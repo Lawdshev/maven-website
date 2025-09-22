@@ -62,15 +62,6 @@ export default function TechStackSection() {
         "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop&crop=center",
       features: ["Kubernetes", "Docker", "Serverless Functions"],
     },
-    {
-      title: "AWS Infrastructure",
-      description:
-        "Scalable, secure cloud infrastructure leveraging Amazon Web Services ecosystem.",
-      icon: Database,
-      image:
-        "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=300&fit=crop&crop=center",
-      features: ["EC2 & ECS", "RDS & DynamoDB", "Lambda & API Gateway"],
-    },
   ];
 
   return (
@@ -99,47 +90,32 @@ export default function TechStackSection() {
 
         {/* Tech Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
           variants={stagger}
         >
           {techItems.map((item, i) => (
-            <motion.div
-              key={i}
-              className="bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 group   "
-              variants={fadeUp}
-            >
-              {/* Icon Header */}
-              <div className="bg-gradient-to-br from-[#0054aa]/10 to-[#0054aa]/5 p-6 flex items-center justify-center">
-                <div className="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center transition-transform duration-300">
-                  <item.icon className="w-8 h-8 text-[#0054aa]" />
+            <motion.div key={i} className="text-center group" variants={fadeUp}>
+              <div className="relative mb-6 overflow-hidden rounded-lg">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={400}
+                  height={250}
+                  className="w-full h-[250px] object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-[#0054aa]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <item.icon className="h-16 w-16 text-white" />
                 </div>
               </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#0054aa] transition-colors duration-300">
-                  {item.title}
-                </h3>
-
-                <p className="text-gray-600 mb-6 leading-relaxed text-sm">
-                  {item.description}
-                </p>
-
-                <div className="space-y-3">
-                  {item.features.map((feature, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center text-sm text-gray-700"
-                    >
-                      <div className="w-2 h-2 bg-[#0054aa] rounded-full mr-3 flex-shrink-0"></div>
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <h3 className="text-2xl font-normal mb-4 text-[#0054aa]">
+                {item.title}
+              </h3>
+              <p className="text-lg leading-[30px] text-black">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>
