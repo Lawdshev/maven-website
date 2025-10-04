@@ -11,7 +11,7 @@ export default function Approach() {
        <div className="max-w-6xl mx-auto">
          {/* Section Header */}
          <div className="text-center mb-20">
-           <h2 className="text-sm font-medium text-foreground/70 uppercase tracking-wider mb-8">
+           <h2 className="text-base font-medium text-foreground/70 uppercase tracking-wider mb-8">
              OUR APPROACH
            </h2>
          </div>
