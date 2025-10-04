@@ -5,6 +5,7 @@ import Approach from "./components/Approach";
 import Services from "./components/Services";
 import Insights from "./components/Insights";
 import Footer from "./components/Footer";
+import ThemeToggle from "./components/ThemeToggle";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Services />
       <Insights />
       <Footer />
+      <ThemeToggle />
     </div>
   );
 }
