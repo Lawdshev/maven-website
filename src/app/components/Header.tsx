@@ -2,6 +2,7 @@
 import Image from "next/image";
 import LogoLight from "@/app/image/logo.png";
 import Button from "./Button";
+import Link from "next/link";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -12,7 +13,7 @@ const navItems = [
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-white ">
+    <header className="fixed top-0 left-0 right-0 z-40 bg-white dark:bg-[#2A2C38] ">
       <div className="max-w-[1500px] mx-auto px-4 py-2 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -23,9 +24,9 @@ export default function Header() {
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a key={item.name} href={item.href} className="text-nav text-xl">
+              <Link key={item.name} href={item.href} className="text-nav dark:text-nav-dark text-xl">
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
