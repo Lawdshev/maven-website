@@ -7,11 +7,8 @@ import Seamless from "@/app/image/approach/seamless.png";
 
 export default function Approach() {
   return (
-    <section
-      id="approach"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-background dark:bg-background-dark"
-    >
-      <div className="max-w-6xl mx-auto">
+    <section id="approach" className=" bg-background dark:bg-background-dark">
+      <div className="max-w-6xl py-20 px-4 sm:px-6 lg:px-8 mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-base font-medium text-black uppercase tracking-wider mb-8 dark:text-white ">

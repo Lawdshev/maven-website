@@ -33,11 +33,8 @@ export default function Insights() {
   ];
 
   return (
-    <section
-      id="insights"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-background dark:bg-background-dark"
-    >
-      <div className="max-w-6xl mx-auto">
+    <section id="insights" className=" bg-background dark:bg-background-dark">
+      <div className="max-w-6xl py-20 px-4 sm:px-6 lg:px-8 mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#01CBFB33] dark:bg-[#10718833] mb-8">
@@ -68,10 +65,10 @@ export default function Insights() {
 
               {/* Content */}
               <div className="mt-4 text-left">
-                <h3 className="text-[22px] font-bold text-insight-heading dark:text-insight-heading-dark mb-2 ">
+                <h3 className="text-xl font-bold text-[#1E5993] dark:[#78A7D5] mb-2 ">
                   {insight.title}
                 </h3>
-                <p className="text-[#999999] dark:text-gray-400 text-[19px] leading-relaxed">
+                <p className="text-[#999999] dark:text-[#999999] text-lg leading-[31px]">
                   {insight.description}
                 </p>
               </div>
