@@ -1,6 +1,3 @@
-"use client";
-
-import Button from "./Button";
 import Mckinsin from "@/app/image/insight/mckinsin.png";
 import Innovation from "@/app/image/insight/innovation.png";
 import Agentic from "@/app/image/insight/agentic.png";
@@ -43,13 +40,13 @@ export default function Insights() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/20 mb-8">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#01CBFB33] dark:bg-[#10718833] mb-8">
             <span className="text-xs font-medium text-insight-heading dark:text-insight-heading-dark tracking-wide">
               LATEST INSIGHT
             </span>
           </div>
 
-          <h2 className="text-xl text-insight-text dark:text-insight-text-dark mb-8 max-w-4xl mx-auto">
+          <h2 className="text-xl text-insight-text dark:text-[#DAE0EC] mb-8 max-w-4xl mx-auto">
             Explore the latest insight on AI, cloud computing, and digital
             transformation
           </h2>

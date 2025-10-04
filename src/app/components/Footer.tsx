@@ -64,7 +64,7 @@ export default function Footer() {
                 <a
                   key={index}
                   href="#"
-                  className=" rounded-lg flex items-center justify-center text-social-icon dark:text-social-icon-dark"
+                  className=" rounded-lg flex items-center justify-center text-social-icon dark:text-[#78A7D5]"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -119,7 +119,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {contactInfo.map((info) => (
                 <li key={info.name} className="flex items-start space-x-3">
-                  <span className="text-icon-text dark:text-icon-text-dark w-5 h-5 mt-0.5">
+                  <span className="text-icon-text dark:text-[#78A7D5] w-5 h-5 mt-0.5">
                     {info.icon}
                   </span>
                   <a
