@@ -1,16 +1,26 @@
 "use client";
 
-import { useTheme } from "../contexts/ThemeContext";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const { theme, toggleTheme, mounted } = useTheme();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   if (!mounted) return null; // Avoid SSR mismatch
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-4 right-4 p-3 rounded-full bg-background border border-foreground/20 hover:bg-foreground/10 transition-all duration-300 shadow-lg z-50"
+      className="fixed top-4 right-4 p-3 rounded-full bg-background dark:bg-background-dark border border-foreground/20 dark:border-foreground-dark/20 hover:bg-foreground/10 dark:hover:bg-foreground-dark/10 transition-all duration-300 shadow-lg z-50"
       aria-label="Toggle theme"
     >
       {theme === "light" ? (
@@ -19,7 +29,7 @@ export default function ThemeToggle() {
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          className="w-5 h-5 text-foreground"
+          className="w-5 h-5 text-foreground dark:text-foreground-dark"
         >
           <path
             strokeLinecap="round"
@@ -34,7 +44,7 @@ export default function ThemeToggle() {
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          className="w-5 h-5 text-foreground"
+          className="w-5 h-5 text-foreground dark:text-foreground-dark"
         >
           <path
             strokeLinecap="round"

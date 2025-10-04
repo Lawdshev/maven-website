@@ -1,39 +1,42 @@
-'use client'
+"use client";
 
-import { useTheme } from '../contexts/ThemeContext'
-import AgentAi from '@/app/image/services/agentAi.png'
-import Time from '@/app/image/services/time.png'
-import Cloud from '@/app/image/services/cloud.png'
-import Image from 'next/image'
-import IconOne from '@/app/image/services/iconOne.png'
-import IconTwo from '@/app/image/services/iconTwo.png'
-import IconThree from '@/app/image/services/iconThree.png'
+import AgentAi from "@/app/image/services/agentAi.png";
+import Time from "@/app/image/services/time.png";
+import Cloud from "@/app/image/services/cloud.png";
+import Image from "next/image";
+import IconOne from "@/app/image/services/iconOne.png";
+import IconTwo from "@/app/image/services/iconTwo.png";
+import IconThree from "@/app/image/services/iconThree.png";
 export default function Services() {
-  const { theme } = useTheme()
-
   const services = [
     {
       title: "AI Agent",
-      description: "Lorem ipsum amet, consectetur adipisicing elit,sd do eiusmod tempor incididunt labore etdolore magna aliqua..",
+      description:
+        "Lorem ipsum amet, consectetur adipisicing elit,sd do eiusmod tempor incididunt labore etdolore magna aliqua..",
       image: AgentAi,
-      icon: IconOne
+      icon: IconOne,
     },
     {
       title: "Real Time Pipeline",
-      description: "Lorem ipsum amet, consectetur adipisicing elit,sd do eiusmod tempor incididunt labore etdolore magna aliqua..",
+      description:
+        "Lorem ipsum amet, consectetur adipisicing elit,sd do eiusmod tempor incididunt labore etdolore magna aliqua..",
       image: Time,
-      icon: IconTwo
+      icon: IconTwo,
     },
     {
       title: "Cloud Native",
-      description: "Lorem ipsum amet, consectetur adipisicing elit,sd do eiusmod tempor incididunt labore etdolore magna aliqua..",
-      image:Cloud,
-      icon: IconThree
-    }
-  ]
+      description:
+        "Lorem ipsum amet, consectetur adipisicing elit,sd do eiusmod tempor incididunt labore etdolore magna aliqua..",
+      image: Cloud,
+      icon: IconThree,
+    },
+  ];
 
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+    <section
+      id="services"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-background dark:bg-background-dark"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -42,34 +45,47 @@ export default function Services() {
               Service
             </span>
           </div>
-          
-          <h2 className="text-xl text-foreground mb-8 max-w-2xl mx-auto">
-          Cutting edge technology stack designed for, scale, performancee and 
-         innovation 
+
+          <h2 className="text-xl text-foreground dark:text-foreground-dark mb-8 max-w-2xl mx-auto">
+            Cutting edge technology stack designed for, scale, performancee and
+            innovation
           </h2>
         </div>
 
         {/* Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-background rounded-2xl shadow-lg overflow-hidden relative">
+            <div
+              key={index}
+              className="bg-background dark:bg-background-dark rounded-2xl shadow-lg overflow-hidden relative"
+            >
               {/* Image Container with Bottom Icon */}
               <div className="relative flex justify-center mb-6">
-                <Image src={service.image} alt={service.title} width={400} height={400} />
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  width={400}
+                  height={400}
+                />
                 {/* Small Icon Overlay - Bottom Center */}
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
-                  <div className="bg-background rounded-full p-3 shadow-lg border border-border">
-                    <Image src={service.icon} alt={`${service.title} icon`} width={30} height={30} />
+                  <div className="bg-background dark:bg-background-dark rounded-full p-3 shadow-lg border border-border dark:border-border-dark">
+                    <Image
+                      src={service.icon}
+                      alt={`${service.title} icon`}
+                      width={30}
+                      height={30}
+                    />
                   </div>
                 </div>
               </div>
 
               {/* Content */}
               <div className="text-center py-4 px-6">
-                <h3 className="text-[22px] font-bold text-foreground mb-4">
+                <h3 className="text-[22px] font-bold text-foreground dark:text-foreground-dark mb-4">
                   {service.title}
                 </h3>
-                <p className="text-base text-foreground/70 leading-relaxed">
+                <p className="text-base text-foreground/70 dark:text-foreground-dark/70 leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -78,5 +94,5 @@ export default function Services() {
         </div>
       </div>
     </section>
-  )
+  );
 }
