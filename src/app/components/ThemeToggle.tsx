@@ -1,32 +1,25 @@
-'use client'
+"use client";
 
-import { useTheme } from '../contexts/ThemeContext'
+import { useTheme } from "../contexts/ThemeContext";
 
 export default function ThemeToggle() {
-  const { theme, toggleTheme, mounted } = useTheme()
+  const { theme, toggleTheme, mounted } = useTheme();
 
-  // Don't render until mounted to avoid hydration mismatch
-  if (!mounted) {
-    return (
-      <div className="fixed top-4 right-4 p-3 rounded-full bg-gray-200 border border-gray-300 shadow-lg z-50">
-        <div className="w-5 h-5"></div>
-      </div>
-    )
-  }
+  if (!mounted) return null; // Avoid SSR mismatch
 
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-4 right-4 p-3 rounded-full bg-background border border-foreground/20 hover:bg-foreground/10 transition-colors duration-200 shadow-lg z-50"
-      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+      className="fixed top-4 right-4 p-3 rounded-full bg-background border border-foreground/20 hover:bg-foreground/10 transition-all duration-300 shadow-lg z-50"
+      aria-label="Toggle theme"
     >
-      {theme === 'light' ? (
-        // Moon icon for dark mode
+      {theme === "light" ? (
         <svg
-          className="w-5 h-5 text-foreground"
+          xmlns="http://www.w3.org/2000/svg"
           fill="none"
-          stroke="currentColor"
           viewBox="0 0 24 24"
+          stroke="currentColor"
+          className="w-5 h-5 text-foreground"
         >
           <path
             strokeLinecap="round"
@@ -36,12 +29,12 @@ export default function ThemeToggle() {
           />
         </svg>
       ) : (
-        // Sun icon for light mode
         <svg
-          className="w-5 h-5 text-foreground"
+          xmlns="http://www.w3.org/2000/svg"
           fill="none"
-          stroke="currentColor"
           viewBox="0 0 24 24"
+          stroke="currentColor"
+          className="w-5 h-5 text-foreground"
         >
           <path
             strokeLinecap="round"
@@ -52,5 +45,5 @@ export default function ThemeToggle() {
         </svg>
       )}
     </button>
-  )
+  );
 }
