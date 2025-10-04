@@ -33,41 +33,26 @@ export default function Services() {
   ];
 
   return (
-    <section
-      id="services"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-background dark:bg-background-dark"
-    >
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/20 mb-8">
-            <span className="text-sm font-medium text-blue-600 dark:text-blue-400 uppercase tracking-wide">
-              Service
-            </span>
-          </div>
-
-          <h2 className="text-xl text-foreground dark:text-foreground-dark mb-8 max-w-2xl mx-auto">
-            Cutting edge technology stack designed for, scale, performancee and
-            innovation
-          </h2>
+    <section id="services" className="bg-white dark:bg-[#2A2C38]">
+      <div className="6xl mx-auto py-36 px-4 sm:px-6 lg:px-8 text-center">
+        <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#01CBFB33] dark:bg-blue-[#10718833] mb-8">
+          <span className="text-sm font-medium text-[#1E5993] dark:text-[#78A7D5] uppercase tracking-wide">
+            Service
+          </span>
         </div>
 
-        {/* Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <h2 className="text-xl font-normal  max-w-3xl mx-auto text-[#111827] dark:text-[#DAE0EC] ">
+          Cutting edge technology stack designed for, scale, performance and
+          innovation
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 mt-8 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-background dark:bg-background-dark rounded-2xl shadow-lg overflow-hidden relative"
+              className="bg-background dark:bg-background-dark  rounded-2xl shadow-lg overflow-hidden relative"
             >
-              {/* Image Container with Bottom Icon */}
               <div className="relative flex justify-center mb-6">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  width={400}
-                  height={400}
-                />
-                {/* Small Icon Overlay - Bottom Center */}
+                <Image src={service.image} alt={service.title} />
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
                   <div className="bg-background dark:bg-background-dark rounded-full p-3 shadow-lg border border-border dark:border-border-dark">
                     <Image
@@ -80,12 +65,11 @@ export default function Services() {
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="text-center py-4 px-6">
-                <h3 className="text-[22px] font-bold text-foreground dark:text-foreground-dark mb-4">
+              <div className="text-center p-6 max-w-md mx-auto">
+                <h3 className="text-[22px] font-bold text-[#222222] dark:text-[#DDDDDD] mb-4">
                   {service.title}
                 </h3>
-                <p className="text-base text-foreground/70 dark:text-foreground-dark/70 leading-relaxed">
+                <p className=" text-[#555555] dark:text-[#AAAAAA] leading-[30px]">
                   {service.description}
                 </p>
               </div>
