@@ -59,6 +59,14 @@ const config: Config = {
           DEFAULT: "#1e5993",
           dark: "#78a7d5",
         },
+        "about-text": {
+          DEFAULT: "#171717",
+          dark: "#E8E8E8",
+        },
+        "about-heading": {
+          DEFAULT: "#402BDC",
+          dark: "#4635C2",
+        },
       },
     },
   },
