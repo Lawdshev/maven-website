@@ -6,54 +6,21 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-      darkMode: 'class', // Use class-based dark mode
+  darkMode: 'class', // We'll toggle .dark on <html>
   theme: {
     extend: {
       colors: {
-        background: {
-          DEFAULT: '#ffffff',
-          dark: '#2A2C38',
-        },
-        foreground: {
-          DEFAULT: '#171717',
-          dark: '#ededed',
-        },
-        nav: {
-          DEFAULT: '#170F49',
-          dark: '#C2BCEA',
-        },
-        buttonBg:{
-          DEFAULT: '#1E5993',
-          dark: '#193551',
-        },
-        footerText: {
-          DEFAULT: '#6F6C90',
-          dark: '#767490',
-        },
-        border: {
-          DEFAULT: "#EFF0F6",
-          dark: "#1F2130"
-        },
-        footerBorder: {
-          DEFAULT: "#D9DBE9",
-          dark: "#282B3E"
-        },
-        socialIcon: {
-          DEFAULT: '#1E5993',
-          dark: '#2A2C38',
-        },
-        iconText: {
-          DEFAULT: '#170F49',
-          dark: '#C2BCEA',
-        },
-        insighttext: {
-          DEFAULT: "#111827",
-          dark: "#DAE0EC",
-        },
-        insightHeading: {
-          DEFAULT: "#1E5993",
-          dark: "#78A7D5",
-        }
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        nav: 'var(--nav)',
+        buttonBg: 'var(--button-bg)',
+        footerText: 'var(--footer-text)',
+        border: 'var(--border)',
+        footerBorder: 'var(--footer-border)',
+        socialIcon: 'var(--social-icon)',
+        iconText: 'var(--icon-text)',
+        insighttext: 'var(--insight-text)',
+        insightHeading: 'var(--insight-heading)',
       },
     },
   },

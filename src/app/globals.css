@@ -1,36 +1,5 @@
 @import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --nav: #170F49;
-  --button-bg: #1E5993;
-  --footer-text: #6F6C90;
-  --icon-text: #170F49;
-  --social-icon: #1E5993;
-  --border: #EFF0F6;
-  --insight-text: #111827;
-  --insight-heading: #1E5993;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-nav: var(--nav);
-  --color-button-bg: var(--button-bg);
-  --color-footer-text: var(--footer-text);
-  --color-icon-text: var(--icon-text);
-  --color-social-icon: var(--social-icon);
-  --color-border: var(--border);
-  --color-footer-border: var(--footer-border);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --insight-text: var(--insight-text);
-  --insight-heading: var(--insight-heading);
-}
-
-/* Light theme (default) */
-.light {
   --background: #ffffff;
   --foreground: #171717;
   --nav: #170F49;
@@ -43,8 +12,6 @@
   --insight-text: #111827;
   --insight-heading: #1E5993;
 }
-
-/* Dark theme */
 .dark {
   --background: #2A2C38;
   --foreground: #ededed;
@@ -58,8 +25,6 @@
   --insight-text: #DAE0EC;
   --insight-heading: #78A7D5;
 }
-
-/* Fallback for system preference when no manual theme is set */
 @media (prefers-color-scheme: dark) {
   :root:not(.light):not(.dark) {
     --background: #2A2C38;
