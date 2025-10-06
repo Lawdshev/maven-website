@@ -67,6 +67,11 @@ const config: Config = {
           DEFAULT: "#402BDC",
           dark: "#4635C2",
         },
+        "blog-icon":{
+          DEFAULT:"#BACCE1",
+          dark: "#3F5A79"
+
+        }
       },
     },
   },
