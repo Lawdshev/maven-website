@@ -69,9 +69,33 @@ const config: Config = {
         },
         "blog-icon":{
           DEFAULT:"#BACCE1",
-          dark: "#3F5A79"
+          dark: "#3F5A79",
 
-        }
+        },
+        "blog-category":{
+          DEFAULT:"#000000",
+          dark:"#FFFFFF",
+        },
+        "blog-title":{
+          DEFAULT:"#183354",
+          dark:"#B1C7E1",
+        },
+       "blog-text":{
+        DEFAULT:"#545E69",
+        dark:"#98A0A9",
+       },
+       "blog-date":{
+        DEFAULT:"#6D757F",
+        dark:"#828890",
+       },
+       "date-icon":{
+        DEFAULT:"#6D757F",
+        dark:"#42464B",
+       },
+       "blog-category-button":{
+        DEFAULT:"#D0F3FC",
+        dark:"#19768E",
+       },
       },
     },
   },
