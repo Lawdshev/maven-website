@@ -96,6 +96,14 @@ const config: Config = {
         DEFAULT:"#D0F3FC",
         dark:"#19768E",
        },
+       "services-button":{
+        DEFAULT:"#473BF0",
+        dark:"#241C97",
+       },
+       "services-title":{
+        DEFAULT:"#161C2D",
+        dark:"#D4D9E7",
+       },
       },
     },
   },
