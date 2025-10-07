@@ -100,10 +100,15 @@ const config: Config = {
         DEFAULT:"#473BF0",
         dark:"#241C97",
        },
-       "services-title":{
+       "services-paragraph":{
         DEFAULT:"#161C2D",
         dark:"#D4D9E7",
        },
+       "services-text":{
+        DEFAULT:"#161C2D",
+        dark:"#E7D4D5",
+       },
+      
       },
     },
   },
