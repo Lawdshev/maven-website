@@ -1,16 +1,17 @@
 "use client";
 
-import { useState } from "react";
-import { X } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Input, Textarea } from "./Input";
-import Title from "./Title";
 
 interface ContactUsModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export default function ContactUsModal({ isOpen, onClose }: ContactUsModalProps) {
+export default function ContactUsModal({
+  isOpen,
+  onClose,
+}: ContactUsModalProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,9 +19,11 @@ export default function ContactUsModal({ isOpen, onClose }: ContactUsModalProps)
     message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -46,26 +49,33 @@ export default function ContactUsModal({ isOpen, onClose }: ContactUsModalProps)
     }
   };
 
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    // Cleanup function to restore scroll when component unmounts
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
       onClick={handleBackdropClick}
     >
       <div className="bg-background dark:bg-[#2A2C38] rounded-lg py-10 shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
         {/* Modal Header */}
-        <div className="flex justify-end items-center px-2 ">
-
-        <button
-            onClick={onClose}
-            className="justify-end text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
-          >
-            <X size={24} />
-          </button>
-        </div>
         <div className=" text-center ">
-          <h2 className="text-4xl font-bold text-insight-heading dark:text-insight-heading-dark">Contact Us</h2>
+          <h2 className="text-4xl font-bold text-insight-heading dark:text-insight-heading-dark">
+            Contact Us
+          </h2>
           <p className="text-contact-text dark:text-contact-text-dark text-xl font-medium  mt-3 mb-2">
             Have question or support? Send your message
           </p>
@@ -73,8 +83,6 @@ export default function ContactUsModal({ isOpen, onClose }: ContactUsModalProps)
 
         {/* Modal Body */}
         <div className="px-24 py-4 ">
-        
-
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
               type="text"
