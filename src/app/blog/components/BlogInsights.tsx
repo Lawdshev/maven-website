@@ -83,11 +83,12 @@ export default function BlogGrid() {
 
   return (
     <section className="bg-background dark:bg-background-dark text-white py-16 px-4 sm:px-6 lg:px-10">
-
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
         {/* Categories Sidebar */}
         <aside className="md:col-span-1 px-6 rounded-lg  h-fit">
-          <h3 className="text-xl font-bold mb-4 text-blog-category dark:text-blog-category-dark">Categories</h3>
+          <h3 className="text-xl font-bold mb-4 text-blog-category dark:text-blog-category-dark">
+            Categories
+          </h3>
           <ul className="space-y-3">
             {categories.map((cat) => (
               <li key={cat}>
@@ -95,8 +96,8 @@ export default function BlogGrid() {
                   onClick={() => setActiveCategory(cat)}
                   className={`w-full text-left px-4 text-base py-2 rounded-md font-medium ${
                     activeCategory === cat
-                      ? "bg-button-bg dark:bg-button-bg-dark text-white"
-                      : "bg-blog-category-button dark:bg-blog-category-button-dark text-blog-category dark:text-blog-category-dark"
+                      ? "bg-[#1E5993] dark:[#193551] text-white"
+                      : "bg-[#D0F3FC] dark:bg-[#19768E] text-blog-category dark:text-blog-category-dark"
                   }`}
                 >
                   {cat}
@@ -109,10 +110,7 @@ export default function BlogGrid() {
         {/* Articles Grid */}
         <div className="md:col-span-3 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredArticles.map((article) => (
-            <article
-              key={article.id}
-              className="rounded-lg overflow-hidden"
-            >
+            <article key={article.id} className="rounded-lg overflow-hidden">
               <div className="relative h-44 w-full">
                 <Image
                   src={article.image}
@@ -121,29 +119,31 @@ export default function BlogGrid() {
                   className="object-cover"
                 />
                 <div className="absolute top-3 left-3">
-                  <span className="bg-button-bg dark:bg-button-bg-dark  px-3 py-1 rounded text-[9px] font-semibold">
+                  <span className="bg-[#1E5993] dark:bg-[#193551]  px-3 py-1 rounded text-[9px] font-semibold">
                     {article.category}
                   </span>
                 </div>
               </div>
 
               <div className="p-4">
-                <h3 className="text-base text-blog-title dark:blog-title-dark font-bold mb-2 line-clamp-2">
+                <h3 className="text-base text-[#183354] dark:text-[#B1C7E1] font-bold mb-2 line-clamp-2">
                   {article.title}
                 </h3>
                 <div className="flex items-center gap-2  mb-3 ">
-                  <Calendar className="w-4 h-4 text-date-icon dark:date-icon-dark" />
-                  <span className="text-[9px] font-semibold text-blog-date dark:blog-date-dark">{article.date}</span>
+                  <Calendar className="w-4 h-4 text-date-icon dark:text-date-icon-dark" />
+                  <span className="text-[9px] font-semibold text-blog-date dark:text-blog-date-dark">
+                    {article.date}
+                  </span>
                   <div className="flex items-center gap-1">
-                    <PiClockCounterClockwiseLight className="w-4 h-4 text-date-icon dark:date-icon-dark" />
-                    <span className="text-[9px] font-semibold text-blog-date dark:blog-date-dark">20 MINS</span>
+                    <PiClockCounterClockwiseLight className="w-4 h-4 text-date-icon dark:text-date-icon-dark" />
+                    <span className="text-[9px] font-semibold text-blog-date dark:text-blog-date-dark">
+                      20 MINS
+                    </span>
                   </div>
                 </div>
-                <p className="text-xs text-blog-text dark:blog-text-dark max-w-lg mb-3">
+                <p className="text-xs text-justify text-blog-text dark:text-blog-text-dark max-w-lg mb-3">
                   {article.excerpt}
                 </p>
-
-               
               </div>
             </article>
           ))}
