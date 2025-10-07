@@ -37,7 +37,7 @@ export default function Button({
   // Color variants
   const variantStyles = {
     primary:
-      "bg-button-bg dark:bg-button-bg-dark text-white text-xl font-semibold",
+      "bg-button-bg dark:bg-button-bg-dark text-white text-sm font-medium",
     secondary: "bg-gray-600 hover:bg-gray-700 text-white focus:ring-gray-500",
     outline:
       "border-2 border-button-bg dark:border-button-bg-dark text-button-bg dark:text-button-bg-dark hover:bg-button-bg dark:hover:bg-button-bg-dark hover:text-white focus:ring-button-bg/50",

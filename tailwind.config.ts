@@ -59,6 +59,56 @@ const config: Config = {
           DEFAULT: "#1e5993",
           dark: "#78a7d5",
         },
+        "about-text": {
+          DEFAULT: "#171717",
+          dark: "#E8E8E8",
+        },
+        "about-heading": {
+          DEFAULT: "#402BDC",
+          dark: "#4635C2",
+        },
+        "blog-icon":{
+          DEFAULT:"#BACCE1",
+          dark: "#3F5A79",
+
+        },
+        "blog-category":{
+          DEFAULT:"#000000",
+          dark:"#FFFFFF",
+        },
+        "blog-title":{
+          DEFAULT:"#183354",
+          dark:"#B1C7E1",
+        },
+       "blog-text":{
+        DEFAULT:"#545E69",
+        dark:"#98A0A9",
+       },
+       "blog-date":{
+        DEFAULT:"#6D757F",
+        dark:"#828890",
+       },
+       "date-icon":{
+        DEFAULT:"#6D757F",
+        dark:"#42464B",
+       },
+       "blog-category-button":{
+        DEFAULT:"#D0F3FC",
+        dark:"#19768E",
+       },
+       "services-button":{
+        DEFAULT:"#473BF0",
+        dark:"#241C97",
+       },
+       "services-paragraph":{
+        DEFAULT:"#161C2D",
+        dark:"#D4D9E7",
+       },
+       "services-text":{
+        DEFAULT:"#161C2D",
+        dark:"#E7D4D5",
+       },
+      
       },
     },
   },
