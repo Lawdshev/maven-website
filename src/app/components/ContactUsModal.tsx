@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { X } from "lucide-react";
+import { Input, Textarea } from "./Input";
+import Title from "./Title";
 
 interface ContactUsModalProps {
   isOpen: boolean;
@@ -51,97 +53,77 @@ export default function ContactUsModal({ isOpen, onClose }: ContactUsModalProps)
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
       onClick={handleBackdropClick}
     >
-      <div className="bg-background dark:bg-[#2A2C38] rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-background dark:bg-[#2A2C38] rounded-lg py-10 shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
         {/* Modal Header */}
-        <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-700">
-          <h2 className="text-2xl font-bold text-blue-400">Contact Us</h2>
-          <button
+        <div className="flex justify-end items-center px-2 ">
+
+        <button
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+            className="justify-end text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
           >
             <X size={24} />
           </button>
         </div>
-
-        {/* Modal Body */}
-        <div className="p-6">
-          <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">
+        <div className=" text-center ">
+          <h2 className="text-4xl font-bold text-insight-heading dark:text-insight-heading-dark">Contact Us</h2>
+          <p className="text-contact-text dark:text-contact-text-dark text-xl font-medium  mt-3 mb-2">
             Have question or support? Send your message
           </p>
+        </div>
+
+        {/* Modal Body */}
+        <div className="px-24 py-4 ">
+        
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Name Field */}
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                placeholder="Your name"
-                className="w-full px-3 py-2 bg-gray-800 dark:bg-gray-700 border border-gray-600 dark:border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                required
-              />
-            </div>
+            <Input
+              type="text"
+              id="name"
+              name="name"
+              label="Name"
+              value={formData.name}
+              onChange={handleInputChange}
+              placeholder="Your name"
+              required
+            />
 
-            {/* Email Field */}
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="Example@gmail.com"
-                className="w-full px-3 py-2 bg-gray-800 dark:bg-gray-700 border border-gray-600 dark:border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                required
-              />
-            </div>
+            <Input
+              type="email"
+              id="email"
+              name="email"
+              label="Email"
+              value={formData.email}
+              onChange={handleInputChange}
+              placeholder="Example@gmail.com"
+              required
+            />
 
-            {/* Subject Field */}
-            <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Subject
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleInputChange}
-                placeholder="Subject of your message"
-                className="w-full px-3 py-2 bg-gray-800 dark:bg-gray-700 border border-gray-600 dark:border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                required
-              />
-            </div>
+            <Input
+              type="text"
+              id="subject"
+              name="subject"
+              label="Subject"
+              value={formData.subject}
+              onChange={handleInputChange}
+              placeholder="Subject of your message"
+              required
+            />
 
-            {/* Message Field */}
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                placeholder="Your Message Here..."
-                rows={4}
-                className="w-full px-3 py-2 bg-gray-800 dark:bg-gray-700 border border-gray-600 dark:border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                required
-              />
-            </div>
+            <Textarea
+              id="message"
+              name="message"
+              label="Message"
+              value={formData.message}
+              onChange={handleInputChange}
+              placeholder="Your Message Here..."
+              rows={4}
+              required
+            />
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+              className="w-full bg-button-bg dark:bg-button-bg-dark  text-white font-medium py-3 px-4 rounded-md"
             >
               Send Message
             </button>
