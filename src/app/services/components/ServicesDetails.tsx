@@ -86,7 +86,7 @@ export default function ServicesDetails() {
             </h2>
             
             {/* Service Description */}
-             <p className="text-lg text-services-title dark:text-services-title-dark text-[19px] text-center max-w-xl mx-auto  mb-12 leading-relaxed">
+             <p className="text-lg text-services-paragraph dark:text-services-paragraph-dark text-[19px] text-center max-w-xl mx-auto  mb-12 leading-relaxed">
               {service.description}
             </p>
             
@@ -134,10 +134,10 @@ export default function ServicesDetails() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold  mb-2">
+                      <h3 className="text-[21px] font-bold text-services-text dark:text-services-text-dark mb-2">
                         {feature.title}
                       </h3>
-                       <p className=" leading-relaxed">
+                       <p className="text-services-paragraph dark:text-services-paragraph-dark text-[17px] leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
