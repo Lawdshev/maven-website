@@ -108,6 +108,22 @@ const config: Config = {
         DEFAULT:"#161C2D",
         dark:"#E7D4D5",
        },
+       "contact-text":{
+        DEFAULT:"#313957",
+        dark:"#ACB2CA",
+       },
+       "contact-input":{
+        DEFAULT:"#0C1421",
+        dark:"#E1E8F2",
+       },
+       "contact-border":{
+        DEFAULT:"#D4D7E3",
+        dark:"#34394A",
+       },
+       "contact-placeholder":{
+        DEFAULT:"#8897AD",
+        dark:"#8796AD",
+       },
       
       },
     },
