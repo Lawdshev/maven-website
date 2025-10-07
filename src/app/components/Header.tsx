@@ -5,6 +5,8 @@ import LogoDark from "@/app/image/logoDark.png";
 import { useTheme } from "next-themes";
 import Button from "./Button";
 import Link from "next/link";
+import ContactUsModal from "./ContactUsModal";
+import { useState } from "react";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -15,6 +17,15 @@ const navItems = [
 
 export default function Header() {
   const { theme } = useTheme();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleContactClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-white dark:bg-[#2A2C38] ">
@@ -44,11 +55,14 @@ export default function Header() {
           </nav>
 
           {/* Contact Button */}
-          <Button variant="primary" size="md">
+          <Button variant="primary" size="md" onClick={handleContactClick}>
             Contact Us
           </Button>
         </div>
       </div>
+      
+      {/* Contact Us Modal */}
+      <ContactUsModal isOpen={isModalOpen} onClose={handleModalClose} />
     </header>
   );
 }

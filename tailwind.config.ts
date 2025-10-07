@@ -106,7 +106,7 @@ const config: Config = {
        },
        "services-text":{
         DEFAULT:"#161C2D",
-        dark:"#D4D9E7",
+        dark:"#E7D4D5",
        },
       
       },
