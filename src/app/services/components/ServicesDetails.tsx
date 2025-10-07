@@ -135,19 +135,22 @@ export default function ServicesDetails() {
               {/* Features */}
               <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
                 {service.features.map((feature) => (
-                  <div key={feature.number} className="flex items-start gap-4 p-4 max-w-md">
+                  <div
+                    key={feature.number}
+                    className="flex items-start gap-4 p-4 max-w-md"
+                  >
                     <div className="flex-shrink-0">
-                      <div className="bg-services-button dark:bg-services-button-dark rounded-full w-8 h-8 flex items-center justify-center">
-                        <span className="text-[17px] text-insight-heading dark:text-insight-heading-dark">
+                      <div className="bg-[#473BF0]/20 dark:bg-[#241C97]/10 rounded-full w-8 h-8 flex items-center justify-center">
+                        <span className="text-[17px] text-[#1E5993] dark:text-[#78A7D5]">
                           {feature.number}
                         </span>
                       </div>
                     </div>
-                    <div className="text-left">
-                      <h3 className="text-[21px] font-bold text-services-text dark:text-services-text-dark mb-2">
+                    <div className="text-left ">
+                      <h3 className="text-xl font-bold text-services-text dark:text-[#E7D4D5] mb-2">
                         {feature.title}
                       </h3>
-                      <p className="text-services-paragraph dark:text-services-paragraph-dark text-[17px] leading-relaxed">
+                      <p className="text-services-paragraph dark:text-[#D4D9E7]  leading-relaxed">
                         {feature.description}
                       </p>
                     </div>

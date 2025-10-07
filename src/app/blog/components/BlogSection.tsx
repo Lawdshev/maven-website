@@ -30,7 +30,7 @@ export default function BlogSection() {
   ];
   return (
     <section className="bg-background dark:bg-background-dark  ">
-      <div className="max-w-6xl py-24 px-4 sm:px-6 lg:px-8 mx-auto">
+      <div className="max-w-6xl py-32 px-4 sm:px-6 lg:px-8 mx-auto">
         <div className=" grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="lg:col-span-2 rounded-xl">
             <div className="relative h-[630px] w-full rounded-xl">
