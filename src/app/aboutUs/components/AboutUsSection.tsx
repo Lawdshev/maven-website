@@ -25,12 +25,12 @@ export default function AboutUsSection() {
       <div className="max-w-6xl mx-auto py-36 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Section - Text Content */}
-          <div className="space-y-4 text-left">
+          <div className="space-y-4 text-left ">
             <h1 className="text-4xl  font-bold  text-about-text dark:text-about-text-dark leading-tight">
               About us
             </h1>
 
-            <p className="text-base text-about-text dark:text-about-text-dark text-justify leading-relaxed max-w-sm">
+            <p className="text-base text-about-text dark:text-about-text-dark text-justify leading-relaxed w-full lg:max-w-sm">
               Welcome to <span className="font-bold">Mavencode</span> — your
               trusted partner in AI and cloud transformation.We believe
               technology should deliver real impact, not hype. That’s why we
@@ -40,8 +40,13 @@ export default function AboutUsSection() {
               help organizations unlock innovation and measurable value.
             </p>
 
-            <div className="pt-4">
-              <Button variant="primary" size="md" href="/services">
+            <div className="pt-4 w-full lg:w-auto">
+              <Button
+                variant="primary"
+                className="!py-4 !lg:!py-0 !text-base !lg:!text-sm w-full lg:w-auto"
+                size="md"
+                href="/services"
+              >
                 See our services
               </Button>
             </div>
