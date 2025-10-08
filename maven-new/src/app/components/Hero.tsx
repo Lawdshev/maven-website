@@ -21,11 +21,11 @@ export default function Hero() {
       </video>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <h1 className="text-8xl sm:text-6xl lg:text-7xl font-bold text-foreground-dark mb-6">
+      <div className="relative z-10  w-full text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl  font-bold text-foreground-dark mb-6 leading-tight">
           Artificial Intelligence
         </h1>
-        <p className="text-[23px] text-foreground-dark/80 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-2xl text-foreground-dark/80 max-w-3xl mx-auto leading-relaxed px-2">
           Learn how we&apos;re helping capture the opportunity of generative AI
         </p>
       </div>

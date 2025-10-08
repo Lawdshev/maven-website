@@ -86,31 +86,30 @@ const services = [
 
 export default function ServicesDetails() {
   return (
-    <section className="bg-background dark:bg-[#2A2C38] py-10 px-4 sm:px-6 lg:px-8">
+    <section className="bg-background dark:bg-[#2A2C38] py-8 sm:py-10 lg:py-16 px-4 md:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {services.map((service) => (
-          <div key={service.id} className="mb-24 text-center">
-            {/* Service Title */}
-            <h2 className="text-4xl font-bold text-insight-heading dark:text-insight-heading-dark mb-6">
+          <div
+            key={service.id}
+            className="mb-16 md:mb-20 lg:mb-24 text-left md:text-center"
+          >
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-insight-heading dark:text-insight-heading-dark mb-4 md:mb-6">
               {service.title}
             </h2>
-
-            {/* Service Description */}
-            <p className="text-lg text-services-paragraph dark:text-services-paragraph-dark text-[19px] max-w-2xl mx-auto mb-12 leading-relaxed">
+            <p className="text-base sm:text-lg text-services-paragraph dark:text-services-paragraph-dark max-w-2xl mx-auto mb-8 md:mb-10 lg:mb-12 leading-relaxed">
               {service.description}
             </p>
 
-            {/* Image + Features */}
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-2 mx-auto">
-              {/* Image */}
-              <div className="flex justify-center ">
-                <div className="relative rounded-lg overflow-hidden shadow-lg">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2 mx-auto">
+              <div className="flex justify-center w-full lg:w-auto">
+                <div className="relative rounded-lg overflow-hidden shadow-lg w-full  md:max-w-none">
                   {service.id === 1 && (
                     <Image
                       src={Circuit}
                       alt="Circuit Board"
                       width={420}
                       height={420}
+                      className="w-full"
                     />
                   )}
                   {service.id === 2 && (
@@ -119,6 +118,7 @@ export default function ServicesDetails() {
                       width={420}
                       height={420}
                       alt="Neural Network Brain"
+                      className="w-full"
                     />
                   )}
                   {service.id === 3 && (
@@ -127,30 +127,30 @@ export default function ServicesDetails() {
                       alt="Developer Workstation"
                       width={420}
                       height={420}
+                      className="w-full"
                     />
                   )}
                 </div>
               </div>
 
-              {/* Features */}
-              <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
+              <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start justify-center">
                 {service.features.map((feature) => (
                   <div
                     key={feature.number}
-                    className="flex items-start gap-4 p-4 max-w-md"
+                    className="flex items-start gap-3 md:gap-4 p-3 md:p-4 md:max-w-md w-full"
                   >
                     <div className="flex-shrink-0">
-                      <div className="bg-[#473BF0]/20 dark:bg-[#241C97]/10 rounded-full w-8 h-8 flex items-center justify-center">
-                        <span className="text-[17px] text-[#1E5993] dark:text-[#78A7D5]">
+                      <div className="bg-[#473BF0]/20 dark:bg-[#241C97]/10 rounded-full w-7 h-7 md:w-8 md:h-8 flex items-center justify-center">
+                        <span className="text-sm md:text-[17px] text-[#1E5993] dark:text-[#78A7D5]">
                           {feature.number}
                         </span>
                       </div>
                     </div>
-                    <div className="text-left ">
-                      <h3 className="text-xl font-bold text-services-text dark:text-[#E7D4D5] mb-2">
+                    <div className="text-left">
+                      <h3 className="text-lg md:text-xl font-bold text-services-text dark:text-[#E7D4D5] mb-1 sm:mb-2">
                         {feature.title}
                       </h3>
-                      <p className="text-services-paragraph dark:text-[#D4D9E7]  leading-relaxed">
+                      <p className="text-sm md:text-base text-services-paragraph dark:text-[#D4D9E7] leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
