@@ -70,20 +70,20 @@ export default function ContactUsModal({
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
       onClick={handleBackdropClick}
     >
-      <div className="bg-background dark:bg-[#2A2C38] rounded-lg py-10 shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-background dark:bg-[#2A2C38] rounded-lg py-6 sm:py-8 lg:py-10 shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
         {/* Modal Header */}
-        <div className=" text-center ">
-          <h2 className="text-4xl font-bold text-insight-heading dark:text-insight-heading-dark">
+        <div className="text-center px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-insight-heading dark:text-insight-heading-dark">
             Contact Us
           </h2>
-          <p className="text-contact-text dark:text-contact-text-dark text-xl font-medium  mt-3 mb-2">
+          <p className="text-contact-text dark:text-contact-text-dark text-base sm:text-lg lg:text-xl font-medium mt-2 sm:mt-3 mb-2">
             Have question or support? Send your message
           </p>
         </div>
 
         {/* Modal Body */}
-        <div className="px-24 py-4 ">
-          <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="px-4 sm:px-8 md:px-12 lg:px-24 py-4">
+          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
             <Input
               type="text"
               id="name"
@@ -131,7 +131,7 @@ export default function ContactUsModal({
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-button-bg dark:bg-button-bg-dark  text-white font-medium py-3 px-4 rounded-md"
+              className="w-full bg-button-bg dark:bg-button-bg-dark text-white font-medium py-2.5 sm:py-3 px-4 rounded-md hover:opacity-90 transition-opacity"
             >
               Send Message
             </button>

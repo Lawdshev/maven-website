@@ -66,11 +66,12 @@ export default function AboutUsInfoBlocks() {
   return (
     <section className="bg-background dark:bg-background-dark">
       <div className="max-w-6xl mx-auto py-20 px-4 sm:px-6 lg:px-8 relative">
+        {/* Intro Section */}
         <div className="mb-8">
-          <h2 className="text-3xl font-medium text-about-text dark:text-about-text-dark leading-tight max-w-md mb-3">
+          <h2 className="md:text-3xl text-2xl font-medium text-about-text dark:text-about-text-dark leading-tight lg:max-w-md mb-3">
             Focus on growth. We handle the intelligence.
           </h2>
-          <p className="text-sm font-medium text-about-text dark:text-about-text-dark leading-relaxed max-w-2xl">
+          <p className="text-sm font-medium text-about-text dark:text-about-text-dark leading-relaxed w-full md:max-w-2xl">
             At Mavencode, we take care of the heavy lifting — from AI-driven
             automation to cloud-native systems — so you can focus on scaling
             your business. With solutions designed to adapt, learn, and grow
@@ -78,25 +79,39 @@ export default function AboutUsInfoBlocks() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Info Blocks */}
+        <div
+          className="
+            grid grid-cols-1 
+            sm:grid-cols-2 
+            md:grid-cols-3 
+            gap-6 
+            auto-rows-fr
+          "
+        >
           {infoBlocks.map((block) => (
-            <div key={block.id} className={`${block.colSpan}`}>
-              <div className={`mb-4 rounded-lg overflow-hidden`}>
+            <div
+              key={block.id}
+              className={`flex flex-col justify-between ${block.colSpan}`}
+            >
+              <div className="mb-4 rounded-lg overflow-hidden">
                 <Image
                   src={block.image}
                   alt={block.imageAlt}
                   className={`w-full ${block.imageHeight} object-cover`}
                 />
               </div>
-              <h3 className="text-xs text-about-heading dark:text-about-heading-dark mb-2">
-                {block.number}
-              </h3>
-              <h4 className="text-sm font-medium text-about-heading dark:text-about-heading-dark mb-2">
-                {block.title}
-              </h4>
-              <p className="text-xs text-about-text dark:text-about-text-dark max-w-xs">
-                {block.description}
-              </p>
+              <div>
+                <h3 className="text-xs text-about-heading dark:text-about-heading-dark mb-2">
+                  {block.number}
+                </h3>
+                <h4 className="text-sm font-medium text-about-heading dark:text-about-heading-dark mb-2">
+                  {block.title}
+                </h4>
+                <p className="text-xs w-full text-about-text dark:text-about-text-dark md:max-w-xs">
+                  {block.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
