@@ -44,7 +44,7 @@ export default function Footer() {
   const { theme } = useTheme();
 
   return (
-    <footer className="bg-background dark:bg-background-dark border-t border-footer-border dark:border-footer-border-dark py-16 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-background dark:bg-[#010101] border-t border-footer-border dark:border-footer-border-dark py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-4">
           <div className="text-left">

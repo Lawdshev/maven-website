@@ -6,160 +6,112 @@ import Workstation from "@/app/image/services/workStation.png";
 const services = [
   {
     id: 1,
-    title: "AI AGENT",
+    number: "01",
+    title: "AI Agent Development",
     description:
-      "Our AI agents are designed to act independently, handle complex workflows, and continuously learn from data..",
-    image: "Circuit",
+      "Bring about cultural change and remove barriers to innovation that allow your organization to become a mature digital enterprise.",
+    image: Circuit,
     features: [
-      {
-        number: "1",
-        title: "Autonomous Operations",
-        description:
-          "Agents that execute routine analyses, tasks without constant human oversight.",
-      },
-      {
-        number: "2",
-        title: "Smart Decision-Making",
-        description:
-          "Simulate human to analyze relevant information or act on real-time.",
-      },
-      {
-        number: "3",
-        title: "Seamless Integration",
-        description:
-          "Easily connect with existing tools, CRMs, and enterprise platforms.",
-      },
+      "With a focus on human-centered design, align your strategies with desired business outcomes.",
+      "Drive buy-in, engagement, and new ways of working to ensure long-term success.",
+      "Autonomous operations that execute routine analyses and tasks without constant human oversight.",
     ],
   },
   {
     id: 2,
-    title: "Real-Time Pipeline",
+    number: "02",
+    title: "Real-Time Data Pipeline",
     description:
       "In a world where seconds matter, real-time data pipelines ensure that your organization has instant access to actionable insights.",
-    image: "Brain",
+    image: Brain,
     features: [
-      {
-        number: "1",
-        title: "Data Ingestion & Processing",
-        description:
-          "Collect and process large volumes of structured and unstructured data quickly.",
-      },
-      {
-        number: "2",
-        title: "Event Streaming",
-        description:
-          "Build streaming systems for live insights across multiple data sources.",
-      },
-      {
-        number: "3",
-        title: "Predictive Analytics",
-        description: "Detect risks, trends, and opportunities instantly.",
-      },
+      "Collect and process large volumes of structured and unstructured data quickly.",
+      "Build streaming systems for live insights across multiple data sources.",
+      "Detect risks, trends, and opportunities instantly with predictive analytics.",
     ],
   },
   {
     id: 3,
-    title: "Cloud Native",
+    number: "03",
+    title: "Cloud Native Architecture",
     description:
       "We help organizations transition to cloud-native systems that are flexible, reliable, and ready for scale.",
-    image: "Workstation",
+    image: Workstation,
     features: [
-      {
-        number: "1",
-        title: "Cloud Architecture Design",
-        description: "Tailored infrastructure for performance and efficiency.",
-      },
-      {
-        number: "2",
-        title: "Migration Services",
-        description: "Smooth transition from legacy systems to the cloud.",
-      },
-      {
-        number: "3",
-        title: "DevOps & Automation",
-        description:
-          "CI/CD pipelines for faster deployments and better reliability.",
-      },
+      "Tailored cloud infrastructure design for optimal performance and efficiency.",
+      "Smooth migration services from legacy systems to modern cloud platforms.",
+      "CI/CD pipelines and DevOps automation for faster deployments and better reliability.",
     ],
   },
 ];
 
 export default function ServicesDetails() {
   return (
-    <section className="bg-background dark:bg-[#2A2C38] py-8 sm:py-10 lg:py-16 px-4 md:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        {services.map((service) => (
-          <div
-            key={service.id}
-            className="mb-16 md:mb-20 lg:mb-24 text-left md:text-center"
-          >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-insight-heading dark:text-insight-heading-dark mb-4 md:mb-6">
-              {service.title}
-            </h2>
-            <p className="text-base sm:text-lg text-services-paragraph dark:text-services-paragraph-dark max-w-2xl mx-auto mb-8 md:mb-10 lg:mb-12 leading-relaxed">
-              {service.description}
-            </p>
+    <section className="bg-background dark:bg-[#010101] py-16 lg:py-24 px-4 md:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="bg-white dark:bg-transparent rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+            >
+              {/* Image Section */}
+              <div className="relative">
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={600}
+                    height={300}
+                    className="w-full h-[250px] object-cover"
+                  />
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2 mx-auto">
-              <div className="flex justify-center w-full lg:w-auto">
-                <div className="relative rounded-lg overflow-hidden shadow-lg w-full  md:max-w-none">
-                  {service.id === 1 && (
-                    <Image
-                      src={Circuit}
-                      alt="Circuit Board"
-                      width={420}
-                      height={420}
-                      className="w-full"
-                    />
-                  )}
-                  {service.id === 2 && (
-                    <Image
-                      src={Brain}
-                      width={420}
-                      height={420}
-                      alt="Neural Network Brain"
-                      className="w-full"
-                    />
-                  )}
-                  {service.id === 3 && (
-                    <Image
-                      src={Workstation}
-                      alt="Developer Workstation"
-                      width={420}
-                      height={420}
-                      className="w-full"
-                    />
-                  )}
+                  {/* Large Number Overlay */}
+                  <div className="absolute top-6 left-6">
+                    <div className="bg-white/90 dark:bg-[#2A2C38]/90 backdrop-blur-sm rounded-lg px-4 py-2">
+                      <span className="text-3xl lg:text-4xl font-bold text-[#1E5993] dark:text-[#78A7D5]">
+                        {service.number}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start justify-center">
-                {service.features.map((feature) => (
-                  <div
-                    key={feature.number}
-                    className="flex items-start gap-3 md:gap-4 p-3 md:p-4 md:max-w-md w-full"
-                  >
-                    <div className="flex-shrink-0">
-                      <div className="bg-[#473BF0]/20 dark:bg-[#241C97]/10 rounded-full w-7 h-7 md:w-8 md:h-8 flex items-center justify-center">
-                        <span className="text-sm md:text-[17px] text-[#1E5993] dark:text-[#78A7D5]">
-                          {feature.number}
-                        </span>
+              {/* Content Section */}
+              <div className="p-6 lg:p-8 space-y-6">
+                <div>
+                  <h2 className="text-xl lg:text-2xl font-bold text-[#161C2D] dark:text-[#D4D9E7] mb-3">
+                    {service.title}
+                  </h2>
+                  <p className="text-sm lg:text-base text-[#666666] dark:text-[#B0B0B0] leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+
+                {/* Features List */}
+                <div className="space-y-3">
+                  {service.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 mt-1.5">
+                        <div className="w-1.5 h-1.5 bg-[#1E5993] dark:bg-[#78A7D5] rounded-full"></div>
                       </div>
-                    </div>
-                    <div className="text-left">
-                      <h3 className="text-lg md:text-xl font-bold text-services-text dark:text-[#E7D4D5] mb-1 sm:mb-2">
-                        {feature.title}
-                      </h3>
-                      <p className="text-sm md:text-base text-services-paragraph dark:text-[#D4D9E7] leading-relaxed">
-                        {feature.description}
+                      <p className="text-sm lg:text-base text-[#666666] dark:text-[#B0B0B0] leading-relaxed">
+                        {feature}
                       </p>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+
+                {/* CTA Button */}
+                <div className="pt-4">
+                  <button className="w-full bg-[#1E5993] hover:bg-[#164A7B] dark:bg-[#164A7B] dark:hover:bg-[#164A7B] text-white px-6 py-3 rounded-lg text-sm lg:text-base font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl">
+                    Learn More
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
