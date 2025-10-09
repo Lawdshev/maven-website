@@ -11,8 +11,7 @@ export default function BlogSection() {
     {
       img: Cloud,
       tag: "CLOUD",
-      title:
-        "Essential Cloud Security Practices Every Business Must Implement",
+      title: "Essential Cloud Security Practices Every Business Must Implement",
       date: "27 AUGUST, 2024",
     },
     {
@@ -30,7 +29,7 @@ export default function BlogSection() {
   ];
   return (
     <section className="bg-background dark:bg-background-dark">
-      <div className="max-w-6xl py-32 px-4 sm:px-6 lg:px-8 mx-auto">
+      <div className="container pt-32 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-4">
           <div className="lg:col-span-2 rounded-xl">
             <div className="relative h-[400px] sm:h-[500px] lg:h-[630px] w-full rounded-xl">

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Woman from "@/app/image/aboutus/woman.png";
 import Code from "@/app/image/aboutus/code.png";
 import Logo from "@/app/image/aboutus/logo.png";
-import DarkLogo from "@/app/image/aboutus/darkLogo.png"
+import DarkLogo from "@/app/image/aboutus/darkLogo.png";
 import AgentAi from "@/app/image/services/agentAi.png";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -21,7 +21,7 @@ export default function AboutUsSection() {
     return null;
   }
   return (
-    <section className="bg-white dark:bg-[#2A2C38]">
+    <section className="bg-white dark:bg-background-dark">
       <div className="max-w-6xl mx-auto py-36 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Section - Text Content */}

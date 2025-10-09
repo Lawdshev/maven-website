@@ -28,7 +28,8 @@ const articles = [
   },
   {
     id: 2,
-    title: "Where AI Meets Cloud: Unlocking The Future Of Scalable Intelligence",
+    title:
+      "Where AI Meets Cloud: Unlocking The Future Of Scalable Intelligence",
     category: "Innovations",
     excerpt:
       "The most exciting innovations of today are born at the intersection of AI and cloud computing. Together, they redefine what’s possible by combining the intelligence of advanced algorithms with the limitless capacity of scalable infrastructure.",
@@ -37,7 +38,8 @@ const articles = [
   },
   {
     id: 3,
-    title: "Behind The Scenes: How We Build Scalable Digital Products At Mavencode",
+    title:
+      "Behind The Scenes: How We Build Scalable Digital Products At Mavencode",
     category: "Mavencode Insight",
     excerpt:
       "Browned butter and brown sugar caramelly oodness crispy edgesthick At Mavencode, every solution we design starts with one principle: impact over hype. Our process is built around collaboration and clarity, where innovation meets execution. ",
@@ -55,7 +57,8 @@ const articles = [
   },
   {
     id: 5,
-    title: "Where AI Meets Cloud: Unlocking The Future Of Scalable Intelligence",
+    title:
+      "Where AI Meets Cloud: Unlocking The Future Of Scalable Intelligence",
     category: "Innovations",
     excerpt:
       "The most exciting innovations of today are born at the intersection of AI and cloud computing. Together, they redefine what’s possible by combining the intelligence of advanced algorithms with the limitless capacity of scalable infrastructure.",
@@ -64,7 +67,8 @@ const articles = [
   },
   {
     id: 6,
-    title: "Behind The Scenes: How We Build Scalable Digital Products At Mavencode",
+    title:
+      "Behind The Scenes: How We Build Scalable Digital Products At Mavencode",
     category: "Mavencode Insight",
     excerpt:
       "Browned butter and brown sugar caramelly oodness crispy edgesthick At Mavencode, every solution we design starts with one principle: impact over hype. Our process is built around collaboration and clarity, where innovation meets execution. ",
@@ -82,7 +86,7 @@ export default function BlogGrid() {
       : articles.filter((a) => a.category === activeCategory);
 
   return (
-    <section className="bg-background dark:bg-background-dark text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-10">
+    <section className="bg-background dark:bg-background-dark text-white pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-10">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 md:items-start">
         <aside className="md:col-span-1 rounded-lg md:sticky md:top-12 h-fit">
           <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-blog-category dark:text-blog-category-dark">
