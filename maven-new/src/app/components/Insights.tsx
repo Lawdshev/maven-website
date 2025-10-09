@@ -3,6 +3,7 @@ import Innovation from "@/app/image/insight/innovation.png";
 import Agentic from "@/app/image/insight/agentic.png";
 import Source from "@/app/image/insight/source.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Insights() {
   const insights = [
@@ -71,7 +72,7 @@ export default function Insights() {
                 <h3 className="text-lg  font-bold text-[#1E5993] dark:text-[#78A7D5] mb-2">
                   {insight.title}
                 </h3>
-                <p className="text-[#999999] dark:text-[#999999] text-base  leading-[31px]">
+                <p className="text-[#999999] dark:text-[#999999] text-base leading-[31px] line-clamp-3">
                   {insight.description}
                 </p>
               </div>
@@ -81,9 +82,11 @@ export default function Insights() {
 
         {/* Read More Button */}
         <div className="text-center">
-          <button className="bg-button-bg dark:bg-button-bg-dark text-white text-[17px] font-medium px-6 py-4">
-            Read More Insights
-          </button>
+          <Link href="/blog">
+            <button className="bg-button-bg dark:bg-button-bg-dark text-white text-[17px] font-medium px-6 py-4">
+              Show More
+            </button>
+          </Link>
         </div>
       </div>
     </section>
