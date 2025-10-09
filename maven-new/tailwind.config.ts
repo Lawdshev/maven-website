@@ -17,7 +17,7 @@ const config: Config = {
         // Light mode colors
         background: {
           DEFAULT: "#ffffff",
-          dark: "#2a2c38",
+          dark: "#010101",
         },
         foreground: {
           DEFAULT: "#171717",
@@ -25,11 +25,11 @@ const config: Config = {
         },
         nav: {
           DEFAULT: "#170f49",
-          dark: "#c2bcea",
+          dark: "#010101",
         },
         "button-bg": {
           DEFAULT: "#1e5993",
-          dark: "#193551",
+          dark: "#010101",
         },
         "footer-text": {
           DEFAULT: "#6f6c90",
