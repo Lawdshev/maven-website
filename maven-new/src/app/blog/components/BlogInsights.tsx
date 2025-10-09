@@ -83,8 +83,8 @@ export default function BlogGrid() {
 
   return (
     <section className="bg-background dark:bg-background-dark text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-10">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4">
-        <aside className="md:col-span-1 rounded-lg h-fit">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 md:items-start">
+        <aside className="md:col-span-1 rounded-lg md:sticky md:top-12 h-fit">
           <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-blog-category dark:text-blog-category-dark">
             Categories
           </h3>
@@ -93,10 +93,10 @@ export default function BlogGrid() {
               <li key={cat} className="flex-shrink-0 md:flex-shrink">
                 <button
                   onClick={() => setActiveCategory(cat)}
-                  className={`w-full text-left px-3 sm:px-4 text-sm sm:text-base py-2 rounded-md font-medium whitespace-nowrap md:whitespace-normal ${
+                  className={`w-[180px] text-left px-3 sm:px-4 text-sm sm:text-base py-2 rounded-md font-medium whitespace-nowrap md:whitespace-normal ${
                     activeCategory === cat
-                      ? "bg-[#1E5993] dark:[#193551] text-white"
-                      : "bg-[#D0F3FC] dark:bg-[#19768E] text-blog-category dark:text-blog-category-dark"
+                      ? "bg-[#1E5993] dark:bg-[#193551] text-white"
+                      : "bg-[#D0F3FC] dark:bg-[#19768E] text-black dark:text-blog-category-dark"
                   }`}
                 >
                   {cat}
@@ -106,7 +106,7 @@ export default function BlogGrid() {
           </ul>
         </aside>
 
-        {/* Articles Grid */}
+        {/* Articles Grid - Scrollable */}
         <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {filteredArticles.map((article) => (
             <article key={article.id} className="rounded-lg overflow-hidden">

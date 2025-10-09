@@ -59,6 +59,26 @@ const config: Config = {
           DEFAULT: "#1e5993",
           dark: "#78a7d5",
         },
+        "blog-category": {
+          DEFAULT: "#183354",
+          dark: "#78a7d5",
+        },
+        "blog-date": {
+          DEFAULT: "#6f6c90",
+          dark: "#767490",
+        },
+        "blog-text": {
+          DEFAULT: "#6f6c90",
+          dark: "#767490",
+        },
+        "blog-icon": {
+          DEFAULT: "#6f6c90",
+          dark: "#767490",
+        },
+        "date-icon": {
+          DEFAULT: "#6f6c90",
+          dark: "#767490",
+        },
       },
     },
   },
