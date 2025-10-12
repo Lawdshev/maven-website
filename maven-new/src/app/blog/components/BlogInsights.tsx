@@ -87,8 +87,8 @@ export default function BlogGrid() {
 
   return (
     <section className="bg-background dark:bg-background-dark text-white pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-10">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 md:items-start">
-        <aside className="md:col-span-1 rounded-lg md:sticky md:top-12 h-fit">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-6 md:gap-4 md:items-start">
+        <aside className="rounded-lg md:sticky md:top-12 h-fit">
           <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-blog-category dark:text-white">
             Categories
           </h3>
@@ -111,9 +111,12 @@ export default function BlogGrid() {
         </aside>
 
         {/* Articles Grid - Scrollable */}
-        <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {filteredArticles.map((article) => (
-            <article key={article.id} className="rounded-lg overflow-hidden">
+            <article
+              key={article.id}
+              className="border hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-all duration-300  border-gray-100 dark:border-gray-800 overflow-hidden"
+            >
               <div className="relative h-40 sm:h-44 w-full">
                 <Image
                   src={article.image}
@@ -128,7 +131,7 @@ export default function BlogGrid() {
                 </div>
               </div>
 
-              <div className="py-3 sm:py-4">
+              <div className="py-3 px-2 sm:py-4">
                 <h3 className="text-sm sm:text-base text-[#183354] dark:text-white font-bold mb-2 line-clamp-2">
                   {article.title}
                 </h3>
