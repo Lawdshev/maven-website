@@ -25,11 +25,11 @@ const config: Config = {
         },
         nav: {
           DEFAULT: "#170f49",
-          dark: "#010101",
+          dark: "#c2bcea",
         },
         "button-bg": {
           DEFAULT: "#1e5993",
-          dark: "#010101",
+          dark: "#193551",
         },
         "footer-text": {
           DEFAULT: "#6f6c90",

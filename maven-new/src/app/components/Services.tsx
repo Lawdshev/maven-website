@@ -34,7 +34,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="bg-white dark:bg-[#2A2C38]">
+    <section id="services" className="bg-white dark:bg-[#010101]">
       <div className="max-w-6xl mx-auto py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8 text-left md:text-center">
         {/* Section Header */}
         <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#01CBFB33] dark:bg-[#10718833] mb-6 sm:mb-8">
