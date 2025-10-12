@@ -85,7 +85,7 @@ export default function BlogGrid() {
     <section className="bg-background dark:bg-background-dark text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-10">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 md:items-start">
         <aside className="md:col-span-1 rounded-lg md:sticky md:top-12 h-fit">
-          <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-blog-category dark:text-blog-category-dark">
+          <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-blog-category dark:text-white">
             Categories
           </h3>
           <ul className="flex md:flex-col overflow-x-auto md:overflow-x-visible gap-2 md:gap-0 md:space-y-3 pb-2 md:pb-0 scrollbar-hide">
@@ -96,7 +96,7 @@ export default function BlogGrid() {
                   className={`w-[180px] text-left px-3 sm:px-4 text-sm sm:text-base py-2 rounded-md font-medium whitespace-nowrap md:whitespace-normal ${
                     activeCategory === cat
                       ? "bg-[#1E5993] dark:bg-[#193551] text-white"
-                      : "bg-[#D0F3FC] dark:bg-[#19768E] text-black dark:text-blog-category-dark"
+                      : "bg-[#D0F3FC] dark:bg-[#19768E] text-black dark:text-white"
                   }`}
                 >
                   {cat}
@@ -125,22 +125,22 @@ export default function BlogGrid() {
               </div>
 
               <div className="py-3 sm:py-4">
-                <h3 className="text-sm sm:text-base text-[#183354] dark:text-[#B1C7E1] font-bold mb-2 line-clamp-2">
+                <h3 className="text-sm sm:text-base text-[#183354] dark:text-white font-bold mb-2 line-clamp-2">
                   {article.title}
                 </h3>
                 <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                  <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-date-icon dark:text-date-icon-dark" />
-                  <span className="text-[8px] sm:text-[9px] font-semibold text-blog-date dark:text-blog-date-dark">
+                  <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-date-icon dark:text-white" />
+                  <span className="text-[8px] sm:text-[9px] font-semibold text-blog-date dark:text-white">
                     {article.date}
                   </span>
                   <div className="flex items-center gap-1">
-                    <PiClockCounterClockwiseLight className="w-3 h-3 sm:w-4 sm:h-4 text-date-icon dark:text-date-icon-dark" />
-                    <span className="text-[8px] sm:text-[9px] font-semibold text-blog-date dark:text-blog-date-dark">
+                    <PiClockCounterClockwiseLight className="w-3 h-3 sm:w-4 sm:h-4 text-date-icon dark:text-white" />
+                    <span className="text-[8px] sm:text-[9px] font-semibold text-blog-date dark:text-white">
                       20 MINS
                     </span>
                   </div>
                 </div>
-                <p className="text-[11px] sm:text-xs text-justify text-blog-text dark:text-blog-text-dark mb-2 sm:mb-3 line-clamp-3">
+                <p className="text-[11px] sm:text-xs text-justify text-blog-text dark:text-white mb-2 sm:mb-3 line-clamp-3">
                   {article.excerpt}
                 </p>
               </div>
